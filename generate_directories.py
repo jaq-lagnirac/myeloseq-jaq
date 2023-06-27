@@ -2,9 +2,13 @@
 # Generates directory of unsorted data into one that can be
 # used by MyeloSeq test server
 
-import os, sys; sys
+import os
+import sys
 import argparse
 import logging
+import shutil
+
+DEFAULT_DIR = os.path.join('sorted_dir')
 
 SCRIPT_PATH = os.path.abspath(__file__)
 FORMAT = '[%(asctime)s] %(levelname)s %(message)s'
@@ -33,10 +37,12 @@ parser = argparse.ArgumentParser(description=DESCRIPTION, epilog=EPILOG,
 
 parser.add_argument('-i',
                     nargs='+',
-                    help='File or files to be sorted')
+                    help='File or files to be sorted',
+                    metavar='INPUT_FILES')
 parser.add_argument('-o',
-                    default='sorted_dir',
-                    help='Output location of sorted directory')
+                    default=DEFAULT_DIR,
+                    help='Output location of sorted directory',
+                    metavar='MAIN_OUTPUT_DIRECTORY')
 parser.add_argument('-v', '--verbose',
                     action='store_true',
                     help='Set logging level to DEBUG')
@@ -59,22 +65,27 @@ for file in args.i:
   # extracts full relative path name
   path_name = file.split(file_sep) # array
   full_name = path_name[len(path_name) - 1]
-  print(full_name)
+  info(f'Reading in: {full_name}')
 
-  # extracts extension name
-  ext_location = full_name.rindex(ext_sep)
-  ext_name = full_name[ext_location:]
-  print(ext_name)
-
+#   # extracts extension name
+#   ext_location = full_name.rindex(ext_sep)
+#   ext_name = full_name[ext_location:]
+# #  print(ext_name)
+  
   # extracts name to be used for directory
   name_location = full_name.index(ext_sep)
   subdir_name = full_name[:name_location]
-  print(subdir_name)
 
   # creates subdirectory if it doesn't exist
   output_subdir = os.path.join(args.o, subdir_name)
   if not os.path.exists(output_subdir):
+    info(f'Creating subdirectory: {output_subdir}')
     os.mkdir(output_subdir)
+  else:
+    info(f'Already exists: {output_subdir}')
+
+  info(f'Copying {full_name} to {output_subdir}')
+  shutil.copy(file, output_subdir)
 
   
 
