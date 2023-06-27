@@ -31,9 +31,12 @@ class CustomFormatter(argparse.ArgumentDefaultsHelpFormatter,
 parser = argparse.ArgumentParser(description=DESCRIPTION, epilog=EPILOG,
   formatter_class=CustomFormatter)
 
-parser.add_argument('input_files',
-                    nargs='+')
-parser.add_argument('output_directory')
+parser.add_argument('-i',
+                    nargs='+',
+                    help='File or files to be sorted')
+parser.add_argument('-o',
+                    default='sorted_dir',
+                    help='Output location of sorted directory')
 parser.add_argument('-v', '--verbose',
                     action='store_true',
                     help='Set logging level to DEBUG')
@@ -48,7 +51,11 @@ ext_sep = '.'
 
 debug('%s begin', SCRIPT_PATH)
 
-for file in args.input_files:
+# if main output directory doesn't exist, creates one
+if not os.path.exists(args.o):
+  os.makedirs(args.o)
+
+for file in args.i:
   # extracts full relative path name
   path_name = file.split(file_sep) # array
   full_name = path_name[len(path_name) - 1]
@@ -61,8 +68,14 @@ for file in args.input_files:
 
   # extracts name to be used for directory
   name_location = full_name.index(ext_sep)
-  dir_name = full_name[:name_location]
-  print(dir_name)
+  subdir_name = full_name[:name_location]
+  print(subdir_name)
 
+  # creates subdirectory if it doesn't exist
+  output_subdir = os.path.join(args.o, subdir_name)
+  if not os.path.exists(output_subdir):
+    os.mkdir(output_subdir)
+
+  
 
 debug('%s end', (SCRIPT_PATH))
