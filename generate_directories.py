@@ -3,12 +3,13 @@
 # used by MyeloSeq test server
 
 import os
-import sys
 import argparse
 import logging
 import shutil
 
-DEFAULT_DIR = os.path.join('sorted_dir')
+FILE_SEP = '/'
+EXT_SEP = '.'
+DEFAULT_DIR = os.path.join('..', 'sorted_dir')
 
 SCRIPT_PATH = os.path.abspath(__file__)
 FORMAT = '[%(asctime)s] %(levelname)s %(message)s'
@@ -52,28 +53,25 @@ args = parser.parse_args()
 if args.verbose:
   l.setLevel(logging.DEBUG)
 
-file_sep = '/'
-ext_sep = '.'
+
 
 debug('%s begin', SCRIPT_PATH)
 
 # if main output directory doesn't exist, creates one
 if not os.path.exists(args.o):
+  info(f'Creating main directory: {args.o}')
   os.makedirs(args.o)
+else:
+  info(f'Already exists: {args.o}')
 
 for file in args.i:
   # extracts full relative path name
-  path_name = file.split(file_sep) # array
+  path_name = file.split(FILE_SEP) # array
   full_name = path_name[len(path_name) - 1]
   info(f'Reading in: {full_name}')
-
-#   # extracts extension name
-#   ext_location = full_name.rindex(ext_sep)
-#   ext_name = full_name[ext_location:]
-# #  print(ext_name)
   
   # extracts name to be used for directory
-  name_location = full_name.index(ext_sep)
+  name_location = full_name.index(EXT_SEP)
   subdir_name = full_name[:name_location]
 
   # creates subdirectory if it doesn't exist
@@ -87,6 +85,6 @@ for file in args.i:
   info(f'Copying {full_name} to {output_subdir}')
   shutil.copy(file, output_subdir)
 
-  
+info(f'Finished copying and sorting. Output can be found in {args.o}')
 
 debug('%s end', (SCRIPT_PATH))
