@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 
 import readConfig from './readConfig.js';
-import { getJsonPaths } from './batch.js';
+import { getJsonPaths, getBedPaths } from './batch.js';
 import { getOrderList, filterOrderList } from './orderList.js';
 import fetchOrder from './fetchOrder.js';
 import updateOrder from './updateOrder.js';
@@ -12,8 +12,12 @@ const config = readConfig('../package.json', './config.json');
 const jsonPaths = getJsonPaths(config.batchDir);
 const [ orderList, orderHash ] = getOrderList(jsonPaths);
 
-console.log(jsonPaths)
-console.log(orderList)
+// console.log(jsonPaths)
+// console.log(orderList)
+
+const bedPaths = getBedPaths(config.batchDir);
+console.log(bedPaths)
+
 
 const server = () => {
   const app = express();
@@ -41,6 +45,8 @@ const server = () => {
     res.writeHead(200);
     res.end(fetchOrder(req.query, orderHash));
   });
+
+  // TODO create/integrate fetchOrder with bed files (text/plain)
 
   app.post('/api/v1/myeloseq/UpdateOrder', (req, res) => {
     res.setHeader('content-type', 'application/json');

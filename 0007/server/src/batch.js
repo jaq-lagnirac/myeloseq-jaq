@@ -27,5 +27,28 @@ const getJsonPaths = (batchDirPath) => {
   return jsonPaths;
 };
 
-export { getJsonPaths };
+const getBedPaths = (batchDirPath) => {
+  const batchDir = fs.opendirSync(batchDirPath);
+  const bedPaths = [];
+
+  let batchDirEntry;
+  while ((batchDirEntry = batchDir.readSync()) !== null) {
+    const casePath = path.join(config.batchDir, batchDirEntry.name);
+    const caseDir = fs.opendirSync(casePath);
+    let caseDirEntry;
+    while ((caseDirEntry = caseDir.readSync()) !== null) {
+      const bedFilename = caseDirEntry.name;
+      if (bedFilename.includes('.qc-coverage-region-1_full_res.bed')) {
+        const bedPath = path.join(casePath, bedFilename);
+        bedPaths.push(bedPath);
+      }
+    }
+    caseDir.closeSync();
+  }
+  batchDir.closeSync();
+
+  return bedPaths;
+};
+
+export { getJsonPaths, getBedPaths };
 
