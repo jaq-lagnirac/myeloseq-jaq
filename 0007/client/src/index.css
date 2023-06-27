@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+header {
+  @apply mb-9 flex justify-between;
+}
+
+h1 {
+  @apply block font-bold text-gray-500;
+}
+
+h2 {
+  @apply block font-bold text-black mb-6;
+}
+
+#user-id {
+  @apply block text-gray-500;
+}
+
+.app-container {
+  @apply m-6;
+}
+
+.order-controls {
+  @apply bg-gray-300 p-3 w-fit flex gap-3 items-center justify-center;
+}
+
+.editor-container {
+  @apply mt-6 bg-gray-300 grid grid-cols-4 p-6 gap-x-6 gap-y-2 w-fit;
+}
+
+.control-container > button {
+  @apply rounded font-bold;
+}
+
+.control-container > button:disabled,
+button[disabled] {
+  @apply bg-gray-300 text-white
+    opacity-50 cursor-not-allowed border-gray-500;
+}
+
+button {
+  @apply bg-transparent hover:bg-black text-black
+    font-semibold hover:text-white p-3
+    border border-black hover:border-transparent rounded;
+}
+
+a {
+  text-decoration: underline;
+}
+
+body {
+  @apply m-6;
+}
+label,input,#message {
+  @apply mt-3;
+}
+button {
+  @apply mr-3 mt-6;
+}
+label {
+  @apply block;
+}
+input {
+  @apply block border border-black;
+}
+#message {
+  @apply block text-red-500;
+}
+table {
+  text-align: left;
+  @apply mt-12;
+}
+td,th {
+  @apply ml-12 pr-6;
+}
+#joint-probabilities {
+  @apply ml-12 mt-3;
+}
+p {
+  @apply block mt-6;
+}
+#lod-formulas {
+  @apply mt-12;
+}
+#lod-formulas b {
+  display: inline;
+  font-weight: bold;
+  @apply mr-6
+}
+pre {
+  display: inline;
+}
