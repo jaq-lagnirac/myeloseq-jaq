@@ -15,8 +15,9 @@ const [ orderList, orderHash ] = getOrderList(jsonPaths);
 // console.log(jsonPaths)
 // console.log(orderList)
 
+// may not need this, please check orderList.js
 const bedPaths = getBedPaths(config.batchDir);
-console.log(bedPaths)
+// console.log(bedPaths)
 
 
 const server = () => {

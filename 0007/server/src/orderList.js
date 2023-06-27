@@ -17,10 +17,16 @@ const getOrderList = (jsonPaths) => {
     }
     const spcNum = match[0];
 
+    // splicing json path and converting it to bed path
+    const splicedPath = jsonPath.split('.')
+    const bedPath = splicedPath[0].concat('.qc-coverage-region-1_full_res.bed')
+    // console.log(bedPath)
+    
     const firstName = uniqueNamesGenerator({ dictionaries: [names]});
     let lastName = uniqueNamesGenerator({ dictionaries: [colors]});
     lastName = lastName.charAt(0).toUpperCase() + lastName.slice(1);
-
+    
+    // TODO integrate bedPath into orderEntry
     const orderEntry = {
       firstName: firstName,
       lastName: lastName,
