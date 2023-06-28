@@ -17,6 +17,12 @@ const getOrderList = (jsonPaths) => {
     }
     const spcNum = match[0];
 
+    const bedPath = jsonPath.replace('.report.json',
+      '.qc-coverage-region-1_full_res.bed')
+    const bedBasename = path.basename(bedPath)
+    const caseBed = fs.readFileSync(bedPath)
+    // console.log(bedPath)
+
     const firstName = uniqueNamesGenerator({ dictionaries: [names]});
     let lastName = uniqueNamesGenerator({ dictionaries: [colors]});
     lastName = lastName.charAt(0).toUpperCase() + lastName.slice(1);
@@ -33,7 +39,8 @@ const getOrderList = (jsonPaths) => {
       orderId: count,
       resultDate: null,
       spcNum: spcNum,
-      open: false
+      open: false,
+      bedName: bedPath
     };
     if (count === 13) {
       orderEntry.open = true;

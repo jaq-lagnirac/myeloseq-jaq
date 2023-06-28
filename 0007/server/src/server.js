@@ -16,8 +16,7 @@ const [ orderList, orderHash ] = getOrderList(jsonPaths);
 // console.log(orderList)
 
 const bedPaths = getBedPaths(config.batchDir);
-console.log(bedPaths)
-
+//console.log(bedPaths)
 
 const server = () => {
   const app = express();
