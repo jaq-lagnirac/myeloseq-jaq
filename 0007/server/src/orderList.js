@@ -26,7 +26,8 @@ const getOrderList = (jsonPaths) => {
     const firstName = uniqueNamesGenerator({ dictionaries: [names]});
     let lastName = uniqueNamesGenerator({ dictionaries: [colors]});
     lastName = lastName.charAt(0).toUpperCase() + lastName.slice(1);
-
+    
+    // TODO integrate bedPath into orderEntry
     const orderEntry = {
       firstName: firstName,
       lastName: lastName,
