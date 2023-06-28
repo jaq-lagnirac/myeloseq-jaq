@@ -4,8 +4,8 @@ import cors from 'cors';
 import readConfig from './readConfig.js';
 import { getJsonPaths, getBedPaths } from './batch.js';
 import { getOrderList, filterOrderList } from './orderList.js';
-import fetchOrder from './fetchOrder.js';
-import updateOrder from './updateOrder.js';
+import { fetchOrder, fetchBed } from './fetchOrder.js';
+import { updateOrder, updateBed} from './updateOrder.js';
 
 const config = readConfig('../package.json', './config.json');
 
@@ -42,12 +42,24 @@ const server = () => {
     res.end(fetchOrder(req.query, orderHash));
   });
 
-  // TODO create/integrate fetchOrder with bed files (text/plain)
-
   app.post('/api/v1/myeloseq/UpdateOrder', (req, res) => {
     res.setHeader('content-type', 'application/json');
     res.writeHead(200);
     res.end(updateOrder(req.query, req.body, orderHash));
+  });
+
+  // TODO create/integrate updateOrder/fetchOrder with bed files (text/plain)
+
+  app.post('/api/v1/myeloseq/fetchBed', (req, res) => {
+    res.setHeader('content-type', 'text/plain');
+    res.writeHead(200);
+    res.end(fetchBed(req.query, orderHash));
+  });
+
+  app.post('/api/v1/myeloseq/updateBed', (req, res) => {
+    res.setHeader('content-type', 'text/plain');
+    res.writeHead(200);
+    res.end(updateBed(req.query, req.body, orderHash));
   });
 
   app.listen(port, () => {

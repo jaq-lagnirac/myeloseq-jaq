@@ -11,5 +11,14 @@ const updateOrder = (query, body, orderHash)  => {
   return JSON.stringify('OK');
 };
 
-export default updateOrder;
+const updateBed = (query, body, orderHash)  => {
+  const hashKey =
+      [query.orderId, query.caseNum, query.mrn].join('-');
+  const orderEntry = orderHash[hashKey];
+  const bedPath = orderEntry.bedName;
+  console.log(bedPath);
+  fs.writeFileSync(bedPath);
+  return 'OK';
+};
 
+export default { updateOrder, updateBed };
