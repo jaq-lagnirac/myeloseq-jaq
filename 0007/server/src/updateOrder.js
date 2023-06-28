@@ -21,4 +21,4 @@ const updateBed = (query, body, orderHash)  => {
   return 'OK';
 };
 
-export default { updateOrder, updateBed };
+export { updateOrder, updateBed };

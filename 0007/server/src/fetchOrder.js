@@ -8,5 +8,13 @@ const fetchOrder = (query, orderHash) => {
   return JSON.stringify(JSON.parse(fs.readFileSync(jsonPath)));
 };
 
-export default fetchOrder;
+const fetchBed = (query, orderHash) => {
+  const hashKey =
+      [query.orderId, query.caseNum, query.mrn].join('-');
+  const orderEntry = orderHash[hashKey];
+  const bedPath = orderEntry.bedName;
+  return fs.readFileSync(bedPath);
+};
+
+export { fetchOrder, fetchBed };
 
