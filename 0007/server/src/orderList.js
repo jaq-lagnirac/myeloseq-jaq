@@ -17,17 +17,16 @@ const getOrderList = (jsonPaths) => {
     }
     const spcNum = match[0];
 
+    // Converts jsonPath to bedPath
     const bedPath = jsonPath.replace('.report.json',
       '.qc-coverage-region-1_full_res.bed')
     const bedBasename = path.basename(bedPath)
     const caseBed = fs.readFileSync(bedPath)
-    // console.log(bedPath)
 
     const firstName = uniqueNamesGenerator({ dictionaries: [names]});
     let lastName = uniqueNamesGenerator({ dictionaries: [colors]});
     lastName = lastName.charAt(0).toUpperCase() + lastName.slice(1);
     
-    // TODO integrate bedPath into orderEntry
     const orderEntry = {
       firstName: firstName,
       lastName: lastName,

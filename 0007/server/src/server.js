@@ -12,12 +12,8 @@ const config = readConfig('../package.json', './config.json');
 const jsonPaths = getJsonPaths(config.batchDir);
 const [ orderList, orderHash ] = getOrderList(jsonPaths);
 
-// console.log(jsonPaths)
-// console.log(orderList)
-
 // may not need this, please check orderList.js
 const bedPaths = getBedPaths(config.batchDir);
-//console.log(bedPaths)
 
 const server = () => {
   const app = express();
