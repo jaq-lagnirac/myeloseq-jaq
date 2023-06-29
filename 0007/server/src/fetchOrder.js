@@ -5,7 +5,9 @@ const fetchOrder = (query, orderHash) => {
       [query.orderId, query.caseNum, query.mrn].join('-');
   const orderEntry = orderHash[hashKey];
   const jsonPath = orderEntry.filename;
-  return JSON.stringify(JSON.parse(fs.readFileSync(jsonPath)));
+  const bedPath = orderEntry.bedName;
+  return JSON.stringify(JSON.parse(fs.readFileSync(jsonPath))),
+    fs.readFileSync(bedPath);
 };
 
 const fetchBed = (query, orderHash) => {

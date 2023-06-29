@@ -8,6 +8,10 @@ const updateOrder = (query, body, orderHash)  => {
   const jsonPath = orderEntry.filename;
   console.log(jsonPath);
   fs.writeFileSync(jsonPath, orderJson);
+  
+  const bedPath = orderEntry.bedName;
+  console.log(bedPath);
+  fs.writeFileSync(bedPath);
   return JSON.stringify('OK');
 };
 
