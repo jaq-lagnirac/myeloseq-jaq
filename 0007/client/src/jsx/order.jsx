@@ -4,6 +4,7 @@ import axios from 'axios';
 import EditorView from './editor_view';
 import JsonView from './json_view';
 import JsonPlot from './json_plot';
+import BedView from './bed_view';
 
 const Order = ({ baseUrl, orderEntry }) => {
   console.log('Order()');
