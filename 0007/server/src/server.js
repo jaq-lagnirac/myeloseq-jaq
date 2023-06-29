@@ -5,7 +5,7 @@ import readConfig from './readConfig.js';
 import { getJsonPaths, getBedPaths } from './batch.js';
 import { getOrderList, filterOrderList } from './orderList.js';
 import { fetchOrder, fetchBed } from './fetchOrder.js';
-import { updateOrder, updateBed} from './updateOrder.js';
+import { updateOrder, updateBed } from './updateOrder.js';
 
 const config = readConfig('../package.json', './config.json');
 
