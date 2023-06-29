@@ -1,4 +1,5 @@
 import fs from 'fs';
+import Read from 'bedjs';
 
 const fetchOrder = (query, orderHash) => {
   const hashKey =
@@ -13,7 +14,7 @@ const fetchBed = (query, orderHash) => {
       [query.orderId, query.caseNum, query.mrn].join('-');
   const orderEntry = orderHash[hashKey];
   const bedPath = orderEntry.bedName;
-  return fs.readFileSync(bedPath);
+  return Read(fs.readFileSync(bedPath));
 };
 
 export { fetchOrder, fetchBed };
