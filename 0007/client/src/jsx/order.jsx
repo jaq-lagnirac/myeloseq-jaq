@@ -76,6 +76,10 @@ const Order = ({ baseUrl, orderEntry }) => {
                 <a href='#' onClick={() => setView('json')}>JSON</a>
               </li>
               <li className={`mt-3 pl-2 border-l-2
+                  ${view === 'bed' ? 'border-black' : 'border-white'}`}>
+                <a href='#' onClick={() => setView('bed')}>BED</a>
+              </li>
+              <li className={`mt-3 pl-2 border-l-2
                   ${view === 'plot' ? 'border-black' : 'border-white'}`}>
                 <a href='#' onClick={() => setView('plot')}>Plot</a>
               </li>
@@ -91,6 +95,13 @@ const Order = ({ baseUrl, orderEntry }) => {
               /> : null}
             {view === 'json' ?
               <JsonView
+                order={order}
+                orderEntry={orderEntry}
+                addEdit={handleAddEdit}
+                saveEdit={handleSaveEdit}
+              /> : null}
+            {view === 'bed' ?
+              <BedView
                 order={order}
                 orderEntry={orderEntry}
                 addEdit={handleAddEdit}
