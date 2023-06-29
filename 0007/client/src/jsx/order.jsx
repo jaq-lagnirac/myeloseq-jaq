@@ -18,15 +18,23 @@ const Order = ({ baseUrl, orderEntry }) => {
 
   useEffect(() => {
     console.log('Order useEffect()');
-    const url = `${baseUrl}/FetchOrder`;
-    axios({
-      method: 'post',
-      url: url,
-      params: { ...subsetOrderEntry }
-    })
-      .then((res) => {
-        setOrder(res.data);
-      });
+    let url = `DUMMY`;
+    if (view === 'json')
+    {
+      url = `${baseUrl}/FetchOrder`;
+    }
+    else if (view === 'bed')
+    {
+      url = `${baseUrl}/FetchBed`;
+    }
+      axios({
+        method: 'post',
+        url: url,
+        params: { ...subsetOrderEntry }
+      })
+        .then((res) => {
+          setOrder(res.data);
+        });
   }, []);
 
   const handleAddEdit = (e) => {
@@ -48,7 +56,15 @@ const Order = ({ baseUrl, orderEntry }) => {
 
   const handleSaveEdit = (e) => {
     console.log('handleSaveEdit');
-    const url = `${baseUrl}/UpdateOrder`;
+    let url = `DUMMY`;
+    if (view === 'json')
+    {
+       url = `${baseUrl}/UpdateOrder`;
+    }
+    else if (view === 'bed')
+    {
+      url = `${baseUrl}/UpdateBed`;
+    }
     axios({
       method: 'post',
       url: url,
