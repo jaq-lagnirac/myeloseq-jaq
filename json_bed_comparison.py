@@ -142,9 +142,9 @@ for directory_name in os.listdir(args.directory):
     start -= 1
 
     # Comparison code
-    bed_cov = bed_tree[start : end] # overlaps
+    interval_set = bed_tree[start : end] # overlaps
     #bed_cov = bed_tree.envelop(start, end)
-    for interval in bed_cov:
+    for interval in interval_set:
       total_comparisons += 1
 
       bed_cov = interval.data
