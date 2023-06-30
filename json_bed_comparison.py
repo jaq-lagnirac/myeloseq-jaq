@@ -82,6 +82,7 @@ debug('%s begin', SCRIPT_PATH)
 total_comparisons = 0
 json_greater = 0
 bed_greater = 0
+coverage_equal = 0
 
 for directory_name in os.listdir(args.directory):
   # Generate file paths
@@ -152,6 +153,9 @@ for directory_name in os.listdir(args.directory):
       elif coverage > json_comparison_interval:
         bed_greater += 1
         info('BED has greater coverage than JSON')
+      elif coverage == json_comparison_interval:
+        coverage_equal += 1
+        info('Coverage is equal')
       else:
         info('Unknown comparison')
 
