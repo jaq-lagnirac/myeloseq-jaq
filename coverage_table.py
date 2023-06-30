@@ -15,6 +15,10 @@ from intervaltree import Interval, IntervalTree
 JSON_SUFFIX = '.report.json'
 BED_SUFFIX = '.qc-coverage-region-1_full_res.bed'
 
+SEP = '\t'
+
+ROUNDING_DECIMALS = 3
+
 SCRIPT_PATH = os.path.abspath(__file__)
 FORMAT = '[%(asctime)s] %(levelname)s %(message)s'
 l = logging.getLogger()
@@ -86,6 +90,11 @@ json_greater = 0
 bed_greater = 0
 coverage_equal = 0
 
+# Initialize totals (for averages)
+json_total = 0
+bed_total = 0
+vs_total = 0
+
 # Initialize dictionary and fields (future dataframe)
 fields = ['directory name',
           'chrom',
@@ -113,21 +122,6 @@ for directory_name in os.listdir(args.directory):
   bed_path = os.path.join(args.directory,
                           directory_name,
                           bed_name)
-  
-  
-  # Process BED file
-
-  df = pd.read_csv(bed_path,
-                   sep = '\t',
-                   names = ['chrom',
-                            'start',
-                            'end',
-                            'coverage'])
-  
-  # Create interval tree from pandas dataframe
-  bed_tree = IntervalTree()
-  for index, row in df.iterrows():
-    bed_tree[row['start'] : row['end']] = row['coverage']
 
 
   # Process JSON file
@@ -142,6 +136,21 @@ for directory_name in os.listdir(args.directory):
   except:
     error(f'Tier 1-3 columns do not exist: {json_path}')
     continue
+  
+  
+  # Process BED file
+
+  df = pd.read_csv(bed_path,
+                   sep = SEP,
+                   names = ['chrom',
+                            'start',
+                            'end',
+                            'coverage'])
+  
+  # Create interval tree from pandas dataframe
+  bed_tree = IntervalTree()
+  for index, row in df.iterrows():
+    bed_tree[row['start'] : row['end']] = row['coverage']
 
 
   # Comparing files
@@ -166,8 +175,21 @@ for directory_name in os.listdir(args.directory):
     interval_set = bed_tree[start : end] # overlaps
     #bed_cov = bed_tree.envelop(start, end)
     for interval in interval_set:
+      # extracts data from interval, compares
       bed_cov = interval.data
+      vs_cov = json_cov - bed_cov
 
+      # sets up data list to append to table dict 
+      data = [directory_name,
+              chrom,
+              start,
+              end,
+              ref,
+              alt,
+              json_cov,
+              bed_cov,
+              vs_cov]
+      # appends data to table_dict
       for index, field in enumerate(fields):
         table_dict[field].append(data[index])
 
@@ -184,6 +206,20 @@ for directory_name in os.listdir(args.directory):
         info('Coverage is equal')
       else:
         info('Unknown comparison')
+      
+      # Increments totals for averages
+      json_total += json_cov
+      bed_total += bed_cov
+      vs_total += vs_cov
+
+# Converts dict to tsv
+output_df = pd.DataFrame.from_dict(table_dict)
+output_df.to_csv(sys.stdout, sep=SEP, index=None)
+
+# Calculates averages
+json_avg = round(json_total / total_comparisons, ROUNDING_DECIMALS)
+bed_avg = round(bed_total / total_comparisons, ROUNDING_DECIMALS)
+vs_avg = round(vs_total / total_comparisons, ROUNDING_DECIMALS)
 
 # Output statistics
 
@@ -191,5 +227,8 @@ info(f'Total Comparisons: {total_comparisons}')
 info(f'Cases where JSON coverage was greater: {json_greater}')
 info(f'Cases where BED coverage was greater: {bed_greater}')
 info(f'Cases where coverage was equal: {coverage_equal}')
+info(f'JSON average coverage: {json_avg}')
+info(f'BED average coverage: {bed_avg}')
+info(f'Average coverage comparison: {vs_avg}')
 
 debug('%s end', SCRIPT_PATH)
