@@ -142,18 +142,19 @@ for directory_name in os.listdir(args.directory):
     start -= 1
 
     # Comparison code
-    json_comparison_interval = Interval(start, end, json_cov)
     bed_cov = bed_tree[start : end] # overlaps
     #bed_cov = bed_tree.envelop(start, end)
-    for coverage in bed_cov:
+    for interval in bed_cov:
       total_comparisons += 1
-      if json_comparison_interval > coverage:
+
+      bed_cov = interval.data
+      if json_cov > bed_cov:
         json_greater += 1
         info('JSON has greater coverage than BED')
-      elif coverage > json_comparison_interval:
+      elif bed_cov > json_cov:
         bed_greater += 1
         info('BED has greater coverage than JSON')
-      elif coverage == json_comparison_interval:
+      elif bed_cov == json_cov:
         coverage_equal += 1
         info('Coverage is equal')
       else:
