@@ -71,6 +71,10 @@ def process_json_entry(pos, ref, alt):
 
 debug('%s begin', SCRIPT_PATH)
 
+# Initialize counters
+total_comparisons = 0
+json_greater = 0
+bed_greater = 0
 
 for directory_name in os.listdir(args.directory):
   # Generate file paths
@@ -93,11 +97,7 @@ for directory_name in os.listdir(args.directory):
   # Create interval tree from pandas dataframe
   bed_tree = IntervalTree()
   for index, row in df.iterrows():
-    bed_tree[row['start']:row['end']] = row['coverage']
-
-  #for obj in bed_tree:
-  #  print(obj)
-  #  print(f"{row['chrom']}\t{row['start']}\t{row['end']}\t{row['coverage']}")
+    bed_tree[row['start'] : row['end']] = row['coverage']
 
 
   # Process JSON file
@@ -116,15 +116,38 @@ for directory_name in os.listdir(args.directory):
 
 
   # Comparing files
-
   for entry in tier13_data:
+    # JSON data extraction
     chrom = entry[tier13_columns.index('chrom')]
     pos = int(entry[tier13_columns.index('pos')])
     ref = entry[tier13_columns.index('ref')]
     alt = entry[tier13_columns.index('alt')]
-    cov = entry[tier13_columns.index('coverage')]
+    json_cov = entry[tier13_columns.index('coverage')]
     
     start, end = process_json_entry(pos, ref, alt)
 
+    # -1 accounting for 1-based to 0-based conversion
+    # BED files are 0-based half-open [ )
+    # JSON files are 1-based
+    start -= 1
+
+    # Comparison code
+    json_comparison_interval = Interval(start, end, json_cov)
+    bed_cov = bed_tree[start : end] # overlaps
+    #bed_cov = bed_tree.envelop(start, end)
+    for coverage in bed_cov:
+      total_comparisons += 1
+      if json_comparison_interval > coverage:
+        json_greater += 1
+        info('JSON has greater coverage than BED')
+      elif coverage > json_comparison_interval:
+        bed_greater += 1
+        info('BED has greater coverage than JSON')
+      else:
+        info('Unknown comparison')
+
+info(f'Total Comparisons: {total_comparisons}')
+info(f'Cases where JSON coverage was greater: {json_greater}')
+info(f'Cases where BED coverage was greater: {bed_greater}')
 
 debug('%s end', SCRIPT_PATH)
