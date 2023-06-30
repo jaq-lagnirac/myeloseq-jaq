@@ -164,5 +164,6 @@ for directory_name in os.listdir(args.directory):
 info(f'Total Comparisons: {total_comparisons}')
 info(f'Cases where JSON coverage was greater: {json_greater}')
 info(f'Cases where BED coverage was greater: {bed_greater}')
+info(f'Cases where coverage was equal: {coverage_equal}')
 
 debug('%s end', SCRIPT_PATH)
