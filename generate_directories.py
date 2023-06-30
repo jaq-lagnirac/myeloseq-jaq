@@ -23,11 +23,14 @@ debug = l.debug; info = l.info; warning = l.warning; error = l.error
 DESCRIPTION = '''
 
 Generates directory of unsorted data into one that can be
-used by MyeloSeq test server
+used by MyeloSeq test server.
 
 '''
 
 EPILOG = '''
+
+Output files stored outside of the working directory (in the parent directory).
+
 '''
 
 class CustomFormatter(argparse.ArgumentDefaultsHelpFormatter,
