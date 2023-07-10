@@ -9,7 +9,7 @@ import shutil
 
 FILE_SEP = '/'
 EXT_SEP = '.'
-DEFAULT_DIR = os.path.join('..', 'sorted_dir')
+DEFAULT_DIR = os.path.join('..', '..', 'sorted_dir')
 
 SCRIPT_PATH = os.path.abspath(__file__)
 FORMAT = '[%(asctime)s] %(levelname)s %(message)s'
