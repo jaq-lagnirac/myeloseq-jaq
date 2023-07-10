@@ -92,6 +92,20 @@ for directory_name in os.listdir(args.directory):
   bed_path = os.path.join(args.directory,
                           directory_name,
                           f'{directory_name}{BED_SUFFIX}')
+
+
+  # Process JSON file
+  
+  with open(json_path) as jp:
+    json_file = json.loads(jp.read())
+  
+  try:
+    tier13_columns = json_file['VARIANTS']['TIER1-3']['columns']
+    tier13_data = json_file['VARIANTS']['TIER1-3']['data']
+    info(f'Accessing file: {json_path}')
+  except:
+    error(f'Tier 1-3 columns do not exist: {json_path}')
+    continue
   
   
   # Process BED file
@@ -107,20 +121,6 @@ for directory_name in os.listdir(args.directory):
   bed_tree = IntervalTree()
   for index, row in df.iterrows():
     bed_tree[row['start'] : row['end']] = row['coverage']
-
-
-  # Process JSON file
-  
-  with open(json_path) as jp:
-    json_file = json.loads(jp.read())
-  
-  try:
-    tier13_columns = json_file['VARIANTS']['TIER1-3']['columns']
-    tier13_data = json_file['VARIANTS']['TIER1-3']['data']
-    info(f'Accessing file: {json_path}')
-  except:
-    error(f'Tier 1-3 columns do not exist: {json_path}')
-    continue
 
 
   # Comparing files
