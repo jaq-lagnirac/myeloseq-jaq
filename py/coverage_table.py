@@ -108,6 +108,8 @@ fields = ['directory name',
           'end',
           'ref',
           'alt',
+          'gene',
+          'transcript',
           'json coverage',
           'bed coverage',
           'json vs bed coverage']
@@ -171,6 +173,8 @@ for directory_name in os.listdir(args.directory):
     pos = int(entry[tier13_columns.index('pos')])
     ref = entry[tier13_columns.index('ref')]
     alt = entry[tier13_columns.index('alt')]
+    gene = entry[tier13_columns.index('gene')]
+    transcript = entry[tier13_columns.index('transcript')]
     json_cov = entry[tier13_columns.index('coverage')]
     
     start, end = process_json_entry(pos, ref, alt)
@@ -195,6 +199,8 @@ for directory_name in os.listdir(args.directory):
               end,
               ref,
               alt,
+              gene,
+              transcript,
               json_cov,
               bed_cov,
               vs_cov]
