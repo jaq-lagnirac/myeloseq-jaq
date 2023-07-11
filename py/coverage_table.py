@@ -125,6 +125,7 @@ def intersection(list1, list2):
 
 
 def check_duplicates(data_dict, table_dict):
+  #return False
   dict_of_index_lists = {}
 
   shortened_fields = fields[fields.index('chrom') : fields.index('alt')]
@@ -136,7 +137,7 @@ def check_duplicates(data_dict, table_dict):
 
     # initializes list of indexes of all occurences in table_list
     index_list = []
-    for index, table_list_value in table_list:
+    for index, table_list_value in enumerate(table_list):
       if comparison_value == table_list_value:
         index_list.append(index)
     
@@ -145,14 +146,21 @@ def check_duplicates(data_dict, table_dict):
     index_list.sort()
     dict_of_index_lists[field] = index_list
   
-  # compares lists to see if there is a common thread
+  # compares lists to see if there is a common index across all fields
   comparison_list = dict_of_index_lists['chrom']
   for field in shortened_fields[1 : ]:
     comparison_list = intersection(comparison_list,
                                    dict_of_index_lists[field])
-  print(comparison_list)
-  if comparison_list:
-    sys.exit()
+  
+  # More than one duplicate detected
+  if len(comparison_list) > 1:
+    error('Duplicate located in more than one location.')
+    sys.exit(1)
+
+  # No discrepancies detected
+  if len(comparison_list) == 0:
+    return False # unique data, skips over duplicate handling
+  return comparison_list[0] # returns single int index
 
 
 
@@ -265,7 +273,7 @@ for directory_name in os.listdir(args.directory):
                    bed_cov,
                    vs_cov] 
       data_dict = list_to_dict(fields, data_list)
-      '''
+      
       # returns index of duplicate, false otherwise
       duplicate_index = check_duplicates(data_dict, table_dict)
       
@@ -291,7 +299,7 @@ for directory_name in os.listdir(args.directory):
           info('Lower or equal BED coverage found.')
         
         continue
-      #'''
+      
       ### following only runs if NO duplicates are found
 
       # appends data to table_dict
