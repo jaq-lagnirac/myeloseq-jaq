@@ -118,64 +118,41 @@ def process_json_entry(pos, ref, alt):
 
 
 
-def check_duplicates(data, table_dict):
-  debug('call check_duplicates')
-  # only compares start, end, ref, alt, and json coverage
-  shortened_list = data[fields.index('start') : fields.index('json coverage')]
-  list_of_indexes = []
+def intersection(list1, list2):
+  list3 = [value for value in list1 if value in list2]
+  return list3
+
+
+
+def check_duplicates(data_dict, table_dict):
+  dict_of_index_lists = {}
+
+  shortened_fields = fields[fields.index('chrom') : fields.index('alt')]
   
-  # iterates through data, comparing each field
-  for index, value in enumerate(shortened_list):
+  # generates dict of index lists
+  for field in shortened_fields:
+    comparison_value = data_dict[field] # string or int
+    table_list = table_dict[field] # list
+
+    # initializes list of indexes of all occurences in table_list
+    index_list = []
+    for index, table_list_value in table_list:
+      if comparison_value == table_list_value:
+        index_list.append(index)
     
-    # extracts list from dict for comparison
-    header = fields[index + fields.index('start')]
-    table_data = table_dict[header]
-
-    debug(f'checking out {header}')
-    debug(table_data)
-    # iterates through dict list (the value) to find searched element
-    added_index = False
-    for table_list_index, table_value in enumerate(table_data):
-      debug(f'{value} - {table_value} - {table_list_index}')
-      if value == table_value:
-        list_of_indexes.append(table_list_index)
-        added_index = True
-        
-
-
-    # if no duplicate, exit function early
-    # if not added_index:
-    #   error('Index not added.')
-    #   return False
+    # cleans index_list, adds to dict
+    index_list = list(set(index_list)) # removes duplicate indexes
+    index_list.sort()
+    dict_of_index_lists[field] = index_list
   
-  debug('end of list generation')
-  debug(shortened_list)
-  debug(list_of_indexes)
-
-  # if no identical elements, then exit function early
-  if len(list_of_indexes) == 0:
-    error('No identical values detected.')
-    return False
-
-  # if no duplicate for every comparison element, exit function early
-  if len(shortened_list) != len(list_of_indexes):
-    error('List lengths not the same.')
-    return False
-    
-  # extracts zeroth element to compare to the rest of the elements
-  point_of_comparison = list_of_indexes[0]
-  for index_value in list_of_indexes[1 : ]:
-
-    # if index values aren't all the same, exit function early
-    if index_value != point_of_comparison:
-      error('Indexes are not all equal')
-      return False
-  
-  # If this point is reached, then a duplicate read with the same JSON file but 
-  # different coverages in the BED read have occured
-  # Returns index of discrepancy in order to compare and possibly change the BED
-  # coverage and versus coverage
-  return point_of_comparison
+  # compares lists to see if there is a common thread
+  comparison_list = dict_of_index_lists['chrom']
+  for field in shortened_fields[1 : ]:
+    comparison_list = intersection(comparison_list,
+                                   dict_of_index_lists[field])
+  print(comparison_list)
+  if comparison_list:
+    sys.exit()
 
 
 
@@ -288,7 +265,7 @@ for directory_name in os.listdir(args.directory):
                    bed_cov,
                    vs_cov] 
       data_dict = list_to_dict(fields, data_list)
-
+      '''
       # returns index of duplicate, false otherwise
       duplicate_index = check_duplicates(data_dict, table_dict)
       
@@ -314,7 +291,7 @@ for directory_name in os.listdir(args.directory):
           info('Lower or equal BED coverage found.')
         
         continue
-
+      #'''
       ### following only runs if NO duplicates are found
 
       # appends data to table_dict
