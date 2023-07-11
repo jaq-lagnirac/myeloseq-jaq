@@ -83,6 +83,20 @@ for field in fields:
 
 
 
+def list_to_dict(keys, values):
+  if len(keys) != len(values):
+    error('Keys and values mismatch.')
+    sys.exit(1)
+  
+  return_dict = {}
+  for index, key in enumerate(keys):
+    return_dict[key] = values[index]
+  
+  return return_dict
+
+
+
+
 def process_json_entry(pos, ref, alt):
   # SNV
   if (len(ref) == 1) and (len(ref) == 1):
@@ -260,21 +274,23 @@ for directory_name in os.listdir(args.directory):
       bed_cov = interval.data
       vs_cov = json_cov - bed_cov
 
-      # sets up data list to append to table dict 
-      data = [directory_name,
-              chrom,
-              start,
-              end,
-              ref,
-              alt,
-              gene,
-              transcript,
-              json_cov,
-              bed_cov,
-              vs_cov]
-      
+      # sets up data dict to compare and append to table dict
+      # see list "fields" for heading list
+      data_list = [directory_name,
+                   chrom,
+                   start,
+                   end,
+                   ref,
+                   alt,
+                   gene,
+                   transcript,
+                   json_cov,
+                   bed_cov,
+                   vs_cov] 
+      data_dict = list_to_dict(fields, data_list)
+
       # returns index of duplicate, false otherwise
-      duplicate_index = check_duplicates(data, table_dict)
+      duplicate_index = check_duplicates(data_dict, table_dict)
       
       # only runs if duplicate present
       if duplicate_index:
@@ -302,8 +318,8 @@ for directory_name in os.listdir(args.directory):
       ### following only runs if NO duplicates are found
 
       # appends data to table_dict
-      for index, field in enumerate(fields):
-        table_dict[field].append(data[index])
+      for field in fields:
+        table_dict[field].append(data_dict[field])
       
       # Output checkpoints and increments counters
       # Duplicates should not affect count, as none observed have changed signs
