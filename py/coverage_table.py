@@ -65,6 +65,24 @@ if args.verbose:
 
 
 
+# Initialize dictionary and fields (future dataframe)
+fields = ['directory name',
+          'chrom',
+          'start',
+          'end',
+          'ref',
+          'alt',
+          'gene',
+          'transcript',
+          'json coverage',
+          'bed coverage',
+          'json vs bed coverage']
+table_dict = {}
+for field in fields:
+  table_dict[field] = []
+
+
+
 def process_json_entry(pos, ref, alt):
   # SNV
   if (len(ref) == 1) and (len(ref) == 1):
@@ -86,10 +104,55 @@ def process_json_entry(pos, ref, alt):
 
 
 
+def check_duplicates(data, table_dict):
+  shortened_list = data[ : fields.index('json coverage')] # only compares dir to json coverage
+  list_of_indexes = []
+  # iterates through data, comparing each field
+  for index, value in enumerate(shortened_list):
+    
+    # extracts list from dict for comparison
+    header = fields[index]
+    table_data = table_dict[header]
+    
+    # iterates through dict list (the value) to find searched element
+    added_index = False
+    for table_list_index, table_value in enumerate(table_data):
+      if value == table_value:
+        list_of_indexes.append(table_list_index)
+        added_index = True
+        break
+
+    # if no duplicate, end function early
+    if not added_index:
+      error('Index not added.')
+      return False
+  
+  # NOTE: Most likely redundant with 'if not added_index', but added safety check
+  if len(shortened_list) != len(list_of_indexes):
+    error('List lengths not the same.')
+    
+  # extracts zeroth element to compare to the rest of the elements
+  point_of_comparison = list_of_indexes[0]
+  for index_value in list_of_indexes[1 : ]:
+
+    # if index values aren't all the same, end function early
+    if index_value != point_of_comparison:
+      error('Indexes are not all equal')
+      return False
+  
+  # If this point is reached, then a duplicate read with the same JSON file but 
+  # different coverages in the BED read have occured
+  # Returns index of discrepancy in order to compare and possibly change the BED
+  # coverage and versus coverage
+  return point_of_comparison
+
+
+
 debug('%s begin', SCRIPT_PATH)
 
 # Initialize counters
 total_comparisons = 0
+duplicate_count = 0
 json_greater = 0
 bed_greater = 0
 coverage_equal = 0
@@ -100,22 +163,6 @@ directory_count = 0
 json_total = 0
 bed_total = 0
 vs_total = 0 
-
-# Initialize dictionary and fields (future dataframe)
-fields = ['directory name',
-          'chrom',
-          'start',
-          'end',
-          'ref',
-          'alt',
-          'gene',
-          'transcript',
-          'json coverage',
-          'bed coverage',
-          'json vs bed coverage']
-table_dict = {}
-for field in fields:
-  table_dict[field] = []
 
 # Run through main directory
 for directory_name in os.listdir(args.directory):
@@ -188,6 +235,10 @@ for directory_name in os.listdir(args.directory):
     interval_set = bed_tree[start : end] # overlaps
     #bed_cov = bed_tree.envelop(start, end)
     for interval in interval_set:
+
+      # increment comparison counter
+      total_comparisons += 1
+
       # extracts data from interval, compares
       bed_cov = interval.data
       vs_cov = json_cov - bed_cov
@@ -204,12 +255,42 @@ for directory_name in os.listdir(args.directory):
               json_cov,
               bed_cov,
               vs_cov]
+      
+      # returns index of duplicate, false otherwise
+      duplicate_index = check_duplicates(data, table_dict)
+      
+      # only runs if duplicate present
+      if duplicate_index:
+
+        # increments duplicate coverage counter
+        duplicate_count += 1
+
+        # if new bed coverage is greater than coverage in table_dict
+        if bed_cov > table_dict['bed coverage'][duplicate_index]:
+
+          info('Higher BED coverage found. Updating table and averages.')
+          
+          # then update totals (for averages)
+          bed_total += bed_cov - table_dict['bed coverage'][duplicate_index]
+          vs_total += vs_cov - table_dict['json vs bed coverage'][duplicate_index]
+
+          # and change both bed_cov and vs_cov to reflect new change
+          table_dict['bed coverage'][duplicate_index] = bed_cov
+          table_dict['json vs bed coverage'][duplicate_index] = vs_cov
+
+        else:
+          info('Lower or equal BED coverage found.')
+        
+        continue
+
+      ### following only runs if NO duplicates are found
+
       # appends data to table_dict
       for index, field in enumerate(fields):
         table_dict[field].append(data[index])
-
+      
       # Output checkpoints and increments counters
-      total_comparisons += 1
+      # Duplicates should not affect count, as none observed have changed signs
       if json_cov > bed_cov:
         json_greater += 1
         info('JSON has greater coverage than BED')
@@ -231,15 +312,17 @@ for directory_name in os.listdir(args.directory):
 output_df = pd.DataFrame.from_dict(table_dict)
 output_df.to_csv(sys.stdout, sep=SEP, index=None)
 
+total_no_duplicates = total_comparisons - duplicate_count
+
 # Calculates percent
-json_percent = round(json_greater / total_comparisons, ROUNDING_DECIMALS)
-bed_percent = round(bed_greater / total_comparisons, ROUNDING_DECIMALS)
-equal_percent = round(coverage_equal / total_comparisons, ROUNDING_DECIMALS)
+json_percent = round(json_greater / total_no_duplicates, ROUNDING_DECIMALS)
+bed_percent = round(bed_greater / total_no_duplicates, ROUNDING_DECIMALS)
+equal_percent = round(coverage_equal / total_no_duplicates, ROUNDING_DECIMALS)
 
 # Calculates averages
-json_avg = round(json_total / total_comparisons, ROUNDING_DECIMALS)
-bed_avg = round(bed_total / total_comparisons, ROUNDING_DECIMALS)
-vs_avg = round(vs_total / total_comparisons, ROUNDING_DECIMALS)
+json_avg = round(json_total / total_no_duplicates, ROUNDING_DECIMALS)
+bed_avg = round(bed_total / total_no_duplicates, ROUNDING_DECIMALS)
+vs_avg = round(vs_total / total_no_duplicates, ROUNDING_DECIMALS)
 error_percent = round(error_count / directory_count, ROUNDING_DECIMALS)
 
 # Output statistics
@@ -248,8 +331,11 @@ info('----------DIRECTORTY STATISTICS----------')
 info(f'Total subdirectories accessed: {directory_count}')
 info(f'JSON files without column \"TIER1-3\" (error count): {error_count}')
 info(f'Subirectory error percent: {error_percent}')
+
 info('----------COMPARISON STATISTICS----------')
 info(f'Total Comparisons: {total_comparisons}')
+info(f'Duplicate coverage count: {duplicate_count}')
+info(f'Total Comparisons, excluding duplicates: {total_no_duplicates}')
 info(f'Cases where JSON coverage was greater: {json_percent} ({json_greater})')
 info(f'Cases where BED coverage was greater: {bed_percent} ({bed_greater})')
 info(f'Cases where coverage was equal: {equal_percent} ({coverage_equal})')
