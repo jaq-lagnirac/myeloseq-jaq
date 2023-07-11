@@ -105,37 +105,54 @@ def process_json_entry(pos, ref, alt):
 
 
 def check_duplicates(data, table_dict):
-  shortened_list = data[ : fields.index('json coverage')] # only compares dir to json coverage
+  debug('call check_duplicates')
+  # only compares start, end, ref, alt, and json coverage
+  shortened_list = data[fields.index('start') : fields.index('json coverage')]
   list_of_indexes = []
+  
   # iterates through data, comparing each field
   for index, value in enumerate(shortened_list):
     
     # extracts list from dict for comparison
-    header = fields[index]
+    header = fields[index + fields.index('start')]
     table_data = table_dict[header]
-    
+
+    debug(f'checking out {header}')
+    debug(table_data)
     # iterates through dict list (the value) to find searched element
     added_index = False
     for table_list_index, table_value in enumerate(table_data):
+      debug(f'{value} - {table_value} - {table_list_index}')
       if value == table_value:
         list_of_indexes.append(table_list_index)
         added_index = True
-        break
+        
 
-    # if no duplicate, end function early
-    if not added_index:
-      error('Index not added.')
-      return False
+
+    # if no duplicate, exit function early
+    # if not added_index:
+    #   error('Index not added.')
+    #   return False
   
-  # NOTE: Most likely redundant with 'if not added_index', but added safety check
+  debug('end of list generation')
+  debug(shortened_list)
+  debug(list_of_indexes)
+
+  # if no identical elements, then exit function early
+  if len(list_of_indexes) == 0:
+    error('No identical values detected.')
+    return False
+
+  # if no duplicate for every comparison element, exit function early
   if len(shortened_list) != len(list_of_indexes):
     error('List lengths not the same.')
+    return False
     
   # extracts zeroth element to compare to the rest of the elements
   point_of_comparison = list_of_indexes[0]
   for index_value in list_of_indexes[1 : ]:
 
-    # if index values aren't all the same, end function early
+    # if index values aren't all the same, exit function early
     if index_value != point_of_comparison:
       error('Indexes are not all equal')
       return False
@@ -261,7 +278,6 @@ for directory_name in os.listdir(args.directory):
       
       # only runs if duplicate present
       if duplicate_index:
-
         # increments duplicate coverage counter
         duplicate_count += 1
 
