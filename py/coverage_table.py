@@ -10,7 +10,7 @@ import argparse
 import logging
 import json
 import pandas as pd
-from intervaltree import Interval, IntervalTree
+from intervaltree import IntervalTree
 
 JSON_SUFFIX = '.report.json'
 BED_SUFFIX = '.qc-coverage-region-1_full_res.bed'
@@ -65,7 +65,7 @@ if args.verbose:
 
 
 
-# Initialize dictionary and fields (future dataframe)
+# Initialize dictionary and fields
 fields = ['directory name',
           'chrom',
           'start',
@@ -77,17 +77,22 @@ fields = ['directory name',
           'json coverage',
           'bed coverage',
           'json vs bed coverage']
-table_dict = {}
+table_dict = {} # will be turned into a dataframe
 for field in fields:
   table_dict[field] = []
 
 
 
 def list_to_dict(keys, values):
+  # takes two lists, converts into dict
+
+  # error handling
   if len(keys) != len(values):
     error('Keys and values mismatch.')
+    error(f'Key length: {len(keys)}, Value length: {len(values)}')
     sys.exit(1)
   
+  # bulk of code
   return_dict = {}
   for index, key in enumerate(keys):
     return_dict[key] = values[index]
@@ -119,15 +124,16 @@ def process_json_entry(pos, ref, alt):
 
 
 def intersection(list1, list2):
+  # set theory intersection
   list3 = [value for value in list1 if value in list2]
   return list3
 
 
 
 def check_duplicates(data_dict, table_dict):
-  #return False
   dict_of_index_lists = {}
 
+  # fields to be compared
   shortened_fields = fields[fields.index('chrom') : fields.index('alt')]
   
   # generates dict of index lists
@@ -147,12 +153,17 @@ def check_duplicates(data_dict, table_dict):
     dict_of_index_lists[field] = index_list
   
   # compares lists to see if there is a common index across all fields
+  # finds intersection of all of the index comparison lists, leaving
+  # only one index left
   comparison_list = dict_of_index_lists['chrom']
   for field in shortened_fields[1 : ]:
     comparison_list = intersection(comparison_list,
                                    dict_of_index_lists[field])
   
   # More than one duplicate detected
+  # Should never be triggered as duplicates are deleted as soon
+  # as two of the same are detected, but included to handle
+  # any possible errors
   if len(comparison_list) > 1:
     error('Duplicate located in more than one location.')
     sys.exit(1)
@@ -160,7 +171,10 @@ def check_duplicates(data_dict, table_dict):
   # No discrepancies detected
   if len(comparison_list) == 0:
     return False # unique data, skips over duplicate handling
-  return comparison_list[0] # returns single int index
+  
+  # returns single int index
+  # Python sees this as boolean True
+  return comparison_list[0]
 
 
 
@@ -202,28 +216,32 @@ for directory_name in os.listdir(args.directory):
   with open(json_path) as jp:
     json_file = json.loads(jp.read())
   
+  # if the file doesn't contain column "TIER1-3", ignore the rest
+  # of the loop, continue to the next iteration, and read in the
+  # next file
   try:
     tier13_columns = json_file['VARIANTS']['TIER1-3']['columns']
     tier13_data = json_file['VARIANTS']['TIER1-3']['data']
-    info(f'Accessing file: {json_path}')
+    info(f'Accessing file: {json_name}')
   except:
-    error(f'Tier 1-3 columns do not exist: {json_path}')
+    error(f'Tier 1-3 columns do not exist: {json_name}')
     error_count += 1
     continue
   
   
   # Process BED file
 
-  df = pd.read_csv(bed_path,
-                   sep = SEP,
-                   names = ['chrom',
-                            'start',
-                            'end',
-                            'coverage'])
+  info(f'Accessing file: {bed_name}')
+  bed_df = pd.read_csv(bed_path,
+                       sep = SEP,
+                       names = ['chrom',
+                                'start',
+                                'end',
+                                'coverage'])
   
   # Create interval tree from pandas dataframe
   bed_tree = IntervalTree()
-  for index, row in df.iterrows():
+  for index, row in bed_df.iterrows():
     bed_tree[row['start'] : row['end']] = row['coverage']
 
 
@@ -240,16 +258,19 @@ for directory_name in os.listdir(args.directory):
     transcript = entry[tier13_columns.index('transcript')]
     json_cov = entry[tier13_columns.index('coverage')]
     
+    # creates start and end using maf string-like processing
     start, end = process_json_entry(pos, ref, alt)
 
-    # -1 accounting for 1-based to 0-based conversion
+    # NOTE: -1 accounting for 1-based to 0-based conversion
     # BED files are 0-based half-open [ )
     # JSON files are 1-based
     start -= 1
 
+
     # Comparison code
+
     interval_set = bed_tree[start : end] # overlaps
-    #bed_cov = bed_tree.envelop(start, end)
+
     for interval in interval_set:
 
       # increment comparison counter
@@ -295,28 +316,35 @@ for directory_name in os.listdir(args.directory):
           table_dict['bed coverage'][duplicate_index] = bed_cov
           table_dict['json vs bed coverage'][duplicate_index] = vs_cov
 
+          # NOTE: Duplicates should not affect count,
+          # as none observed have changed signs
+
         else:
           debug('Lower or equal BED coverage found.')
         
         continue
       
+
       ### following only runs if NO duplicates are found
 
-      # appends data to table_dict
+      # appends data to table_dict field by field
       for field in fields:
         table_dict[field].append(data_dict[field])
       
       # Output checkpoints and increments counters
-      # Duplicates should not affect count, as none observed have changed signs
+      # NOTE: Duplicates should not affect count, as none observed have changed signs
       if json_cov > bed_cov:
         json_greater += 1
         debug('JSON has greater coverage than BED')
+
       elif bed_cov > json_cov:
         bed_greater += 1
         debug('BED has greater coverage than JSON')
+
       elif bed_cov == json_cov:
         coverage_equal += 1
         debug('Coverage is equal')
+
       else: # should never trigger, but will stop as a safety measure
         error('Unknown comparison')
         sys.exit(1)
@@ -332,7 +360,7 @@ output_df.to_csv(sys.stdout, sep=SEP, index=None)
 
 total_no_duplicates = total_comparisons - duplicate_count
 
-# Calculates percent
+# Calculates percent (does NOT multiply by 100, leaves as decimal)
 json_percent = round(json_greater / total_no_duplicates, ROUNDING_DECIMALS)
 bed_percent = round(bed_greater / total_no_duplicates, ROUNDING_DECIMALS)
 equal_percent = round(coverage_equal / total_no_duplicates, ROUNDING_DECIMALS)
@@ -342,6 +370,7 @@ json_avg = round(json_total / total_no_duplicates, ROUNDING_DECIMALS)
 bed_avg = round(bed_total / total_no_duplicates, ROUNDING_DECIMALS)
 vs_avg = round(vs_total / total_no_duplicates, ROUNDING_DECIMALS)
 error_percent = round(error_count / directory_count, ROUNDING_DECIMALS)
+
 
 # Output statistics
 
@@ -354,13 +383,16 @@ info('----------COMPARISON STATISTICS----------')
 info(f'Total Comparisons: {total_comparisons}')
 info(f'Duplicate coverage count: {duplicate_count}')
 info(f'Total Comparisons, excluding duplicates: {total_no_duplicates}')
+
+info('----------STATISTICS EXCLUDING DUPLICATES----------')
 info(f'Cases where JSON coverage was greater: {json_percent} ({json_greater})')
 info(f'Cases where BED coverage was greater: {bed_percent} ({bed_greater})')
 info(f'Cases where coverage was equal: {equal_percent} ({coverage_equal})')
 info(f'JSON average coverage: {json_avg}')
 info(f'BED average coverage: {bed_avg}')
 info(f'Average coverage comparison: {vs_avg}')
-info('NOTE: Average coverage calculated by (JSON coverage) - (BED coverage) for each interval')
-info('NOTE: +(pos) indicates higher average JSON coverage, -(neg) indicated higher average BED coverage')
+
+debug('NOTE: Average coverage calculated by (JSON coverage) - (BED coverage) for each interval')
+debug('NOTE: +(pos) indicates higher average JSON coverage, -(neg) indicated higher average BED coverage')
 
 debug('%s end', SCRIPT_PATH)

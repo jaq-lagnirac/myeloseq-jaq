@@ -1,54 +1,84 @@
-[2023-07-12 10:39:21,359] INFO Accessing file: ../../sorted_batch247/TWAO-102552878-W23-5092-BM-lib1/TWAO-102552878-W23-5092-BM-lib1.report.json
-[2023-07-12 10:39:21,960] INFO Accessing file: ../../sorted_batch247/TWAO-201723434-W23-5114-BM-lib1/TWAO-201723434-W23-5114-BM-lib1.report.json
-[2023-07-12 10:39:22,582] INFO Accessing file: ../../sorted_batch247/TWAO-200054718-W23-5200-BM-lib1/TWAO-200054718-W23-5200-BM-lib1.report.json
-[2023-07-12 10:39:23,164] INFO Accessing file: ../../sorted_batch247/TWAO-MS-Positive-Control-W22-6944-BM-lib16/TWAO-MS-Positive-Control-W22-6944-BM-lib16.report.json
-[2023-07-12 10:39:23,765] INFO Accessing file: ../../sorted_batch247/TWAO-105163199-W23-5089-BM-lib1/TWAO-105163199-W23-5089-BM-lib1.report.json
-[2023-07-12 10:39:24,407] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-107016815-W23-5248-PB-lib1/TWAO-107016815-W23-5248-PB-lib1.report.json
-[2023-07-12 10:39:24,407] INFO Accessing file: ../../sorted_batch247/TWAO-104533120-W23-5281-BM-lib1/TWAO-104533120-W23-5281-BM-lib1.report.json
-[2023-07-12 10:39:25,038] INFO Accessing file: ../../sorted_batch247/TWAO-108032713-W23-5115-BM2-lib1/TWAO-108032713-W23-5115-BM2-lib1.report.json
-[2023-07-12 10:39:25,695] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-202154026-W23-5242-BM-lib1/TWAO-202154026-W23-5242-BM-lib1.report.json
-[2023-07-12 10:39:25,698] INFO Accessing file: ../../sorted_batch247/TWAO-108783743-W23-5282-BM-lib1/TWAO-108783743-W23-5282-BM-lib1.report.json
-[2023-07-12 10:39:26,463] INFO Accessing file: ../../sorted_batch247/TWAO-106444776-W23-5197-PB-lib1/TWAO-106444776-W23-5197-PB-lib1.report.json
-[2023-07-12 10:39:27,137] INFO Accessing file: ../../sorted_batch247/TWAO-202153377-W23-5261-BM-lib1/TWAO-202153377-W23-5261-BM-lib1.report.json
-[2023-07-12 10:39:27,709] INFO Accessing file: ../../sorted_batch247/TWAO-201682401-W23-5060-BM-lib1/TWAO-201682401-W23-5060-BM-lib1.report.json
-[2023-07-12 10:39:28,330] INFO Accessing file: ../../sorted_batch247/TWAO-202143635-W23-5271-BM-lib1/TWAO-202143635-W23-5271-BM-lib1.report.json
-[2023-07-12 10:39:29,031] INFO Accessing file: ../../sorted_batch247/TWAO-103144074-W23-5051-BM-lib1/TWAO-103144074-W23-5051-BM-lib1.report.json
-[2023-07-12 10:39:29,698] INFO Accessing file: ../../sorted_batch247/TWAO-103636692-W23-5198-BM-lib1/TWAO-103636692-W23-5198-BM-lib1.report.json
-[2023-07-12 10:39:30,361] INFO Accessing file: ../../sorted_batch247/TWAO-201791635-W23-5078-BM-lib1/TWAO-201791635-W23-5078-BM-lib1.report.json
-[2023-07-12 10:39:31,045] INFO Accessing file: ../../sorted_batch247/TWAO-105982473-W23-5162-BM-lib1/TWAO-105982473-W23-5162-BM-lib1.report.json
-[2023-07-12 10:39:31,776] INFO Accessing file: ../../sorted_batch247/TWAO-201796057-W23-5143-BM2-lib1/TWAO-201796057-W23-5143-BM2-lib1.report.json
-[2023-07-12 10:39:32,458] INFO Accessing file: ../../sorted_batch247/TWAO-103212136-W23-5185-BM-lib1/TWAO-103212136-W23-5185-BM-lib1.report.json
-[2023-07-12 10:39:33,119] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-201878424-W23-5285-BM-lib1/TWAO-201878424-W23-5285-BM-lib1.report.json
-[2023-07-12 10:39:33,122] INFO Accessing file: ../../sorted_batch247/TWAO-202138202-W23-5245-BM-lib1/TWAO-202138202-W23-5245-BM-lib1.report.json
-[2023-07-12 10:39:33,745] INFO Accessing file: ../../sorted_batch247/TWAO-201516155-W23-5090-BM-lib1/TWAO-201516155-W23-5090-BM-lib1.report.json
-[2023-07-12 10:39:34,425] INFO Accessing file: ../../sorted_batch247/TWAO-103562837-W23-5141-BM2-lib1/TWAO-103562837-W23-5141-BM2-lib1.report.json
-[2023-07-12 10:39:35,030] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-108152658-W23-5283-BM-lib1/TWAO-108152658-W23-5283-BM-lib1.report.json
-[2023-07-12 10:39:35,031] INFO Accessing file: ../../sorted_batch247/TWAO-105188778-W23-5079-BM-lib1/TWAO-105188778-W23-5079-BM-lib1.report.json
-[2023-07-12 10:39:35,603] INFO Accessing file: ../../sorted_batch247/TWAO-200249928-W23-5250-BM-lib1/TWAO-200249928-W23-5250-BM-lib1.report.json
-[2023-07-12 10:39:36,232] INFO Accessing file: ../../sorted_batch247/TWAO-107196322-W23-5284-BM-lib1/TWAO-107196322-W23-5284-BM-lib1.report.json
-[2023-07-12 10:39:36,866] INFO Accessing file: ../../sorted_batch247/TWAO-201938262-W23-5253-BM-lib1/TWAO-201938262-W23-5253-BM-lib1.report.json
-[2023-07-12 10:39:37,467] INFO Accessing file: ../../sorted_batch247/TWAO-106444776-W23-5056-BM-lib1/TWAO-106444776-W23-5056-BM-lib1.report.json
-[2023-07-12 10:39:37,861] INFO Accessing file: ../../sorted_batch247/TWAO-201280541-W23-5184-BM-lib1/TWAO-201280541-W23-5184-BM-lib1.report.json
-[2023-07-12 10:39:38,483] INFO Accessing file: ../../sorted_batch247/TWAO-101484893-W23-5251-BM-lib1/TWAO-101484893-W23-5251-BM-lib1.report.json
-[2023-07-12 10:39:39,117] INFO Accessing file: ../../sorted_batch247/TWAO-202035007-W23-5244-BM-lib1/TWAO-202035007-W23-5244-BM-lib1.report.json
-[2023-07-12 10:39:39,778] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-100406124-W23-5088-BM-lib1/TWAO-100406124-W23-5088-BM-lib1.report.json
-[2023-07-12 10:39:39,779] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-108007890-W23-5011-BM3-lib1/TWAO-108007890-W23-5011-BM3-lib1.report.json
-[2023-07-12 10:39:39,781] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-106352110-W23-5075-BM-lib1/TWAO-106352110-W23-5075-BM-lib1.report.json
-[2023-07-12 10:39:39,783] INFO Accessing file: ../../sorted_batch247/TWAO-201805813-W23-5093-BM-lib1/TWAO-201805813-W23-5093-BM-lib1.report.json
-[2023-07-12 10:39:40,387] INFO Accessing file: ../../sorted_batch247/TWAO-105574860-W23-5249-BM-lib1/TWAO-105574860-W23-5249-BM-lib1.report.json
-[2023-07-12 10:39:40,945] INFO ----------DIRECTORTY STATISTICS----------
-[2023-07-12 10:39:40,945] INFO Total subdirectories accessed: 38
-[2023-07-12 10:39:40,945] INFO JSON files without column "TIER1-3" (error count): 7
-[2023-07-12 10:39:40,945] INFO Subirectory error percent: 0.184
-[2023-07-12 10:39:40,945] INFO ----------COMPARISON STATISTICS----------
-[2023-07-12 10:39:40,945] INFO Total Comparisons: 134
-[2023-07-12 10:39:40,945] INFO Duplicate coverage count: 39
-[2023-07-12 10:39:40,945] INFO Total Comparisons, excluding duplicates: 95
-[2023-07-12 10:39:40,945] INFO Cases where JSON coverage was greater: 0.221 (21)
-[2023-07-12 10:39:40,945] INFO Cases where BED coverage was greater: 0.495 (47)
-[2023-07-12 10:39:40,945] INFO Cases where coverage was equal: 0.284 (27)
-[2023-07-12 10:39:40,945] INFO JSON average coverage: 4413.789
-[2023-07-12 10:39:40,945] INFO BED average coverage: 4425.421
-[2023-07-12 10:39:40,945] INFO Average coverage comparison: 28.832
-[2023-07-12 10:39:40,945] INFO NOTE: Average coverage calculated by (JSON coverage) - (BED coverage) for each interval
-[2023-07-12 10:39:40,945] INFO NOTE: +(pos) indicates higher average JSON coverage, -(neg) indicated higher average BED coverage
+[2023-07-12 11:28:37,471] INFO Accessing file: TWAO-102552878-W23-5092-BM-lib1.report.json
+[2023-07-12 11:28:37,471] INFO Accessing file: TWAO-102552878-W23-5092-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:38,025] INFO Accessing file: TWAO-201723434-W23-5114-BM-lib1.report.json
+[2023-07-12 11:28:38,026] INFO Accessing file: TWAO-201723434-W23-5114-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:38,630] INFO Accessing file: TWAO-200054718-W23-5200-BM-lib1.report.json
+[2023-07-12 11:28:38,630] INFO Accessing file: TWAO-200054718-W23-5200-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:39,218] INFO Accessing file: TWAO-MS-Positive-Control-W22-6944-BM-lib16.report.json
+[2023-07-12 11:28:39,218] INFO Accessing file: TWAO-MS-Positive-Control-W22-6944-BM-lib16.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:39,828] INFO Accessing file: TWAO-105163199-W23-5089-BM-lib1.report.json
+[2023-07-12 11:28:39,828] INFO Accessing file: TWAO-105163199-W23-5089-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:40,439] ERROR Tier 1-3 columns do not exist: TWAO-107016815-W23-5248-PB-lib1.report.json
+[2023-07-12 11:28:40,440] INFO Accessing file: TWAO-104533120-W23-5281-BM-lib1.report.json
+[2023-07-12 11:28:40,442] INFO Accessing file: TWAO-104533120-W23-5281-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:41,044] INFO Accessing file: TWAO-108032713-W23-5115-BM2-lib1.report.json
+[2023-07-12 11:28:41,045] INFO Accessing file: TWAO-108032713-W23-5115-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:41,739] ERROR Tier 1-3 columns do not exist: TWAO-202154026-W23-5242-BM-lib1.report.json
+[2023-07-12 11:28:41,740] INFO Accessing file: TWAO-108783743-W23-5282-BM-lib1.report.json
+[2023-07-12 11:28:41,740] INFO Accessing file: TWAO-108783743-W23-5282-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:42,353] INFO Accessing file: TWAO-106444776-W23-5197-PB-lib1.report.json
+[2023-07-12 11:28:42,353] INFO Accessing file: TWAO-106444776-W23-5197-PB-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:42,967] INFO Accessing file: TWAO-202153377-W23-5261-BM-lib1.report.json
+[2023-07-12 11:28:42,967] INFO Accessing file: TWAO-202153377-W23-5261-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:43,636] INFO Accessing file: TWAO-201682401-W23-5060-BM-lib1.report.json
+[2023-07-12 11:28:43,636] INFO Accessing file: TWAO-201682401-W23-5060-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:44,303] INFO Accessing file: TWAO-202143635-W23-5271-BM-lib1.report.json
+[2023-07-12 11:28:44,303] INFO Accessing file: TWAO-202143635-W23-5271-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:45,017] INFO Accessing file: TWAO-103144074-W23-5051-BM-lib1.report.json
+[2023-07-12 11:28:45,017] INFO Accessing file: TWAO-103144074-W23-5051-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:45,642] INFO Accessing file: TWAO-103636692-W23-5198-BM-lib1.report.json
+[2023-07-12 11:28:45,642] INFO Accessing file: TWAO-103636692-W23-5198-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:46,258] INFO Accessing file: TWAO-201791635-W23-5078-BM-lib1.report.json
+[2023-07-12 11:28:46,259] INFO Accessing file: TWAO-201791635-W23-5078-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:46,896] INFO Accessing file: TWAO-105982473-W23-5162-BM-lib1.report.json
+[2023-07-12 11:28:46,896] INFO Accessing file: TWAO-105982473-W23-5162-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:47,589] INFO Accessing file: TWAO-201796057-W23-5143-BM2-lib1.report.json
+[2023-07-12 11:28:47,589] INFO Accessing file: TWAO-201796057-W23-5143-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:48,212] INFO Accessing file: TWAO-103212136-W23-5185-BM-lib1.report.json
+[2023-07-12 11:28:48,212] INFO Accessing file: TWAO-103212136-W23-5185-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:48,832] ERROR Tier 1-3 columns do not exist: TWAO-201878424-W23-5285-BM-lib1.report.json
+[2023-07-12 11:28:48,833] INFO Accessing file: TWAO-202138202-W23-5245-BM-lib1.report.json
+[2023-07-12 11:28:48,833] INFO Accessing file: TWAO-202138202-W23-5245-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:49,456] INFO Accessing file: TWAO-201516155-W23-5090-BM-lib1.report.json
+[2023-07-12 11:28:49,456] INFO Accessing file: TWAO-201516155-W23-5090-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:50,151] INFO Accessing file: TWAO-103562837-W23-5141-BM2-lib1.report.json
+[2023-07-12 11:28:50,151] INFO Accessing file: TWAO-103562837-W23-5141-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:50,769] ERROR Tier 1-3 columns do not exist: TWAO-108152658-W23-5283-BM-lib1.report.json
+[2023-07-12 11:28:50,770] INFO Accessing file: TWAO-105188778-W23-5079-BM-lib1.report.json
+[2023-07-12 11:28:50,770] INFO Accessing file: TWAO-105188778-W23-5079-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:51,323] INFO Accessing file: TWAO-200249928-W23-5250-BM-lib1.report.json
+[2023-07-12 11:28:51,323] INFO Accessing file: TWAO-200249928-W23-5250-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:51,964] INFO Accessing file: TWAO-107196322-W23-5284-BM-lib1.report.json
+[2023-07-12 11:28:51,965] INFO Accessing file: TWAO-107196322-W23-5284-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:52,595] INFO Accessing file: TWAO-201938262-W23-5253-BM-lib1.report.json
+[2023-07-12 11:28:52,595] INFO Accessing file: TWAO-201938262-W23-5253-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:53,203] INFO Accessing file: TWAO-106444776-W23-5056-BM-lib1.report.json
+[2023-07-12 11:28:53,203] INFO Accessing file: TWAO-106444776-W23-5056-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:53,562] INFO Accessing file: TWAO-201280541-W23-5184-BM-lib1.report.json
+[2023-07-12 11:28:53,562] INFO Accessing file: TWAO-201280541-W23-5184-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:54,208] INFO Accessing file: TWAO-101484893-W23-5251-BM-lib1.report.json
+[2023-07-12 11:28:54,209] INFO Accessing file: TWAO-101484893-W23-5251-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:54,867] INFO Accessing file: TWAO-202035007-W23-5244-BM-lib1.report.json
+[2023-07-12 11:28:54,867] INFO Accessing file: TWAO-202035007-W23-5244-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:55,531] ERROR Tier 1-3 columns do not exist: TWAO-100406124-W23-5088-BM-lib1.report.json
+[2023-07-12 11:28:55,531] ERROR Tier 1-3 columns do not exist: TWAO-108007890-W23-5011-BM3-lib1.report.json
+[2023-07-12 11:28:55,532] ERROR Tier 1-3 columns do not exist: TWAO-106352110-W23-5075-BM-lib1.report.json
+[2023-07-12 11:28:55,532] INFO Accessing file: TWAO-201805813-W23-5093-BM-lib1.report.json
+[2023-07-12 11:28:55,532] INFO Accessing file: TWAO-201805813-W23-5093-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:56,134] INFO Accessing file: TWAO-105574860-W23-5249-BM-lib1.report.json
+[2023-07-12 11:28:56,134] INFO Accessing file: TWAO-105574860-W23-5249-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-12 11:28:56,702] INFO ----------DIRECTORTY STATISTICS----------
+[2023-07-12 11:28:56,702] INFO Total subdirectories accessed: 38
+[2023-07-12 11:28:56,702] INFO JSON files without column "TIER1-3" (error count): 7
+[2023-07-12 11:28:56,702] INFO Subirectory error percent: 0.184
+[2023-07-12 11:28:56,702] INFO ----------COMPARISON STATISTICS----------
+[2023-07-12 11:28:56,702] INFO Total Comparisons: 134
+[2023-07-12 11:28:56,702] INFO Duplicate coverage count: 39
+[2023-07-12 11:28:56,702] INFO Total Comparisons, excluding duplicates: 95
+[2023-07-12 11:28:56,702] INFO ----------STATISTICS EXCLUDING DUPLICATES----------
+[2023-07-12 11:28:56,702] INFO Cases where JSON coverage was greater: 0.221 (21)
+[2023-07-12 11:28:56,702] INFO Cases where BED coverage was greater: 0.495 (47)
+[2023-07-12 11:28:56,702] INFO Cases where coverage was equal: 0.284 (27)
+[2023-07-12 11:28:56,702] INFO JSON average coverage: 4413.789
+[2023-07-12 11:28:56,702] INFO BED average coverage: 4425.421
+[2023-07-12 11:28:56,702] INFO Average coverage comparison: 28.832

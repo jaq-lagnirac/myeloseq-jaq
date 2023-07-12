@@ -39,11 +39,11 @@ class CustomFormatter(argparse.ArgumentDefaultsHelpFormatter,
 parser = argparse.ArgumentParser(description=DESCRIPTION, epilog=EPILOG,
   formatter_class=CustomFormatter)
 
-parser.add_argument('-i',
+parser.add_argument('-i', '--input_files',
                     nargs='+',
                     help='File or files to be sorted',
                     metavar='INPUT_FILES')
-parser.add_argument('-o',
+parser.add_argument('-o', '--output_directory',
                     default=DEFAULT_DIR,
                     help='Output location of sorted directory',
                     metavar='MAIN_OUTPUT_DIRECTORY')
@@ -85,7 +85,7 @@ for file in args.i:
   else:
     info(f'Already exists: {output_subdir}')
 
-  info(f'Copying {full_name} to {output_subdir}')
+  info(f'Copying {full_name} ==> {output_subdir}')
   shutil.copy(file, output_subdir)
 
 info(f'Finished copying and sorting. Output can be found in {args.o}')
