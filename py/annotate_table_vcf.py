@@ -7,6 +7,9 @@ import sys
 import argparse
 import logging
 import json
+import pandas as pd
+
+VCF_SUFFIX = '.annotated_filtered.vcf'
 
 SEP = '\t'
 
@@ -54,10 +57,34 @@ args = parser.parse_args()
 if args.verbose:
   l.setLevel(logging.DEBUG)
 
+
+
+def add_set(row):
+  dir_name = row['directory name']
+  chrom = row['chrom']
+  ref = row['ref']
+  alt = row['alt']
+  pos = row['start'] + 1
+  # NOTE: VCF is 1-based, must covert between
+  # 0-based half open BED notation that is contained
+  # in the file
+
+  file_name = f'{dir_name}{VCF_SUFFIX}'
+  file_path = os.path.join(args.directory, file_name)
+  if os.path.exists(file_path):
+    print(f'YAY! {file_path}')
+  else:
+    print(f'AHHHHHHHHH! {file_path}')
+  return row
+
+
+
 debug('%s begin', SCRIPT_PATH)
 
 
-
+coverage_table = pd.read_csv(args.coverage_table, sep=SEP)
+# NOTE: 1 = columns, apply function to each row
+annotated_table = coverage_table.apply(add_set, axis=1)
 
 
 debug('%s end', SCRIPT_PATH)

@@ -9,7 +9,7 @@ import argparse
 import logging
 import json
 import pandas as pd
-from intervaltree import Interval, IntervalTree
+from intervaltree import IntervalTree
 
 JSON_SUFFIX = '.report.json'
 BED_SUFFIX = '.qc-coverage-region-1_full_res.bed'
