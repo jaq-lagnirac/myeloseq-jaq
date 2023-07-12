@@ -1,188 +1,54 @@
-[2023-07-12 10:29:42,657] INFO Accessing file: ../../sorted_batch247/TWAO-102552878-W23-5092-BM-lib1/TWAO-102552878-W23-5092-BM-lib1.report.json
-[2023-07-12 10:29:43,247] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:43,247] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:43,247] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:43,247] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:43,247] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:43,250] INFO Accessing file: ../../sorted_batch247/TWAO-201723434-W23-5114-BM-lib1/TWAO-201723434-W23-5114-BM-lib1.report.json
-[2023-07-12 10:29:43,846] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:43,850] INFO Accessing file: ../../sorted_batch247/TWAO-200054718-W23-5200-BM-lib1/TWAO-200054718-W23-5200-BM-lib1.report.json
-[2023-07-12 10:29:44,436] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:44,440] INFO Accessing file: ../../sorted_batch247/TWAO-MS-Positive-Control-W22-6944-BM-lib16/TWAO-MS-Positive-Control-W22-6944-BM-lib16.report.json
-[2023-07-12 10:29:45,044] INFO Coverage is equal
-[2023-07-12 10:29:45,044] INFO Coverage is equal
-[2023-07-12 10:29:45,044] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:45,045] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:45,045] INFO Coverage is equal
-[2023-07-12 10:29:45,045] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:45,045] INFO Higher BED coverage found. Updating table and averages.
-[2023-07-12 10:29:45,049] INFO Accessing file: ../../sorted_batch247/TWAO-105163199-W23-5089-BM-lib1/TWAO-105163199-W23-5089-BM-lib1.report.json
-[2023-07-12 10:29:45,669] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:45,669] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:45,669] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:45,669] INFO Coverage is equal
-[2023-07-12 10:29:45,671] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-107016815-W23-5248-PB-lib1/TWAO-107016815-W23-5248-PB-lib1.report.json
-[2023-07-12 10:29:45,673] INFO Accessing file: ../../sorted_batch247/TWAO-104533120-W23-5281-BM-lib1/TWAO-104533120-W23-5281-BM-lib1.report.json
-[2023-07-12 10:29:46,275] INFO Coverage is equal
-[2023-07-12 10:29:46,275] INFO Coverage is equal
-[2023-07-12 10:29:46,275] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:46,275] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:46,277] INFO Accessing file: ../../sorted_batch247/TWAO-108032713-W23-5115-BM2-lib1/TWAO-108032713-W23-5115-BM2-lib1.report.json
-[2023-07-12 10:29:46,902] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:46,902] INFO Coverage is equal
-[2023-07-12 10:29:46,902] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:46,902] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:46,902] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:46,902] INFO Higher BED coverage found. Updating table and averages.
-[2023-07-12 10:29:46,902] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:46,902] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:46,903] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:46,904] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-202154026-W23-5242-BM-lib1/TWAO-202154026-W23-5242-BM-lib1.report.json
-[2023-07-12 10:29:46,905] INFO Accessing file: ../../sorted_batch247/TWAO-108783743-W23-5282-BM-lib1/TWAO-108783743-W23-5282-BM-lib1.report.json
-[2023-07-12 10:29:47,508] INFO Coverage is equal
-[2023-07-12 10:29:47,508] INFO Coverage is equal
-[2023-07-12 10:29:47,509] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:47,509] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:47,509] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:47,509] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:47,509] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:47,512] INFO Accessing file: ../../sorted_batch247/TWAO-106444776-W23-5197-PB-lib1/TWAO-106444776-W23-5197-PB-lib1.report.json
-[2023-07-12 10:29:48,054] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:48,054] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:48,054] INFO Coverage is equal
-[2023-07-12 10:29:48,054] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:48,054] INFO Coverage is equal
-[2023-07-12 10:29:48,054] INFO Coverage is equal
-[2023-07-12 10:29:48,054] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:48,054] INFO Coverage is equal
-[2023-07-12 10:29:48,056] INFO Accessing file: ../../sorted_batch247/TWAO-202153377-W23-5261-BM-lib1/TWAO-202153377-W23-5261-BM-lib1.report.json
-[2023-07-12 10:29:48,606] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:48,606] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:48,606] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:48,606] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:48,609] INFO Accessing file: ../../sorted_batch247/TWAO-201682401-W23-5060-BM-lib1/TWAO-201682401-W23-5060-BM-lib1.report.json
-[2023-07-12 10:29:49,211] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:49,211] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:49,216] INFO Accessing file: ../../sorted_batch247/TWAO-202143635-W23-5271-BM-lib1/TWAO-202143635-W23-5271-BM-lib1.report.json
-[2023-07-12 10:29:49,967] INFO Coverage is equal
-[2023-07-12 10:29:49,967] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:49,967] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:49,967] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:49,969] INFO Accessing file: ../../sorted_batch247/TWAO-103144074-W23-5051-BM-lib1/TWAO-103144074-W23-5051-BM-lib1.report.json
-[2023-07-12 10:29:50,589] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:50,589] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:50,589] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:50,589] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:50,589] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:50,589] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:50,589] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:50,589] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:50,589] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:50,589] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:50,589] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:50,590] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:50,590] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:50,591] INFO Accessing file: ../../sorted_batch247/TWAO-103636692-W23-5198-BM-lib1/TWAO-103636692-W23-5198-BM-lib1.report.json
-[2023-07-12 10:29:51,225] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:51,227] INFO Accessing file: ../../sorted_batch247/TWAO-201791635-W23-5078-BM-lib1/TWAO-201791635-W23-5078-BM-lib1.report.json
-[2023-07-12 10:29:51,870] INFO Coverage is equal
-[2023-07-12 10:29:51,874] INFO Accessing file: ../../sorted_batch247/TWAO-105982473-W23-5162-BM-lib1/TWAO-105982473-W23-5162-BM-lib1.report.json
-[2023-07-12 10:29:52,639] INFO Coverage is equal
-[2023-07-12 10:29:52,640] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:52,640] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:52,641] INFO Accessing file: ../../sorted_batch247/TWAO-201796057-W23-5143-BM2-lib1/TWAO-201796057-W23-5143-BM2-lib1.report.json
-[2023-07-12 10:29:53,310] INFO Coverage is equal
-[2023-07-12 10:29:53,310] INFO Coverage is equal
-[2023-07-12 10:29:53,310] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:53,311] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:53,311] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:53,311] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:53,311] INFO Coverage is equal
-[2023-07-12 10:29:53,313] INFO Accessing file: ../../sorted_batch247/TWAO-103212136-W23-5185-BM-lib1/TWAO-103212136-W23-5185-BM-lib1.report.json
-[2023-07-12 10:29:53,960] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:53,960] INFO Higher BED coverage found. Updating table and averages.
-[2023-07-12 10:29:53,960] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:53,960] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:53,961] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:53,961] INFO Higher BED coverage found. Updating table and averages.
-[2023-07-12 10:29:53,967] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-201878424-W23-5285-BM-lib1/TWAO-201878424-W23-5285-BM-lib1.report.json
-[2023-07-12 10:29:53,968] INFO Accessing file: ../../sorted_batch247/TWAO-202138202-W23-5245-BM-lib1/TWAO-202138202-W23-5245-BM-lib1.report.json
-[2023-07-12 10:29:54,604] INFO Coverage is equal
-[2023-07-12 10:29:54,608] INFO Accessing file: ../../sorted_batch247/TWAO-201516155-W23-5090-BM-lib1/TWAO-201516155-W23-5090-BM-lib1.report.json
-[2023-07-12 10:29:55,275] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:55,276] INFO Higher BED coverage found. Updating table and averages.
-[2023-07-12 10:29:55,276] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:55,276] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:55,276] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:55,276] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:55,276] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:55,276] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:55,281] INFO Accessing file: ../../sorted_batch247/TWAO-103562837-W23-5141-BM2-lib1/TWAO-103562837-W23-5141-BM2-lib1.report.json
-[2023-07-12 10:29:55,871] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:55,872] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:55,872] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:55,877] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-108152658-W23-5283-BM-lib1/TWAO-108152658-W23-5283-BM-lib1.report.json
-[2023-07-12 10:29:55,878] INFO Accessing file: ../../sorted_batch247/TWAO-105188778-W23-5079-BM-lib1/TWAO-105188778-W23-5079-BM-lib1.report.json
-[2023-07-12 10:29:56,463] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:56,464] INFO Coverage is equal
-[2023-07-12 10:29:56,464] INFO Coverage is equal
-[2023-07-12 10:29:56,469] INFO Accessing file: ../../sorted_batch247/TWAO-200249928-W23-5250-BM-lib1/TWAO-200249928-W23-5250-BM-lib1.report.json
-[2023-07-12 10:29:57,172] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:57,172] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:57,175] INFO Accessing file: ../../sorted_batch247/TWAO-107196322-W23-5284-BM-lib1/TWAO-107196322-W23-5284-BM-lib1.report.json
-[2023-07-12 10:29:57,854] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:57,854] INFO JSON has greater coverage than BED
-[2023-07-12 10:29:57,854] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:57,854] INFO Coverage is equal
-[2023-07-12 10:29:57,854] INFO Coverage is equal
-[2023-07-12 10:29:57,860] INFO Accessing file: ../../sorted_batch247/TWAO-201938262-W23-5253-BM-lib1/TWAO-201938262-W23-5253-BM-lib1.report.json
-[2023-07-12 10:29:58,514] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:58,520] INFO Accessing file: ../../sorted_batch247/TWAO-106444776-W23-5056-BM-lib1/TWAO-106444776-W23-5056-BM-lib1.report.json
-[2023-07-12 10:29:58,902] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:58,902] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:58,902] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:58,902] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:58,902] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:58,902] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:58,902] INFO Lower or equal BED coverage found.
-[2023-07-12 10:29:58,908] INFO Accessing file: ../../sorted_batch247/TWAO-201280541-W23-5184-BM-lib1/TWAO-201280541-W23-5184-BM-lib1.report.json
-[2023-07-12 10:29:59,554] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:59,555] INFO BED has greater coverage than JSON
-[2023-07-12 10:29:59,555] INFO Coverage is equal
-[2023-07-12 10:29:59,559] INFO Accessing file: ../../sorted_batch247/TWAO-101484893-W23-5251-BM-lib1/TWAO-101484893-W23-5251-BM-lib1.report.json
-[2023-07-12 10:30:00,199] INFO Higher BED coverage found. Updating table and averages.
-[2023-07-12 10:30:00,199] INFO BED has greater coverage than JSON
-[2023-07-12 10:30:00,199] INFO Higher BED coverage found. Updating table and averages.
-[2023-07-12 10:30:00,199] INFO BED has greater coverage than JSON
-[2023-07-12 10:30:00,199] INFO Lower or equal BED coverage found.
-[2023-07-12 10:30:00,208] INFO Accessing file: ../../sorted_batch247/TWAO-202035007-W23-5244-BM-lib1/TWAO-202035007-W23-5244-BM-lib1.report.json
-[2023-07-12 10:30:00,834] INFO BED has greater coverage than JSON
-[2023-07-12 10:30:00,834] INFO BED has greater coverage than JSON
-[2023-07-12 10:30:00,835] INFO Coverage is equal
-[2023-07-12 10:30:00,835] INFO JSON has greater coverage than BED
-[2023-07-12 10:30:00,835] INFO Higher BED coverage found. Updating table and averages.
-[2023-07-12 10:30:00,836] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-100406124-W23-5088-BM-lib1/TWAO-100406124-W23-5088-BM-lib1.report.json
-[2023-07-12 10:30:00,838] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-108007890-W23-5011-BM3-lib1/TWAO-108007890-W23-5011-BM3-lib1.report.json
-[2023-07-12 10:30:00,840] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-106352110-W23-5075-BM-lib1/TWAO-106352110-W23-5075-BM-lib1.report.json
-[2023-07-12 10:30:00,841] INFO Accessing file: ../../sorted_batch247/TWAO-201805813-W23-5093-BM-lib1/TWAO-201805813-W23-5093-BM-lib1.report.json
-[2023-07-12 10:30:01,492] INFO BED has greater coverage than JSON
-[2023-07-12 10:30:01,495] INFO Accessing file: ../../sorted_batch247/TWAO-105574860-W23-5249-BM-lib1/TWAO-105574860-W23-5249-BM-lib1.report.json
-[2023-07-12 10:30:02,059] INFO BED has greater coverage than JSON
-[2023-07-12 10:30:02,059] INFO Coverage is equal
-[2023-07-12 10:30:02,059] INFO BED has greater coverage than JSON
-[2023-07-12 10:30:02,065] INFO ----------DIRECTORTY STATISTICS----------
-[2023-07-12 10:30:02,065] INFO Total subdirectories accessed: 38
-[2023-07-12 10:30:02,065] INFO JSON files without column "TIER1-3" (error count): 7
-[2023-07-12 10:30:02,065] INFO Subirectory error percent: 0.184
-[2023-07-12 10:30:02,065] INFO ----------COMPARISON STATISTICS----------
-[2023-07-12 10:30:02,065] INFO Total Comparisons: 134
-[2023-07-12 10:30:02,065] INFO Duplicate coverage count: 39
-[2023-07-12 10:30:02,065] INFO Total Comparisons, excluding duplicates: 95
-[2023-07-12 10:30:02,065] INFO Cases where JSON coverage was greater: 0.221 (21)
-[2023-07-12 10:30:02,065] INFO Cases where BED coverage was greater: 0.495 (47)
-[2023-07-12 10:30:02,065] INFO Cases where coverage was equal: 0.284 (27)
-[2023-07-12 10:30:02,065] INFO JSON average coverage: 4413.789
-[2023-07-12 10:30:02,065] INFO BED average coverage: 4425.421
-[2023-07-12 10:30:02,065] INFO Average coverage comparison: 28.832
-[2023-07-12 10:30:02,065] INFO NOTE: Average coverage calculated by (JSON coverage) - (BED coverage) for each interval
-[2023-07-12 10:30:02,065] INFO NOTE: +(pos) indicates higher average JSON coverage, -(neg) indicated higher average BED coverage
+[2023-07-12 10:39:21,359] INFO Accessing file: ../../sorted_batch247/TWAO-102552878-W23-5092-BM-lib1/TWAO-102552878-W23-5092-BM-lib1.report.json
+[2023-07-12 10:39:21,960] INFO Accessing file: ../../sorted_batch247/TWAO-201723434-W23-5114-BM-lib1/TWAO-201723434-W23-5114-BM-lib1.report.json
+[2023-07-12 10:39:22,582] INFO Accessing file: ../../sorted_batch247/TWAO-200054718-W23-5200-BM-lib1/TWAO-200054718-W23-5200-BM-lib1.report.json
+[2023-07-12 10:39:23,164] INFO Accessing file: ../../sorted_batch247/TWAO-MS-Positive-Control-W22-6944-BM-lib16/TWAO-MS-Positive-Control-W22-6944-BM-lib16.report.json
+[2023-07-12 10:39:23,765] INFO Accessing file: ../../sorted_batch247/TWAO-105163199-W23-5089-BM-lib1/TWAO-105163199-W23-5089-BM-lib1.report.json
+[2023-07-12 10:39:24,407] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-107016815-W23-5248-PB-lib1/TWAO-107016815-W23-5248-PB-lib1.report.json
+[2023-07-12 10:39:24,407] INFO Accessing file: ../../sorted_batch247/TWAO-104533120-W23-5281-BM-lib1/TWAO-104533120-W23-5281-BM-lib1.report.json
+[2023-07-12 10:39:25,038] INFO Accessing file: ../../sorted_batch247/TWAO-108032713-W23-5115-BM2-lib1/TWAO-108032713-W23-5115-BM2-lib1.report.json
+[2023-07-12 10:39:25,695] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-202154026-W23-5242-BM-lib1/TWAO-202154026-W23-5242-BM-lib1.report.json
+[2023-07-12 10:39:25,698] INFO Accessing file: ../../sorted_batch247/TWAO-108783743-W23-5282-BM-lib1/TWAO-108783743-W23-5282-BM-lib1.report.json
+[2023-07-12 10:39:26,463] INFO Accessing file: ../../sorted_batch247/TWAO-106444776-W23-5197-PB-lib1/TWAO-106444776-W23-5197-PB-lib1.report.json
+[2023-07-12 10:39:27,137] INFO Accessing file: ../../sorted_batch247/TWAO-202153377-W23-5261-BM-lib1/TWAO-202153377-W23-5261-BM-lib1.report.json
+[2023-07-12 10:39:27,709] INFO Accessing file: ../../sorted_batch247/TWAO-201682401-W23-5060-BM-lib1/TWAO-201682401-W23-5060-BM-lib1.report.json
+[2023-07-12 10:39:28,330] INFO Accessing file: ../../sorted_batch247/TWAO-202143635-W23-5271-BM-lib1/TWAO-202143635-W23-5271-BM-lib1.report.json
+[2023-07-12 10:39:29,031] INFO Accessing file: ../../sorted_batch247/TWAO-103144074-W23-5051-BM-lib1/TWAO-103144074-W23-5051-BM-lib1.report.json
+[2023-07-12 10:39:29,698] INFO Accessing file: ../../sorted_batch247/TWAO-103636692-W23-5198-BM-lib1/TWAO-103636692-W23-5198-BM-lib1.report.json
+[2023-07-12 10:39:30,361] INFO Accessing file: ../../sorted_batch247/TWAO-201791635-W23-5078-BM-lib1/TWAO-201791635-W23-5078-BM-lib1.report.json
+[2023-07-12 10:39:31,045] INFO Accessing file: ../../sorted_batch247/TWAO-105982473-W23-5162-BM-lib1/TWAO-105982473-W23-5162-BM-lib1.report.json
+[2023-07-12 10:39:31,776] INFO Accessing file: ../../sorted_batch247/TWAO-201796057-W23-5143-BM2-lib1/TWAO-201796057-W23-5143-BM2-lib1.report.json
+[2023-07-12 10:39:32,458] INFO Accessing file: ../../sorted_batch247/TWAO-103212136-W23-5185-BM-lib1/TWAO-103212136-W23-5185-BM-lib1.report.json
+[2023-07-12 10:39:33,119] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-201878424-W23-5285-BM-lib1/TWAO-201878424-W23-5285-BM-lib1.report.json
+[2023-07-12 10:39:33,122] INFO Accessing file: ../../sorted_batch247/TWAO-202138202-W23-5245-BM-lib1/TWAO-202138202-W23-5245-BM-lib1.report.json
+[2023-07-12 10:39:33,745] INFO Accessing file: ../../sorted_batch247/TWAO-201516155-W23-5090-BM-lib1/TWAO-201516155-W23-5090-BM-lib1.report.json
+[2023-07-12 10:39:34,425] INFO Accessing file: ../../sorted_batch247/TWAO-103562837-W23-5141-BM2-lib1/TWAO-103562837-W23-5141-BM2-lib1.report.json
+[2023-07-12 10:39:35,030] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-108152658-W23-5283-BM-lib1/TWAO-108152658-W23-5283-BM-lib1.report.json
+[2023-07-12 10:39:35,031] INFO Accessing file: ../../sorted_batch247/TWAO-105188778-W23-5079-BM-lib1/TWAO-105188778-W23-5079-BM-lib1.report.json
+[2023-07-12 10:39:35,603] INFO Accessing file: ../../sorted_batch247/TWAO-200249928-W23-5250-BM-lib1/TWAO-200249928-W23-5250-BM-lib1.report.json
+[2023-07-12 10:39:36,232] INFO Accessing file: ../../sorted_batch247/TWAO-107196322-W23-5284-BM-lib1/TWAO-107196322-W23-5284-BM-lib1.report.json
+[2023-07-12 10:39:36,866] INFO Accessing file: ../../sorted_batch247/TWAO-201938262-W23-5253-BM-lib1/TWAO-201938262-W23-5253-BM-lib1.report.json
+[2023-07-12 10:39:37,467] INFO Accessing file: ../../sorted_batch247/TWAO-106444776-W23-5056-BM-lib1/TWAO-106444776-W23-5056-BM-lib1.report.json
+[2023-07-12 10:39:37,861] INFO Accessing file: ../../sorted_batch247/TWAO-201280541-W23-5184-BM-lib1/TWAO-201280541-W23-5184-BM-lib1.report.json
+[2023-07-12 10:39:38,483] INFO Accessing file: ../../sorted_batch247/TWAO-101484893-W23-5251-BM-lib1/TWAO-101484893-W23-5251-BM-lib1.report.json
+[2023-07-12 10:39:39,117] INFO Accessing file: ../../sorted_batch247/TWAO-202035007-W23-5244-BM-lib1/TWAO-202035007-W23-5244-BM-lib1.report.json
+[2023-07-12 10:39:39,778] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-100406124-W23-5088-BM-lib1/TWAO-100406124-W23-5088-BM-lib1.report.json
+[2023-07-12 10:39:39,779] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-108007890-W23-5011-BM3-lib1/TWAO-108007890-W23-5011-BM3-lib1.report.json
+[2023-07-12 10:39:39,781] ERROR Tier 1-3 columns do not exist: ../../sorted_batch247/TWAO-106352110-W23-5075-BM-lib1/TWAO-106352110-W23-5075-BM-lib1.report.json
+[2023-07-12 10:39:39,783] INFO Accessing file: ../../sorted_batch247/TWAO-201805813-W23-5093-BM-lib1/TWAO-201805813-W23-5093-BM-lib1.report.json
+[2023-07-12 10:39:40,387] INFO Accessing file: ../../sorted_batch247/TWAO-105574860-W23-5249-BM-lib1/TWAO-105574860-W23-5249-BM-lib1.report.json
+[2023-07-12 10:39:40,945] INFO ----------DIRECTORTY STATISTICS----------
+[2023-07-12 10:39:40,945] INFO Total subdirectories accessed: 38
+[2023-07-12 10:39:40,945] INFO JSON files without column "TIER1-3" (error count): 7
+[2023-07-12 10:39:40,945] INFO Subirectory error percent: 0.184
+[2023-07-12 10:39:40,945] INFO ----------COMPARISON STATISTICS----------
+[2023-07-12 10:39:40,945] INFO Total Comparisons: 134
+[2023-07-12 10:39:40,945] INFO Duplicate coverage count: 39
+[2023-07-12 10:39:40,945] INFO Total Comparisons, excluding duplicates: 95
+[2023-07-12 10:39:40,945] INFO Cases where JSON coverage was greater: 0.221 (21)
+[2023-07-12 10:39:40,945] INFO Cases where BED coverage was greater: 0.495 (47)
+[2023-07-12 10:39:40,945] INFO Cases where coverage was equal: 0.284 (27)
+[2023-07-12 10:39:40,945] INFO JSON average coverage: 4413.789
+[2023-07-12 10:39:40,945] INFO BED average coverage: 4425.421
+[2023-07-12 10:39:40,945] INFO Average coverage comparison: 28.832
+[2023-07-12 10:39:40,945] INFO NOTE: Average coverage calculated by (JSON coverage) - (BED coverage) for each interval
+[2023-07-12 10:39:40,945] INFO NOTE: +(pos) indicates higher average JSON coverage, -(neg) indicated higher average BED coverage

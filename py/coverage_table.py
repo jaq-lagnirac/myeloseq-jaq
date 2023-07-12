@@ -285,7 +285,7 @@ for directory_name in os.listdir(args.directory):
         # if new bed coverage is greater than coverage in table_dict
         if bed_cov > table_dict['bed coverage'][duplicate_index]:
 
-          info('Higher BED coverage found. Updating table and averages.')
+          debug('Higher BED coverage found. Updating table and averages.')
           
           # then update totals (for averages)
           bed_total += bed_cov - table_dict['bed coverage'][duplicate_index]
@@ -296,7 +296,7 @@ for directory_name in os.listdir(args.directory):
           table_dict['json vs bed coverage'][duplicate_index] = vs_cov
 
         else:
-          info('Lower or equal BED coverage found.')
+          debug('Lower or equal BED coverage found.')
         
         continue
       
@@ -310,15 +310,16 @@ for directory_name in os.listdir(args.directory):
       # Duplicates should not affect count, as none observed have changed signs
       if json_cov > bed_cov:
         json_greater += 1
-        info('JSON has greater coverage than BED')
+        debug('JSON has greater coverage than BED')
       elif bed_cov > json_cov:
         bed_greater += 1
-        info('BED has greater coverage than JSON')
+        debug('BED has greater coverage than JSON')
       elif bed_cov == json_cov:
         coverage_equal += 1
-        info('Coverage is equal')
-      else:
-        info('Unknown comparison')
+        debug('Coverage is equal')
+      else: # should never trigger, but will stop as a safety measure
+        error('Unknown comparison')
+        sys.exit(1)
       
       # Increments totals for averages
       json_total += json_cov
