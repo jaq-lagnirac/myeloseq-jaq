@@ -12,8 +12,17 @@ import pandas as pd
 VCF_SUFFIX = '.annotated_filtered.vcf'
 
 SEP = '\t'
+SET_BEGIN = 'set='
+SET_END = ';'
 
 ROUNDING_DECIMALS = 3
+
+# global vars
+dragen_counter = 0
+pindel_counter = 0
+dragen_pindel_counter = 0
+unknown_counter = 0
+empty_counter = 0
 
 SCRIPT_PATH = os.path.abspath(__file__)
 FORMAT = '[%(asctime)s] %(levelname)s %(message)s'
@@ -60,6 +69,15 @@ if args.verbose:
 
 
 def add_set(row):
+
+  # connecting global vars
+  global dragen_counter
+  global pindel_counter
+  global dragen_pindel_counter
+  global unknown_counter
+  global empty_counter
+
+  # extracts needed info from table row
   dir_name = row['directory name']
   chrom = row['chrom']
   ref = row['ref']
@@ -69,12 +87,73 @@ def add_set(row):
   # 0-based half open BED notation that is contained
   # in the file
 
+  # generates file name and checks of its existence
   file_name = f'{dir_name}{VCF_SUFFIX}'
   file_path = os.path.join(args.directory, file_name)
-  if os.path.exists(file_path):
-    print(f'YAY! {file_path}')
-  else:
-    print(f'AHHHHHHHHH! {file_path}')
+  if not os.path.exists(file_path):
+    error(f'Does not exist: {file_path}')
+    sys.exit(1)
+  
+  # reads the file line-by-line into a list
+  with open(file_path, 'r') as vcf_file:
+    info(f'Accessing file: {file_name}')
+    full_file_list = vcf_file.readlines()
+  
+  # trims list of unneeded info
+  trimmed_list = [x for x in full_file_list if not x.startswith('##')]
+
+  # processes heading
+  heading = trimmed_list[0] # extracts heading
+  trimmed_list.remove(heading) # removes from list
+  heading = heading.replace('#', '') # cleans
+  heading = heading.split(SEP) # splits heading into list
+  
+  for element in trimmed_list:
+
+    # finds VCF row needed for extraction
+    element_list = element.split(SEP) # converts VCF row into list
+    
+    # extracts comparison data
+    vcf_chrom = element_list[heading.index('CHROM')]
+    vcf_pos = element_list[heading.index('POS')]
+    vcf_ref = element_list[heading.index('REF')]
+    vcf_alt = element_list[heading.index('ALT')]
+
+    # bool comparisons
+    chrom_equal = (chrom == vcf_chrom)
+    pos_equal = (pos == vcf_pos)
+    ref_equal = (ref == vcf_ref)
+    alt_equal = (alt == vcf_alt)
+
+    # if correct location is found
+    if chrom_equal and pos_equal and ref_equal and alt_equal:
+      # extract set (dragen/pindel/etc.)
+      vcf_info = element_list[heading.index('INFO')] # seeks out info section
+      start_index = vcf_info.find(SET_BEGIN) + len(SET_BEGIN) # finds index right after SET_BEGIN
+      end_index = vcf_info.find(SET_END, start_index) # finds index 
+      coverage_set = vcf_info[start_index : end_index] # extracts data
+
+      # increments requisite counters
+      if coverage_set == 'dragen':
+        dragen_counter += 1
+        debug('Incrementing DRAGEN.')
+      elif coverage_set == 'pindel':
+        pindel_counter += 1
+        debug('Incrementing PINDEL.')
+      elif coverage_set == 'dragen-pindel':
+        dragen_pindel_counter += 1
+        debug('Incrementing DRAGEN-PINDEL.')
+      elif len(coverage_set) == 0:
+        empty_counter += 1
+        debug('Incrementing Empty.')
+      else: # if string isn't empty but isn't recognized
+        unknown_counter += 1
+        debug('Incrementing Unknown.')
+
+      # appends coverage_set onto table row 
+      row['set'] = coverage_set
+      break
+  
   return row
 
 
@@ -82,9 +161,11 @@ def add_set(row):
 debug('%s begin', SCRIPT_PATH)
 
 
-coverage_table = pd.read_csv(args.coverage_table, sep=SEP)
+info(f'Reading table: {args.coverage_table}')
+df = pd.read_csv(args.coverage_table, sep=SEP)
 # NOTE: 1 = columns, apply function to each row
-annotated_table = coverage_table.apply(add_set, axis=1)
+df = df.apply(add_set, axis=1)
 
+df.to_csv(sys.stdout, sep=SEP, index=None)
 
 debug('%s end', SCRIPT_PATH)
