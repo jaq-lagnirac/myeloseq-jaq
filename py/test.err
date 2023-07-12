@@ -1,0 +1,26 @@
+[2023-07-11 15:31:49,364] INFO Accessing file: ../../temp-test-dir/TWAO-108032713-W23-5115-BM2-lib1/TWAO-108032713-W23-5115-BM2-lib1.report.json
+[2023-07-11 15:31:49,974] INFO BED has greater coverage than JSON
+[2023-07-11 15:31:49,974] INFO Coverage is equal
+[2023-07-11 15:31:49,974] INFO JSON has greater coverage than BED
+[2023-07-11 15:31:49,974] INFO JSON has greater coverage than BED
+[2023-07-11 15:31:49,974] INFO JSON has greater coverage than BED
+[2023-07-11 15:31:49,974] INFO JSON has greater coverage than BED
+[2023-07-11 15:31:49,974] INFO JSON has greater coverage than BED
+[2023-07-11 15:31:49,974] INFO JSON has greater coverage than BED
+[2023-07-11 15:31:49,974] INFO JSON has greater coverage than BED
+[2023-07-11 15:31:49,975] INFO ----------DIRECTORTY STATISTICS----------
+[2023-07-11 15:31:49,976] INFO Total subdirectories accessed: 1
+[2023-07-11 15:31:49,976] INFO JSON files without column "TIER1-3" (error count): 0
+[2023-07-11 15:31:49,976] INFO Subirectory error percent: 0.0
+[2023-07-11 15:31:49,976] INFO ----------COMPARISON STATISTICS----------
+[2023-07-11 15:31:49,976] INFO Total Comparisons: 9
+[2023-07-11 15:31:49,976] INFO Duplicate coverage count: 0
+[2023-07-11 15:31:49,976] INFO Total Comparisons, excluding duplicates: 9
+[2023-07-11 15:31:49,976] INFO Cases where JSON coverage was greater: 0.778 (7)
+[2023-07-11 15:31:49,976] INFO Cases where BED coverage was greater: 0.111 (1)
+[2023-07-11 15:31:49,976] INFO Cases where coverage was equal: 0.111 (1)
+[2023-07-11 15:31:49,976] INFO JSON average coverage: 6251.444
+[2023-07-11 15:31:49,976] INFO BED average coverage: 4079.778
+[2023-07-11 15:31:49,976] INFO Average coverage comparison: 2171.667
+[2023-07-11 15:31:49,976] INFO NOTE: Average coverage calculated by (JSON coverage) - (BED coverage) for each interval
+[2023-07-11 15:31:49,976] INFO NOTE: +(pos) indicates higher average JSON coverage, -(neg) indicated higher average BED coverage
