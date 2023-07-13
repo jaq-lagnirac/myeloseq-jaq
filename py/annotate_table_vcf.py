@@ -244,6 +244,9 @@ df = pd.read_csv(args.coverage_table, sep=SEP)
 # NOTE: axis=1 == columns, i.e. apply function to each row
 df = df.apply(add_set, axis=1)
 
+# re-sorts to ensure that it's sorted in order to take any file
+df = df.sort_values(by='json vs bed coverage', ascending=False)
+
 # outputs table to standard output, can be piped into tsv
 df.to_csv(sys.stdout, sep=SEP, index=None)
 
