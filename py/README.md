@@ -18,8 +18,8 @@ flowchart TD
     action1{"tar -xvf"}
     state2[("directory of unsorted .json and .bed files")]
     action2{"generate_directories.py"}
-    state3["main directory sorted into subdirectories,
-    each with a .json and .bed file"]
+    state3[("main directory sorted into subdirectories,
+    each with a .json and .bed file)"]
     action3{"coverage_table.py"}
     action35{"json_bed_comparison.py"}
     state4[".tsv table file comparing .json and .bed coverages
