@@ -14,7 +14,7 @@
 
 ```mermaid
 flowchart TD
-    originalstate1(("`.tar.gz of unsorted .json and .bed files`"))
+    originalstate1((".tar.gz of unsorted .json and .bed files"))
     action1{"`tar -xvf`"}
     state2[("`directory of unsorted .json and .bed files`")]
     action2{"`generate_directories.py`"}
