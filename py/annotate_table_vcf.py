@@ -103,10 +103,10 @@ def add_set(row):
   trimmed_list = [x for x in full_file_list if not x.startswith('##')]
 
   # processes heading
-  heading = trimmed_list[0] # extracts heading
+  heading = trimmed_list[0] # extracts heading str
   trimmed_list.remove(heading) # removes from list
   heading = heading.replace('#', '') # cleans
-  heading = heading.split(SEP) # splits heading into list
+  heading = heading.split(SEP) # splits heading str into list by SEP
   
   for element in trimmed_list:
 
@@ -115,7 +115,7 @@ def add_set(row):
     
     # extracts comparison data
     vcf_chrom = element_list[heading.index('CHROM')]
-    vcf_pos = element_list[heading.index('POS')]
+    vcf_pos = int(element_list[heading.index('POS')])
     vcf_ref = element_list[heading.index('REF')]
     vcf_alt = element_list[heading.index('ALT')]
 
@@ -124,14 +124,23 @@ def add_set(row):
     pos_equal = (pos == vcf_pos)
     ref_equal = (ref == vcf_ref)
     alt_equal = (alt == vcf_alt)
+    info(f'\n{chrom} {vcf_chrom}\n{pos} {vcf_pos}\n{ref} {vcf_ref}\n{alt} {vcf_alt}')
 
     # if correct location is found
     if chrom_equal and pos_equal and ref_equal and alt_equal:
+      
+      info('Found correct line.')
+
       # extract set (dragen/pindel/etc.)
       vcf_info = element_list[heading.index('INFO')] # seeks out info section
       start_index = vcf_info.find(SET_BEGIN) + len(SET_BEGIN) # finds index right after SET_BEGIN
       end_index = vcf_info.find(SET_END, start_index) # finds index 
       coverage_set = vcf_info[start_index : end_index] # extracts data
+
+      # catches if INFO section does not contain "set="
+      if (start_index < 0) or (end_index < 0):
+        error('File does not contain set data.')
+        sys.exit(1)
 
       # increments requisite counters
       if coverage_set == 'dragen':
@@ -152,9 +161,14 @@ def add_set(row):
 
       # appends coverage_set onto table row 
       row['set'] = coverage_set
-      break
-  
-  return row
+      info(coverage_set)
+      sys.exit()
+      return row ### ENDS FUNCTION
+    
+  # catches and stops program if not found
+  error('Coverage set not found.')
+  error(len(trimmed_list))
+  sys.exit(1)
 
 
 
