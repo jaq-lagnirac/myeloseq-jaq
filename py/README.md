@@ -13,10 +13,10 @@
 ## A general workflow pipeline
 
 ```mermaid
-flowchart LR
+flowchart TD
     originalstate1(("`.tar.gz of unsorted .json and .bed files`"))
     action1{"`tar -xvf`"}
-    state2["`directory of unsorted .json and .bed files`"]
+    state2[("`directory of unsorted .json and .bed files`")]
     action2{"`generate_directories.py`"}
     state3["`main directory sorted into subdirectories,
     each with a .json and .bed file`"]
@@ -27,7 +27,7 @@ flowchart LR
     state45["`.err file containing statistics`"]
     originalstate2(("`.tar.gz of .vcf files`"))
     action21{"`tar -xvf`"}
-    state22["`directory of .vcf files`"]
+    state22[("`directory of .vcf files`")]
     action4{"`annotate_table_vcf.py`"}
     state5["`.tsv table file annotated with the set/source
     of the coverage information and .err file containing
