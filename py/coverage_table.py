@@ -356,6 +356,7 @@ for directory_name in os.listdir(args.directory):
 
 # Converts dict to tsv
 output_df = pd.DataFrame.from_dict(table_dict)
+output_df = output_df.sort_values(by='json vs bed coverage', ascending=False)
 output_df.to_csv(sys.stdout, sep=SEP, index=None)
 
 total_no_duplicates = total_comparisons - duplicate_count
