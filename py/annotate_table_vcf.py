@@ -11,6 +11,7 @@ import pandas as pd
 VCF_SUFFIX = '.annotated_filtered.vcf'
 
 SEP = '\t'
+FILE_SEP = '.'
 SET_BEGIN = 'set='
 SET_END = ';'
 
@@ -18,7 +19,7 @@ EXIT = 'Exiting program.'
 ROUNDING_DECIMALS = 3
 
 # global vars
-files_accessed = 0
+file_accesses = 0
 total_annotations = 0
 dragen_counter = 0
 pindel_counter = 0
@@ -31,6 +32,7 @@ off_by_one = 0
 # global lists
 obo_list = []
 nf_list = []
+files_used_list = []
 
 
 SCRIPT_PATH = os.path.abspath(__file__)
@@ -77,10 +79,33 @@ if args.verbose:
 
 
 
+def count_files(dir_path):
+  total_file_count = 0
+  vcf_suffix_count = 0
+
+  # iterate through directory
+  for path in os.listdir(dir_path):
+    
+    #create new file path
+    full_path = os.path.join(dir_path, path)
+
+    # if current path is a file
+    if os.path.isfile(full_path):
+      total_file_count += 1
+
+      # checks for proper extension
+      ext_location = path.index(FILE_SEP)
+      if path[ext_location : ] == VCF_SUFFIX:
+        vcf_suffix_count += 1
+  
+  return total_file_count, vcf_suffix_count
+
+
+
 def add_set(row):
 
   # connecting global vars
-  global files_accessed
+  global file_accesses
   global total_annotations
   global dragen_counter
   global pindel_counter
@@ -91,6 +116,7 @@ def add_set(row):
   global off_by_one
   global obo_list
   global nf_list
+  global files_used_list
 
   # extracts needed info from table row
   dir_name = row['directory name']
@@ -112,8 +138,12 @@ def add_set(row):
   # reads the file line-by-line into a list
   with open(file_path, 'r') as vcf_file:
     info(f'Accessing file: {file_name}')
-    files_accessed += 1
     full_file_list = vcf_file.readlines()
+    
+    # file statistics incremented
+    file_accesses += 1
+    if file_name not in files_used_list:
+      files_used_list.append(file_name)
   
   # trims list of unneeded info, mainly FORMAT and contig lines
   trimmed_list = [x for x in full_file_list if not x.startswith('##')]
@@ -203,6 +233,9 @@ def add_set(row):
 debug('%s begin', SCRIPT_PATH)
 
 
+# calculates total number of files in inputted directory
+total_file_count, vcf_suffix_count = count_files(args.directory)
+
 # read in table
 info(f'Reading table: {args.coverage_table}')
 df = pd.read_csv(args.coverage_table, sep=SEP)
@@ -214,8 +247,15 @@ df = df.apply(add_set, axis=1)
 # outputs table to standard output, can be piped into tsv
 df.to_csv(sys.stdout, sep=SEP, index=None)
 
-info('----------STATISTICS----------')
-info(f'VCF files accessed: {files_accessed} (Counts each time file was accessed)')
+info('----------DIRECTORY STATISTICS----------')
+info(f'Total files in directory: {total_file_count}')
+info(f'Files with a usable extension: {vcf_suffix_count}')
+debug(f'---NOTE: The usable extension: {VCF_SUFFIX} ---')
+info(f'VCF files used: {len(files_used_list)}')
+info(f'VCF file accesses: {file_accesses}')
+debug('---NOTE: VCF file accesses counts each time a file was accessed---')
+
+info('----------SET STATISTICS----------')
 info(f'Total set annotations: {total_annotations}')
 info(f'DRAGEN sets: {dragen_counter}')
 info(f'PINDEL sets: {pindel_counter}')
@@ -226,14 +266,18 @@ info(f'Files where set was not found: {not_found}')
 info(f'Files where off-by-one flag was triggered: {off_by_one}')
 
 
-duplicate_notice = '---NOTE: Duplicates may occur if file was caught more than once---'
+duplicate_notice = '\t--NOTE: Duplicates may occur if file was caught more than once'
+
+nf_list.append('test')
+not_found = 1
+obo_list.append('test')
 
 if not_found != 0:
 
   nf_list.sort()
 
   # creates debug string
-  nf_debug_str = 'VCF files where set was not found:\n'
+  nf_debug_str = '\n-----VCF files where set was not found-----\n'
   for file in nf_list:
     nf_debug_str += f'\t{file}\n'
   nf_debug_str += duplicate_notice
@@ -246,7 +290,7 @@ if off_by_one != 0:
   obo_list.sort()
 
   # cerates debug string
-  obo_debug_str = 'VCF files where off-by-one flag was triggered:\n'
+  obo_debug_str = '\n-----VCF files where off-by-one flag was triggered-----\n'
   for file in obo_list:
     obo_debug_str += f'\t{file}\n'
   obo_debug_str += duplicate_notice
