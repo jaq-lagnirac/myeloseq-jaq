@@ -18,11 +18,19 @@ SET_END = ';'
 ROUNDING_DECIMALS = 3
 
 # global vars
+files_accessed = 0
+total_annotations = 0
 dragen_counter = 0
 pindel_counter = 0
 dragen_pindel_counter = 0
 unknown_counter = 0
 empty_counter = 0
+not_found = 0
+off_by_one = 0
+
+obo_list = []
+nf_list = []
+
 
 SCRIPT_PATH = os.path.abspath(__file__)
 FORMAT = '[%(asctime)s] %(levelname)s %(message)s'
@@ -71,11 +79,17 @@ if args.verbose:
 def add_set(row):
 
   # connecting global vars
+  global files_accessed
+  global total_annotations
   global dragen_counter
   global pindel_counter
   global dragen_pindel_counter
   global unknown_counter
   global empty_counter
+  global not_found
+  global off_by_one
+  global obo_list
+  global nf_list
 
   # extracts needed info from table row
   dir_name = row['directory name']
@@ -92,11 +106,12 @@ def add_set(row):
   file_path = os.path.join(args.directory, file_name)
   if not os.path.exists(file_path):
     error(f'Does not exist: {file_path}')
-    sys.exit(1)
+    sys.exit(1) # safely exits program
   
   # reads the file line-by-line into a list
   with open(file_path, 'r') as vcf_file:
     info(f'Accessing file: {file_name}')
+    files_accessed += 1
     full_file_list = vcf_file.readlines()
   
   # trims list of unneeded info
@@ -121,16 +136,18 @@ def add_set(row):
 
     # bool comparisons
     chrom_equal = (chrom == vcf_chrom)
-    pos_equal = (pos == vcf_pos)
+    pos_equal_obo_hotfix = ((pos - 1) == vcf_pos)
+    pos_equal = (pos == vcf_pos) or pos_equal_obo_hotfix # hotfix for off-by-one errors
     ref_equal = (ref == vcf_ref)
     alt_equal = (alt == vcf_alt)
-    info(f'\n{chrom} {vcf_chrom}\n{pos} {vcf_pos}\n{ref} {vcf_ref}\n{alt} {vcf_alt}')
+    comparison_debug_str = f'Comparison Debug:\nTABLE\t\tVCF\n{chrom}\t\t{vcf_chrom}'
+    comparison_debug_str += f'\n{pos}\t\t{vcf_pos}\n{ref}\t\t{vcf_ref}\n{alt}\t\t{vcf_alt}'
+    debug(comparison_debug_str)
+    # NOTE: Off-by-one errors
 
     # if correct location is found
     if chrom_equal and pos_equal and ref_equal and alt_equal:
       
-      info('Found correct line.')
-
       # extract set (dragen/pindel/etc.)
       vcf_info = element_list[heading.index('INFO')] # seeks out info section
       start_index = vcf_info.find(SET_BEGIN) + len(SET_BEGIN) # finds index right after SET_BEGIN
@@ -142,7 +159,8 @@ def add_set(row):
         error('File does not contain set data.')
         sys.exit(1)
 
-      # increments requisite counters
+      # increments set counters
+      total_annotations += 1
       if coverage_set == 'dragen':
         dragen_counter += 1
         debug('Incrementing DRAGEN.')
@@ -158,28 +176,61 @@ def add_set(row):
       else: # if string isn't empty but isn't recognized
         unknown_counter += 1
         debug('Incrementing Unknown.')
+      
+      # counts off-by-one errors
+      if not (pos == vcf_pos):
+        debug('Off-by-one detected.')
+        off_by_one += 1
+        obo_list.append(file_name)
 
       # appends coverage_set onto table row 
       row['set'] = coverage_set
-      info(coverage_set)
-      sys.exit()
       return row ### ENDS FUNCTION
     
-  # catches and stops program if not found
-  error('Coverage set not found.')
-  error(len(trimmed_list))
+  # returns unaltered row if not found
+  error(f'Coverage set not found: {file_name}')
+  not_found += 1
+  nf_list.append(file_name)
+  return row
   sys.exit(1)
 
 
 
 debug('%s begin', SCRIPT_PATH)
 
-
+# read in table
 info(f'Reading table: {args.coverage_table}')
 df = pd.read_csv(args.coverage_table, sep=SEP)
-# NOTE: 1 = columns, apply function to each row
+
+# applies extraction function
+# NOTE: axis=1 == columns, apply function to each row
 df = df.apply(add_set, axis=1)
 
 df.to_csv(sys.stdout, sep=SEP, index=None)
+
+info('----------STATISTICS----------')
+info(f'VCF files accessed: {files_accessed}')
+info(f'Total set annotations: {total_annotations}')
+info(f'DRAGEN set: {dragen_counter}')
+info(f'PINDEL set: {pindel_counter}')
+info(f'DRAGEN-PINDEL set: {dragen_pindel_counter}')
+info(f'Unknown set: {unknown_counter}')
+info(f'Empty set: {empty_counter}')
+info(f'Set not found in file: {not_found}')
+info(f'Off-by-one flag triggered: {off_by_one}')
+
+if not_found != 0:
+  nf_debug_str = 'VCF files where set was not found:\n'
+  for file in nf_list:
+    nf_debug_str += f'\t{file}\n'
+  nf_debug_str += '---NOTE: Duplicates may occur if file was caught more than once---'
+  debug(nf_debug_str)
+
+if off_by_one != 0:
+  obo_debug_str = 'VCF files where off-by-one flag was triggered:\n'
+  for file in obo_list:
+    obo_debug_str += f'\t{file}\n'
+  obo_debug_str += '---NOTE: Duplicates may occur if file was caught more than once---'
+  debug(obo_debug_str)
 
 debug('%s end', SCRIPT_PATH)
