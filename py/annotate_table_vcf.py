@@ -6,7 +6,6 @@ import os
 import sys
 import argparse
 import logging
-import json
 import pandas as pd
 
 VCF_SUFFIX = '.annotated_filtered.vcf'
@@ -15,6 +14,7 @@ SEP = '\t'
 SET_BEGIN = 'set='
 SET_END = ';'
 
+EXIT = 'Exiting program.'
 ROUNDING_DECIMALS = 3
 
 # global vars
@@ -28,6 +28,7 @@ empty_counter = 0
 not_found = 0
 off_by_one = 0
 
+# global lists
 obo_list = []
 nf_list = []
 
@@ -105,7 +106,7 @@ def add_set(row):
   file_name = f'{dir_name}{VCF_SUFFIX}'
   file_path = os.path.join(args.directory, file_name)
   if not os.path.exists(file_path):
-    error(f'Does not exist: {file_path}')
+    error(f'{EXIT} File does not exist: {file_path}')
     sys.exit(1) # safely exits program
   
   # reads the file line-by-line into a list
@@ -114,7 +115,7 @@ def add_set(row):
     files_accessed += 1
     full_file_list = vcf_file.readlines()
   
-  # trims list of unneeded info
+  # trims list of unneeded info, mainly FORMAT and contig lines
   trimmed_list = [x for x in full_file_list if not x.startswith('##')]
 
   # processes heading
@@ -130,20 +131,24 @@ def add_set(row):
     
     # extracts comparison data
     vcf_chrom = element_list[heading.index('CHROM')]
-    vcf_pos = int(element_list[heading.index('POS')])
+    vcf_pos = int(element_list[heading.index('POS')]) # originally str
     vcf_ref = element_list[heading.index('REF')]
     vcf_alt = element_list[heading.index('ALT')]
 
     # bool comparisons
     chrom_equal = (chrom == vcf_chrom)
-    pos_equal_obo_hotfix = ((pos - 1) == vcf_pos)
-    pos_equal = (pos == vcf_pos) or pos_equal_obo_hotfix # hotfix for off-by-one errors
     ref_equal = (ref == vcf_ref)
     alt_equal = (alt == vcf_alt)
+    # hotfix for off-by-one errors
+    # NOTE: works during testing, though something to keep an eye on in the future
+    pos_equal_original = (pos == vcf_pos)
+    pos_equal_obo_hotfix = ((pos - 1) == vcf_pos)
+    pos_equal = pos_equal_original or pos_equal_obo_hotfix
+
+    # creates a tiny comparison table for debugging
     comparison_debug_str = f'Comparison Debug:\nTABLE\t\tVCF\n{chrom}\t\t{vcf_chrom}'
     comparison_debug_str += f'\n{pos}\t\t{vcf_pos}\n{ref}\t\t{vcf_ref}\n{alt}\t\t{vcf_alt}'
     debug(comparison_debug_str)
-    # NOTE: Off-by-one errors
 
     # if correct location is found
     if chrom_equal and pos_equal and ref_equal and alt_equal:
@@ -151,12 +156,12 @@ def add_set(row):
       # extract set (dragen/pindel/etc.)
       vcf_info = element_list[heading.index('INFO')] # seeks out info section
       start_index = vcf_info.find(SET_BEGIN) + len(SET_BEGIN) # finds index right after SET_BEGIN
-      end_index = vcf_info.find(SET_END, start_index) # finds index 
+      end_index = vcf_info.find(SET_END, start_index) # finds the SET_END that's right after SET_BEGIN 
       coverage_set = vcf_info[start_index : end_index] # extracts data
 
       # catches if INFO section does not contain "set="
       if (start_index < 0) or (end_index < 0):
-        error('File does not contain set data.')
+        error(f'{EXIT} File does not contain set data.')
         sys.exit(1)
 
       # increments set counters
@@ -172,13 +177,13 @@ def add_set(row):
         debug('Incrementing DRAGEN-PINDEL.')
       elif len(coverage_set) == 0:
         empty_counter += 1
-        debug('Incrementing Empty.')
+        debug('Incrementing empty.')
       else: # if string isn't empty but isn't recognized
         unknown_counter += 1
-        debug('Incrementing Unknown.')
+        debug('Incrementing unknown.')
       
       # counts off-by-one errors
-      if not (pos == vcf_pos):
+      if not pos_equal_original and pos_equal_obo_hotfix:
         debug('Off-by-one detected.')
         off_by_one += 1
         obo_list.append(file_name)
@@ -192,45 +197,61 @@ def add_set(row):
   not_found += 1
   nf_list.append(file_name)
   return row
-  sys.exit(1)
 
 
 
 debug('%s begin', SCRIPT_PATH)
+
 
 # read in table
 info(f'Reading table: {args.coverage_table}')
 df = pd.read_csv(args.coverage_table, sep=SEP)
 
 # applies extraction function
-# NOTE: axis=1 == columns, apply function to each row
+# NOTE: axis=1 == columns, i.e. apply function to each row
 df = df.apply(add_set, axis=1)
 
+# outputs table to standard output, can be piped into tsv
 df.to_csv(sys.stdout, sep=SEP, index=None)
 
 info('----------STATISTICS----------')
-info(f'VCF files accessed: {files_accessed}')
+info(f'VCF files accessed: {files_accessed} (Counts each time file was accessed)')
 info(f'Total set annotations: {total_annotations}')
-info(f'DRAGEN set: {dragen_counter}')
-info(f'PINDEL set: {pindel_counter}')
-info(f'DRAGEN-PINDEL set: {dragen_pindel_counter}')
-info(f'Unknown set: {unknown_counter}')
-info(f'Empty set: {empty_counter}')
-info(f'Set not found in file: {not_found}')
-info(f'Off-by-one flag triggered: {off_by_one}')
+info(f'DRAGEN sets: {dragen_counter}')
+info(f'PINDEL sets: {pindel_counter}')
+info(f'DRAGEN-PINDEL sets: {dragen_pindel_counter}')
+info(f'Unknown sets: {unknown_counter}')
+info(f'Empty sets: {empty_counter}')
+info(f'Files where set was not found: {not_found}')
+info(f'Files where off-by-one flag was triggered: {off_by_one}')
+
+
+duplicate_notice = '---NOTE: Duplicates may occur if file was caught more than once---'
 
 if not_found != 0:
+
+  nf_list.sort()
+
+  # creates debug string
   nf_debug_str = 'VCF files where set was not found:\n'
   for file in nf_list:
     nf_debug_str += f'\t{file}\n'
-  nf_debug_str += '---NOTE: Duplicates may occur if file was caught more than once---'
+  nf_debug_str += duplicate_notice
+
   debug(nf_debug_str)
 
+
 if off_by_one != 0:
+
+  obo_list.sort()
+
+  # cerates debug string
   obo_debug_str = 'VCF files where off-by-one flag was triggered:\n'
   for file in obo_list:
     obo_debug_str += f'\t{file}\n'
-  obo_debug_str += '---NOTE: Duplicates may occur if file was caught more than once---'
+  obo_debug_str += duplicate_notice
+
   debug(obo_debug_str)
+
 
 debug('%s end', SCRIPT_PATH)
