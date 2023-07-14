@@ -271,10 +271,6 @@ info(f'Files where off-by-one flag was triggered: {off_by_one}')
 
 duplicate_notice = '\t--NOTE: Duplicates may occur if file was caught more than once'
 
-nf_list.append('test')
-not_found = 1
-obo_list.append('test')
-
 if not_found != 0:
 
   nf_list.sort()
