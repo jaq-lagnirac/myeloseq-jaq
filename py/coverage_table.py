@@ -18,6 +18,7 @@ BED_SUFFIX = '.qc-coverage-region-1_full_res.bed'
 SEP = '\t'
 
 ROUNDING_DECIMALS = 3
+REL_DIFF_ROUND = 5
 
 SCRIPT_PATH = os.path.abspath(__file__)
 FORMAT = '[%(asctime)s] %(levelname)s %(message)s'
@@ -55,6 +56,7 @@ parser = argparse.ArgumentParser(description=DESCRIPTION, epilog=EPILOG,
 parser.add_argument('directory',
                     help='main directory for comparison')
 parser.add_argument('-t', '--variant_type',
+                    nargs='+',
                     default='TIER1-3',
                     help='Variant type to be extracted')
 parser.add_argument('-v', '--verbose',
@@ -81,7 +83,8 @@ fields = ['directory name',
           'transcript',
           'json coverage',
           'bed coverage',
-          'json vs bed coverage']
+          'json vs bed coverage',
+          'relative difference']
 table_dict = {} # will be turned into a dataframe
 for field in fields:
   table_dict[field] = []
@@ -203,7 +206,8 @@ directory_count = 0
 # Initialize totals (for averages)
 json_total = 0
 bed_total = 0
-vs_total = 0 
+vs_total = 0
+rel_diff_total = 0
 
 # Run through main directory
 for directory_name in os.listdir(args.directory):
@@ -233,7 +237,7 @@ for directory_name in os.listdir(args.directory):
   try:
     variant_columns = json_file['VARIANTS'][args.variant_type]['columns']
     variant_data = json_file['VARIANTS'][args.variant_type]['data']
-    info(f'Accessing file: {json_name}')
+    info(f'Accessing file for {args.variant_type}: {json_name}')
   except:
     error(f'{args.variant_type} columns do not exist: {json_name}')
     error_count += 1
@@ -291,6 +295,7 @@ for directory_name in os.listdir(args.directory):
       # extracts data from interval, compares
       bed_cov = interval.data
       vs_cov = json_cov - bed_cov
+      rel_diff = round(vs_cov / bed_cov, REL_DIFF_ROUND)
 
       # sets up data dict to compare and append to table dict
       # see list "fields" for heading list
@@ -306,7 +311,8 @@ for directory_name in os.listdir(args.directory):
                    transcript,
                    json_cov,
                    bed_cov,
-                   vs_cov] 
+                   vs_cov,
+                   rel_diff] 
       data_dict = list_to_dict(fields, data_list)
       
       # returns index of duplicate, false otherwise
@@ -326,16 +332,18 @@ for directory_name in os.listdir(args.directory):
           # then update totals (for averages)
           bed_total += bed_cov - table_dict['bed coverage'][duplicate_index]
           vs_total += vs_cov - table_dict['json vs bed coverage'][duplicate_index]
+          rel_diff_total += rel_diff - table_dict['relative difference'][duplicate_index]
 
-          # and change both bed_cov and vs_cov to reflect new change
+          # and change values to reflect new change
           table_dict['bed coverage'][duplicate_index] = bed_cov
           table_dict['json vs bed coverage'][duplicate_index] = vs_cov
+          table_dict['relative difference'][duplicate_index] = rel_diff
 
           # NOTE: Duplicates should not affect count,
           # as none observed have changed signs
 
         else:
-          debug('Lower or equal BED coverage found.')
+          debug('Lower or equal absolute value VS coverage found.')
         
         continue
       
@@ -368,6 +376,7 @@ for directory_name in os.listdir(args.directory):
       json_total += json_cov
       bed_total += bed_cov
       vs_total += vs_cov
+      rel_diff_total += rel_diff
 
 # Converts dict to tsv
 output_df = pd.DataFrame.from_dict(table_dict)
@@ -385,6 +394,7 @@ equal_percent = round(coverage_equal / total_no_duplicates, ROUNDING_DECIMALS)
 json_avg = round(json_total / total_no_duplicates, ROUNDING_DECIMALS)
 bed_avg = round(bed_total / total_no_duplicates, ROUNDING_DECIMALS)
 vs_avg = round(vs_total / total_no_duplicates, ROUNDING_DECIMALS)
+rel_diff_avg = round(rel_diff_total / total_no_duplicates, REL_DIFF_ROUND)
 error_percent = round(error_count / directory_count, ROUNDING_DECIMALS)
 
 
@@ -392,7 +402,7 @@ error_percent = round(error_count / directory_count, ROUNDING_DECIMALS)
 
 info('----------DIRECTORTY STATISTICS----------')
 info(f'Total subdirectories accessed: {directory_count}')
-info(f'JSON files without column \"{args.variant_type}\" (error count): {error_count}')
+info(f'JSON files without correct column (error count): {error_count}')
 info(f'Subirectory error percent: {error_percent}')
 
 info('----------COMPARISON STATISTICS----------')
@@ -407,8 +417,10 @@ info(f'Cases where coverage was equal: {equal_percent} ({coverage_equal})')
 info(f'JSON average coverage: {json_avg}')
 info(f'BED average coverage: {bed_avg}')
 info(f'Average coverage comparison: {vs_avg}')
+info(f'Average relative difference: {rel_diff_avg}')
 
 debug('NOTE: Average coverage calculated by (JSON coverage) - (BED coverage) for each interval')
 debug('NOTE: +(pos) indicates higher average JSON coverage, -(neg) indicated higher average BED coverage')
+debug('NOTE: Relative Difference calculated by ((JSON coverage - BED coverage) / BED coverage)')
 
 debug('%s end', SCRIPT_PATH)
