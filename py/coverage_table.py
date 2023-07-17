@@ -54,6 +54,9 @@ parser = argparse.ArgumentParser(description=DESCRIPTION, epilog=EPILOG,
 
 parser.add_argument('directory',
                     help='main directory for comparison')
+parser.add_argument('-t', '--variant_type',
+                    default='TIER1-3',
+                    help='Variant type to be extracted')
 parser.add_argument('-v', '--verbose',
                     action='store_true',
                     help='Set logging level to DEBUG')
@@ -67,6 +70,8 @@ if args.verbose:
 
 # Initialize dictionary and fields
 fields = ['directory name',
+          'variant type',
+          'filter',
           'chrom',
           'start',
           'end',
@@ -134,7 +139,13 @@ def check_duplicates(data_dict, table_dict):
   dict_of_index_lists = {}
 
   # fields to be compared
-  shortened_fields = fields[fields.index('chrom') : fields.index('alt')]
+  # NOTE: removed .index and tying it to fields in order
+  # to make it more universal and open to change
+  shortened_fields = ['chrom',
+                      'start',
+                      'end',
+                      'ref',
+                      'alt']
   
   # generates dict of index lists
   for field in shortened_fields:
@@ -216,15 +227,15 @@ for directory_name in os.listdir(args.directory):
   with open(json_path) as jp:
     json_file = json.loads(jp.read())
   
-  # if the file doesn't contain column "TIER1-3", ignore the rest
-  # of the loop, continue to the next iteration, and read in the
-  # next file
+  # if the file doesn't contain column "TIER1-3" (or other variant)
+  # ignore the rest of the loop, continue to the next iteration,
+  # and read in the next file
   try:
-    tier13_columns = json_file['VARIANTS']['TIER1-3']['columns']
-    tier13_data = json_file['VARIANTS']['TIER1-3']['data']
+    variant_columns = json_file['VARIANTS'][args.variant_type]['columns']
+    variant_data = json_file['VARIANTS'][args.variant_type]['data']
     info(f'Accessing file: {json_name}')
   except:
-    error(f'Tier 1-3 columns do not exist: {json_name}')
+    error(f'{args.variant_type} columns do not exist: {json_name}')
     error_count += 1
     continue
   
@@ -247,16 +258,17 @@ for directory_name in os.listdir(args.directory):
 
   # Comparing files
 
-  for entry in tier13_data:
+  for entry in variant_data:
     
     # JSON data extraction
-    chrom = entry[tier13_columns.index('chrom')]
-    pos = int(entry[tier13_columns.index('pos')])
-    ref = entry[tier13_columns.index('ref')]
-    alt = entry[tier13_columns.index('alt')]
-    gene = entry[tier13_columns.index('gene')]
-    transcript = entry[tier13_columns.index('transcript')]
-    json_cov = entry[tier13_columns.index('coverage')]
+    filter = entry[variant_columns.index('filter')]
+    chrom = entry[variant_columns.index('chrom')]
+    pos = int(entry[variant_columns.index('pos')])
+    ref = entry[variant_columns.index('ref')]
+    alt = entry[variant_columns.index('alt')]
+    gene = entry[variant_columns.index('gene')]
+    transcript = entry[variant_columns.index('transcript')]
+    json_cov = entry[variant_columns.index('coverage')]
     
     # creates start and end using maf string-like processing
     start, end = process_json_entry(pos, ref, alt)
@@ -283,6 +295,8 @@ for directory_name in os.listdir(args.directory):
       # sets up data dict to compare and append to table dict
       # see list "fields" for heading list
       data_list = [directory_name,
+                   args.variant_type,
+                   filter,
                    chrom,
                    start,
                    end,
@@ -377,7 +391,7 @@ error_percent = round(error_count / directory_count, ROUNDING_DECIMALS)
 
 info('----------DIRECTORTY STATISTICS----------')
 info(f'Total subdirectories accessed: {directory_count}')
-info(f'JSON files without column \"TIER1-3\" (error count): {error_count}')
+info(f'JSON files without column \"{args.variant_type}\" (error count): {error_count}')
 info(f'Subirectory error percent: {error_percent}')
 
 info('----------COMPARISON STATISTICS----------')
