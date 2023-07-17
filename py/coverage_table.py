@@ -317,8 +317,9 @@ for directory_name in os.listdir(args.directory):
         # increments duplicate coverage counter
         duplicate_count += 1
 
-        # if new bed coverage is greater than coverage in table_dict
-        if bed_cov > table_dict['bed coverage'][duplicate_index]:
+        # if new absolute vs coverage is greater than coverage in table_dict
+        # greater difference, i.e. more noticeable
+        if abs(vs_cov) > abs(table_dict['json vs bed coverage'][duplicate_index]):
 
           debug('Higher BED coverage found. Updating table and averages.')
           
