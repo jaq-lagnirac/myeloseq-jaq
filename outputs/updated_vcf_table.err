@@ -1,0 +1,84 @@
+[2023-07-17 11:54:57,928] INFO Accessing file: TWAO-102552878-W23-5092-BM-lib1.report.json
+[2023-07-17 11:54:57,929] INFO Accessing file: TWAO-102552878-W23-5092-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:54:58,589] INFO Accessing file: TWAO-201723434-W23-5114-BM-lib1.report.json
+[2023-07-17 11:54:58,589] INFO Accessing file: TWAO-201723434-W23-5114-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:54:59,300] INFO Accessing file: TWAO-200054718-W23-5200-BM-lib1.report.json
+[2023-07-17 11:54:59,301] INFO Accessing file: TWAO-200054718-W23-5200-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:00,005] INFO Accessing file: TWAO-MS-Positive-Control-W22-6944-BM-lib16.report.json
+[2023-07-17 11:55:00,006] INFO Accessing file: TWAO-MS-Positive-Control-W22-6944-BM-lib16.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:00,706] INFO Accessing file: TWAO-105163199-W23-5089-BM-lib1.report.json
+[2023-07-17 11:55:00,706] INFO Accessing file: TWAO-105163199-W23-5089-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:01,620] ERROR TIER1-3 columns do not exist: TWAO-107016815-W23-5248-PB-lib1.report.json
+[2023-07-17 11:55:01,624] INFO Accessing file: TWAO-104533120-W23-5281-BM-lib1.report.json
+[2023-07-17 11:55:01,624] INFO Accessing file: TWAO-104533120-W23-5281-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:02,505] INFO Accessing file: TWAO-108032713-W23-5115-BM2-lib1.report.json
+[2023-07-17 11:55:02,505] INFO Accessing file: TWAO-108032713-W23-5115-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:03,380] ERROR TIER1-3 columns do not exist: TWAO-202154026-W23-5242-BM-lib1.report.json
+[2023-07-17 11:55:03,382] INFO Accessing file: TWAO-108783743-W23-5282-BM-lib1.report.json
+[2023-07-17 11:55:03,382] INFO Accessing file: TWAO-108783743-W23-5282-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:04,162] INFO Accessing file: TWAO-106444776-W23-5197-PB-lib1.report.json
+[2023-07-17 11:55:04,162] INFO Accessing file: TWAO-106444776-W23-5197-PB-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:04,832] INFO Accessing file: TWAO-202153377-W23-5261-BM-lib1.report.json
+[2023-07-17 11:55:04,832] INFO Accessing file: TWAO-202153377-W23-5261-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:05,553] INFO Accessing file: TWAO-201682401-W23-5060-BM-lib1.report.json
+[2023-07-17 11:55:05,553] INFO Accessing file: TWAO-201682401-W23-5060-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:06,467] INFO Accessing file: TWAO-202143635-W23-5271-BM-lib1.report.json
+[2023-07-17 11:55:06,468] INFO Accessing file: TWAO-202143635-W23-5271-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:07,422] INFO Accessing file: TWAO-103144074-W23-5051-BM-lib1.report.json
+[2023-07-17 11:55:07,422] INFO Accessing file: TWAO-103144074-W23-5051-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:08,224] INFO Accessing file: TWAO-103636692-W23-5198-BM-lib1.report.json
+[2023-07-17 11:55:08,224] INFO Accessing file: TWAO-103636692-W23-5198-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:08,950] INFO Accessing file: TWAO-201791635-W23-5078-BM-lib1.report.json
+[2023-07-17 11:55:08,950] INFO Accessing file: TWAO-201791635-W23-5078-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:09,688] INFO Accessing file: TWAO-105982473-W23-5162-BM-lib1.report.json
+[2023-07-17 11:55:09,688] INFO Accessing file: TWAO-105982473-W23-5162-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:10,562] INFO Accessing file: TWAO-201796057-W23-5143-BM2-lib1.report.json
+[2023-07-17 11:55:10,562] INFO Accessing file: TWAO-201796057-W23-5143-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:11,321] INFO Accessing file: TWAO-103212136-W23-5185-BM-lib1.report.json
+[2023-07-17 11:55:11,321] INFO Accessing file: TWAO-103212136-W23-5185-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:12,134] ERROR TIER1-3 columns do not exist: TWAO-201878424-W23-5285-BM-lib1.report.json
+[2023-07-17 11:55:12,136] INFO Accessing file: TWAO-202138202-W23-5245-BM-lib1.report.json
+[2023-07-17 11:55:12,136] INFO Accessing file: TWAO-202138202-W23-5245-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:12,896] INFO Accessing file: TWAO-201516155-W23-5090-BM-lib1.report.json
+[2023-07-17 11:55:12,896] INFO Accessing file: TWAO-201516155-W23-5090-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:13,699] INFO Accessing file: TWAO-103562837-W23-5141-BM2-lib1.report.json
+[2023-07-17 11:55:13,699] INFO Accessing file: TWAO-103562837-W23-5141-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:14,418] ERROR TIER1-3 columns do not exist: TWAO-108152658-W23-5283-BM-lib1.report.json
+[2023-07-17 11:55:14,420] INFO Accessing file: TWAO-105188778-W23-5079-BM-lib1.report.json
+[2023-07-17 11:55:14,420] INFO Accessing file: TWAO-105188778-W23-5079-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:15,084] INFO Accessing file: TWAO-200249928-W23-5250-BM-lib1.report.json
+[2023-07-17 11:55:15,084] INFO Accessing file: TWAO-200249928-W23-5250-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:15,861] INFO Accessing file: TWAO-107196322-W23-5284-BM-lib1.report.json
+[2023-07-17 11:55:15,861] INFO Accessing file: TWAO-107196322-W23-5284-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:16,605] INFO Accessing file: TWAO-201938262-W23-5253-BM-lib1.report.json
+[2023-07-17 11:55:16,605] INFO Accessing file: TWAO-201938262-W23-5253-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:17,357] INFO Accessing file: TWAO-106444776-W23-5056-BM-lib1.report.json
+[2023-07-17 11:55:17,357] INFO Accessing file: TWAO-106444776-W23-5056-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:17,758] INFO Accessing file: TWAO-201280541-W23-5184-BM-lib1.report.json
+[2023-07-17 11:55:17,759] INFO Accessing file: TWAO-201280541-W23-5184-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:18,468] INFO Accessing file: TWAO-101484893-W23-5251-BM-lib1.report.json
+[2023-07-17 11:55:18,468] INFO Accessing file: TWAO-101484893-W23-5251-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:19,201] INFO Accessing file: TWAO-202035007-W23-5244-BM-lib1.report.json
+[2023-07-17 11:55:19,201] INFO Accessing file: TWAO-202035007-W23-5244-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:19,918] ERROR TIER1-3 columns do not exist: TWAO-100406124-W23-5088-BM-lib1.report.json
+[2023-07-17 11:55:19,919] ERROR TIER1-3 columns do not exist: TWAO-108007890-W23-5011-BM3-lib1.report.json
+[2023-07-17 11:55:19,921] ERROR TIER1-3 columns do not exist: TWAO-106352110-W23-5075-BM-lib1.report.json
+[2023-07-17 11:55:19,922] INFO Accessing file: TWAO-201805813-W23-5093-BM-lib1.report.json
+[2023-07-17 11:55:19,922] INFO Accessing file: TWAO-201805813-W23-5093-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:20,613] INFO Accessing file: TWAO-105574860-W23-5249-BM-lib1.report.json
+[2023-07-17 11:55:20,613] INFO Accessing file: TWAO-105574860-W23-5249-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-17 11:55:21,245] INFO ----------DIRECTORTY STATISTICS----------
+[2023-07-17 11:55:21,245] INFO Total subdirectories accessed: 38
+[2023-07-17 11:55:21,245] INFO JSON files without column "TIER1-3" (error count): 7
+[2023-07-17 11:55:21,245] INFO Subirectory error percent: 0.184
+[2023-07-17 11:55:21,245] INFO ----------COMPARISON STATISTICS----------
+[2023-07-17 11:55:21,245] INFO Total Comparisons: 134
+[2023-07-17 11:55:21,245] INFO Duplicate coverage count: 36
+[2023-07-17 11:55:21,245] INFO Total Comparisons, excluding duplicates: 98
+[2023-07-17 11:55:21,245] INFO ----------STATISTICS EXCLUDING DUPLICATES----------
+[2023-07-17 11:55:21,245] INFO Cases where JSON coverage was greater: 0.214 (21)
+[2023-07-17 11:55:21,245] INFO Cases where BED coverage was greater: 0.5 (49)
+[2023-07-17 11:55:21,245] INFO Cases where coverage was equal: 0.286 (28)
+[2023-07-17 11:55:21,245] INFO JSON average coverage: 4373.459
+[2023-07-17 11:55:21,245] INFO BED average coverage: 4424.184
+[2023-07-17 11:55:21,245] INFO Average coverage comparison: -11.5
