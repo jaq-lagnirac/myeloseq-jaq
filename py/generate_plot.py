@@ -1,5 +1,5 @@
 # Justin Caringal
-# Takes source TSV table and generates plots
+# Takes source TSV table and generates comparison plot
 # set/source of coverage
 
 import os
@@ -34,7 +34,7 @@ debug = l.debug; info = l.info; warning = l.warning; error = l.error
 
 DESCRIPTION = '''
 
-Takes source TSV table and generates plots
+Takes source TSV table and generates comparison plot.
 
 '''
 
