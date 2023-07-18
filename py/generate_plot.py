@@ -142,6 +142,8 @@ plt.hist(pindel,
 
 # finalizes plot, displays it
 plt.title('Comparison of Coverage Set Probability Density')
+plt.xlabel('Relative Difference')
+plt.ylabel('Probability')
 plt.legend(loc='upper right')
 plt.show()
 
