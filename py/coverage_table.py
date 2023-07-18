@@ -18,6 +18,7 @@ BED_SUFFIX = '.qc-coverage-region-1_full_res.bed'
 SEP = '\t'
 
 ROUNDING_DECIMALS = 3
+REL_DIFF_ROUND = 5
 
 SCRIPT_PATH = os.path.abspath(__file__)
 FORMAT = '[%(asctime)s] %(levelname)s %(message)s'
@@ -54,6 +55,10 @@ parser = argparse.ArgumentParser(description=DESCRIPTION, epilog=EPILOG,
 
 parser.add_argument('directory',
                     help='main directory for comparison')
+parser.add_argument('-t', '--variant-type',
+                    nargs='+',
+                    default='TIER1-3',
+                    help='Variant type to be extracted')
 parser.add_argument('-v', '--verbose',
                     action='store_true',
                     help='Set logging level to DEBUG')
@@ -67,6 +72,8 @@ if args.verbose:
 
 # Initialize dictionary and fields
 fields = ['directory name',
+          'variant type',
+          'filter',
           'chrom',
           'start',
           'end',
@@ -76,7 +83,8 @@ fields = ['directory name',
           'transcript',
           'json coverage',
           'bed coverage',
-          'json vs bed coverage']
+          'json vs bed coverage',
+          'relative difference']
 table_dict = {} # will be turned into a dataframe
 for field in fields:
   table_dict[field] = []
@@ -134,7 +142,13 @@ def check_duplicates(data_dict, table_dict):
   dict_of_index_lists = {}
 
   # fields to be compared
-  shortened_fields = fields[fields.index('chrom') : fields.index('alt')]
+  # NOTE: removed .index and tying it to fields in order
+  # to make it more universal and open to change
+  shortened_fields = ['chrom',
+                      'start',
+                      'end',
+                      'ref',
+                      'alt']
   
   # generates dict of index lists
   for field in shortened_fields:
@@ -192,7 +206,8 @@ directory_count = 0
 # Initialize totals (for averages)
 json_total = 0
 bed_total = 0
-vs_total = 0 
+vs_total = 0
+rel_diff_total = 0
 
 # Run through main directory
 for directory_name in os.listdir(args.directory):
@@ -216,15 +231,15 @@ for directory_name in os.listdir(args.directory):
   with open(json_path) as jp:
     json_file = json.loads(jp.read())
   
-  # if the file doesn't contain column "TIER1-3", ignore the rest
-  # of the loop, continue to the next iteration, and read in the
-  # next file
+  # if the file doesn't contain column "TIER1-3" (or other variant)
+  # ignore the rest of the loop, continue to the next iteration,
+  # and read in the next file
   try:
-    tier13_columns = json_file['VARIANTS']['TIER1-3']['columns']
-    tier13_data = json_file['VARIANTS']['TIER1-3']['data']
-    info(f'Accessing file: {json_name}')
+    variant_columns = json_file['VARIANTS'][args.variant_type]['columns']
+    variant_data = json_file['VARIANTS'][args.variant_type]['data']
+    info(f'Accessing file for {args.variant_type}: {json_name}')
   except:
-    error(f'Tier 1-3 columns do not exist: {json_name}')
+    error(f'{args.variant_type} columns do not exist: {json_name}')
     error_count += 1
     continue
   
@@ -247,16 +262,17 @@ for directory_name in os.listdir(args.directory):
 
   # Comparing files
 
-  for entry in tier13_data:
+  for entry in variant_data:
     
     # JSON data extraction
-    chrom = entry[tier13_columns.index('chrom')]
-    pos = int(entry[tier13_columns.index('pos')])
-    ref = entry[tier13_columns.index('ref')]
-    alt = entry[tier13_columns.index('alt')]
-    gene = entry[tier13_columns.index('gene')]
-    transcript = entry[tier13_columns.index('transcript')]
-    json_cov = entry[tier13_columns.index('coverage')]
+    filter = entry[variant_columns.index('filter')]
+    chrom = entry[variant_columns.index('chrom')]
+    pos = int(entry[variant_columns.index('pos')])
+    ref = entry[variant_columns.index('ref')]
+    alt = entry[variant_columns.index('alt')]
+    gene = entry[variant_columns.index('gene')]
+    transcript = entry[variant_columns.index('transcript')]
+    json_cov = entry[variant_columns.index('coverage')]
     
     # creates start and end using maf string-like processing
     start, end = process_json_entry(pos, ref, alt)
@@ -279,10 +295,13 @@ for directory_name in os.listdir(args.directory):
       # extracts data from interval, compares
       bed_cov = interval.data
       vs_cov = json_cov - bed_cov
+      rel_diff = round(vs_cov / bed_cov, REL_DIFF_ROUND)
 
       # sets up data dict to compare and append to table dict
       # see list "fields" for heading list
       data_list = [directory_name,
+                   args.variant_type,
+                   filter,
                    chrom,
                    start,
                    end,
@@ -292,7 +311,8 @@ for directory_name in os.listdir(args.directory):
                    transcript,
                    json_cov,
                    bed_cov,
-                   vs_cov] 
+                   vs_cov,
+                   rel_diff] 
       data_dict = list_to_dict(fields, data_list)
       
       # returns index of duplicate, false otherwise
@@ -303,24 +323,27 @@ for directory_name in os.listdir(args.directory):
         # increments duplicate coverage counter
         duplicate_count += 1
 
-        # if new bed coverage is greater than coverage in table_dict
-        if bed_cov > table_dict['bed coverage'][duplicate_index]:
+        # if new absolute vs coverage is greater than coverage in table_dict
+        # greater difference, i.e. more noticeable
+        if abs(vs_cov) > abs(table_dict['json vs bed coverage'][duplicate_index]):
 
           debug('Higher BED coverage found. Updating table and averages.')
           
           # then update totals (for averages)
           bed_total += bed_cov - table_dict['bed coverage'][duplicate_index]
           vs_total += vs_cov - table_dict['json vs bed coverage'][duplicate_index]
+          rel_diff_total += rel_diff - table_dict['relative difference'][duplicate_index]
 
-          # and change both bed_cov and vs_cov to reflect new change
+          # and change values to reflect new change
           table_dict['bed coverage'][duplicate_index] = bed_cov
           table_dict['json vs bed coverage'][duplicate_index] = vs_cov
+          table_dict['relative difference'][duplicate_index] = rel_diff
 
           # NOTE: Duplicates should not affect count,
           # as none observed have changed signs
 
         else:
-          debug('Lower or equal BED coverage found.')
+          debug('Lower or equal absolute value VS coverage found.')
         
         continue
       
@@ -353,6 +376,7 @@ for directory_name in os.listdir(args.directory):
       json_total += json_cov
       bed_total += bed_cov
       vs_total += vs_cov
+      rel_diff_total += rel_diff
 
 # Converts dict to tsv
 output_df = pd.DataFrame.from_dict(table_dict)
@@ -370,6 +394,7 @@ equal_percent = round(coverage_equal / total_no_duplicates, ROUNDING_DECIMALS)
 json_avg = round(json_total / total_no_duplicates, ROUNDING_DECIMALS)
 bed_avg = round(bed_total / total_no_duplicates, ROUNDING_DECIMALS)
 vs_avg = round(vs_total / total_no_duplicates, ROUNDING_DECIMALS)
+rel_diff_avg = round(rel_diff_total / total_no_duplicates, REL_DIFF_ROUND)
 error_percent = round(error_count / directory_count, ROUNDING_DECIMALS)
 
 
@@ -377,7 +402,7 @@ error_percent = round(error_count / directory_count, ROUNDING_DECIMALS)
 
 info('----------DIRECTORTY STATISTICS----------')
 info(f'Total subdirectories accessed: {directory_count}')
-info(f'JSON files without column \"TIER1-3\" (error count): {error_count}')
+info(f'JSON files without correct column (error count): {error_count}')
 info(f'Subirectory error percent: {error_percent}')
 
 info('----------COMPARISON STATISTICS----------')
@@ -392,8 +417,10 @@ info(f'Cases where coverage was equal: {equal_percent} ({coverage_equal})')
 info(f'JSON average coverage: {json_avg}')
 info(f'BED average coverage: {bed_avg}')
 info(f'Average coverage comparison: {vs_avg}')
+info(f'Average relative difference: {rel_diff_avg}')
 
 debug('NOTE: Average coverage calculated by (JSON coverage) - (BED coverage) for each interval')
 debug('NOTE: +(pos) indicates higher average JSON coverage, -(neg) indicated higher average BED coverage')
+debug('NOTE: Relative Difference calculated by ((JSON coverage - BED coverage) / BED coverage)')
 
 debug('%s end', SCRIPT_PATH)
