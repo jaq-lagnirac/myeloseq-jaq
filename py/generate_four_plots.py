@@ -11,10 +11,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 SEP = '\t'
-FILE_SEP = '.'
-
-EXIT = 'Exiting program.'
-ROUNDING_DECIMALS = 3
 
 BIN_WIDTH = 0.5
 ALPHA = 0.3
