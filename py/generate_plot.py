@@ -23,7 +23,6 @@ STACKED = True
 DENSITY = True
 
 
-
 SCRIPT_PATH = os.path.abspath(__file__)
 FORMAT = '[%(asctime)s] %(levelname)s %(message)s'
 l = logging.getLogger()
@@ -53,6 +52,9 @@ parser = argparse.ArgumentParser(description=DESCRIPTION, epilog=EPILOG,
 
 parser.add_argument('coverage_table',
                     help='Source TSV table')
+parser.add_argument('-d', '--disable-table',
+                    action='store_true',
+                    help='Stop plot generation, only output err file')
 parser.add_argument('-v', '--verbose',
                     action='store_true',
                     help='Set logging level to DEBUG')
@@ -77,12 +79,12 @@ pindel = []
 dragen_pindel = []
 
 # iterate through dataframe table, append to correct list
-for _, row in df.iterrows():
+for index, row in df.iterrows():
   
   # extract needed data
   cov_set = row['set']
   rel_diff = row['relative difference']
-  info(f'Extracting: {cov_set}\t\t{rel_diff}')
+  info(f'Extracting row {index}:\t{cov_set:<20}{rel_diff}')
 
   # process and sort extracted data
   if cov_set == 'dragen':
@@ -94,13 +96,25 @@ for _, row in df.iterrows():
   else: # extracted data not expected
     error('Extracted data unable to be sorted.')
 
+# generate bins
 combined_list = dragen + pindel + dragen_pindel
-combined_list.sort()
-print(combined_list)
 bins = np.arange(int(min(combined_list)) - 1,
                  int(max(combined_list)) + 1,
                  BIN_WIDTH)
 
+# stops program depending on cmd line args
+if args.disable_table:
+  info('Plot generation disabled, exiting program.')
+  sys.exit()
+
+# generates plots
+plt.hist(combined_list,
+         bins=bins,
+         histtype='step',
+         stacked=STACKED,
+         density=DENSITY,
+         color='blue',
+         label='combined')
 plt.hist(dragen,
          bins=bins, 
          histtype=HISTTYPE,
@@ -126,7 +140,8 @@ plt.hist(pindel,
          color='red',
          label='pindel')
 
-plt.title('Comparison of Coverage Set Density')
+# finalizes plot, displays it
+plt.title('Comparison of Coverage Set Probability Density')
 plt.legend(loc='upper right')
 plt.show()
 
