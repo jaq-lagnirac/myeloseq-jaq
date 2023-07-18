@@ -55,7 +55,7 @@ parser = argparse.ArgumentParser(description=DESCRIPTION, epilog=EPILOG,
 
 parser.add_argument('directory',
                     help='main directory for comparison')
-parser.add_argument('-t', '--variant_type',
+parser.add_argument('-t', '--variant-type',
                     nargs='+',
                     default='TIER1-3',
                     help='Variant type to be extracted')
