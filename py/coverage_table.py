@@ -56,9 +56,9 @@ parser = argparse.ArgumentParser(description=DESCRIPTION, epilog=EPILOG,
 parser.add_argument('directory',
                     help='main directory for comparison')
 parser.add_argument('-t', '--variant-type',
-                    #nargs='+',
-                    default='TIER1-3',
-                    help='Variant type to be extracted')
+                    nargs='+',
+                    default=['TIER1-3'],
+                    help='Variant type to be extracted, can pass ALL to get all data')
 parser.add_argument('-v', '--verbose',
                     action='store_true',
                     help='Set logging level to DEBUG')
@@ -67,6 +67,19 @@ args = parser.parse_args()
 
 if args.verbose:
   l.setLevel(logging.DEBUG)
+
+# sets up shortcut for all variant types
+if (len(args.variant_type) == 1) \
+  and ((args.variant_type[0]).upper() == 'ALL'):
+
+  variant_types = ['TIER1-3',
+                   'NOTDETECTED',
+                   'LOWLEVEL',
+                   'FILTERED',
+                   'SNPS',
+                   'GENOTYPES']
+else:
+  variant_types = args.variant_type
 
 
 
@@ -231,152 +244,153 @@ for directory_name in os.listdir(args.directory):
   with open(json_path) as jp:
     json_file = json.loads(jp.read())
   
-  # if the file doesn't contain column "TIER1-3" (or other variant)
-  # ignore the rest of the loop, continue to the next iteration,
-  # and read in the next file
-  try:
-    variant_columns = json_file['VARIANTS'][args.variant_type]['columns']
-    variant_data = json_file['VARIANTS'][args.variant_type]['data']
-    info(f'Accessing file for {args.variant_type}: {json_name}')
-  except:
-    error(f'{args.variant_type} columns do not exist: {json_name}')
-    error_count += 1
-    continue
-  
-  
-  # Process BED file
-
-  info(f'Accessing file: {bed_name}')
-  bed_df = pd.read_csv(bed_path,
-                       sep = SEP,
-                       names = ['chrom',
-                                'start',
-                                'end',
-                                'coverage'])
-  
-  # Create interval tree from pandas dataframe
-  bed_tree = IntervalTree()
-  for index, row in bed_df.iterrows():
-    bed_tree[row['start'] : row['end']] = row['coverage']
-
-
-  # Comparing files
-
-  for entry in variant_data:
+  for variant_type in variant_types:
+    # if the file doesn't contain column "TIER1-3" (or other variant)
+    # ignore the rest of the loop, continue to the next iteration,
+    # and read in the next file
+    try:
+      variant_columns = json_file['VARIANTS'][variant_type]['columns']
+      variant_data = json_file['VARIANTS'][variant_type]['data']
+      info(f'Accessing file for {variant_type}: {json_name}')
+    except:
+      error(f'{variant_type} columns do not exist: {json_name}')
+      error_count += 1
+      continue
     
-    # JSON data extraction
-    filter = entry[variant_columns.index('filter')]
-    chrom = entry[variant_columns.index('chrom')]
-    pos = int(entry[variant_columns.index('pos')])
-    ref = entry[variant_columns.index('ref')]
-    alt = entry[variant_columns.index('alt')]
-    gene = entry[variant_columns.index('gene')]
-    transcript = entry[variant_columns.index('transcript')]
-    json_cov = entry[variant_columns.index('coverage')]
     
-    # creates start and end using maf string-like processing
-    start, end = process_json_entry(pos, ref, alt)
+    # Process BED file
 
-    # NOTE: -1 accounting for 1-based to 0-based conversion
-    # BED files are 0-based half-open [ )
-    # JSON files are 1-based
-    start -= 1
+    info(f'Accessing file for {variant_type}: {bed_name}')
+    bed_df = pd.read_csv(bed_path,
+                        sep = SEP,
+                        names = ['chrom',
+                                  'start',
+                                  'end',
+                                  'coverage'])
+    
+    # Create interval tree from pandas dataframe
+    bed_tree = IntervalTree()
+    for index, row in bed_df.iterrows():
+      bed_tree[row['start'] : row['end']] = row['coverage']
 
 
-    # Comparison code
+    # Comparing files
 
-    interval_set = bed_tree[start : end] # overlaps
-
-    for interval in interval_set:
-
-      # increment comparison counter
-      total_comparisons += 1
-
-      # extracts data from interval, compares
-      bed_cov = interval.data
-      vs_cov = json_cov - bed_cov
-      rel_diff = round(vs_cov / bed_cov, REL_DIFF_ROUND)
-
-      # sets up data dict to compare and append to table dict
-      # see list "fields" for heading list
-      data_list = [directory_name,
-                   args.variant_type,
-                   filter,
-                   chrom,
-                   start,
-                   end,
-                   ref,
-                   alt,
-                   gene,
-                   transcript,
-                   json_cov,
-                   bed_cov,
-                   vs_cov,
-                   rel_diff] 
-      data_dict = list_to_dict(fields, data_list)
+    for entry in variant_data:
       
-      # returns index of duplicate, false otherwise
-      duplicate_index = check_duplicates(data_dict, table_dict)
+      # JSON data extraction
+      filter = entry[variant_columns.index('filter')]
+      chrom = entry[variant_columns.index('chrom')]
+      pos = int(entry[variant_columns.index('pos')])
+      ref = entry[variant_columns.index('ref')]
+      alt = entry[variant_columns.index('alt')]
+      gene = entry[variant_columns.index('gene')]
+      transcript = entry[variant_columns.index('transcript')]
+      json_cov = entry[variant_columns.index('coverage')]
       
-      # only runs if duplicate present
-      if duplicate_index:
-        # increments duplicate coverage counter
-        duplicate_count += 1
+      # creates start and end using maf string-like processing
+      start, end = process_json_entry(pos, ref, alt)
 
-        # if new absolute vs coverage is greater than coverage in table_dict
-        # greater difference, i.e. more noticeable
-        if abs(vs_cov) > abs(table_dict['json vs bed coverage'][duplicate_index]):
+      # NOTE: -1 accounting for 1-based to 0-based conversion
+      # BED files are 0-based half-open [ )
+      # JSON files are 1-based
+      start -= 1
 
-          debug('Higher BED coverage found. Updating table and averages.')
-          
-          # then update totals (for averages)
-          bed_total += bed_cov - table_dict['bed coverage'][duplicate_index]
-          vs_total += vs_cov - table_dict['json vs bed coverage'][duplicate_index]
-          rel_diff_total += rel_diff - table_dict['relative difference'][duplicate_index]
 
-          # and change values to reflect new change
-          table_dict['bed coverage'][duplicate_index] = bed_cov
-          table_dict['json vs bed coverage'][duplicate_index] = vs_cov
-          table_dict['relative difference'][duplicate_index] = rel_diff
+      # Comparison code
 
-          # NOTE: Duplicates should not affect count,
-          # as none observed have changed signs
+      interval_set = bed_tree[start : end] # overlaps
 
-        else:
-          debug('Lower or equal absolute value VS coverage found.')
+      for interval in interval_set:
+
+        # increment comparison counter
+        total_comparisons += 1
+
+        # extracts data from interval, compares
+        bed_cov = interval.data
+        vs_cov = json_cov - bed_cov
+        rel_diff = round(vs_cov / bed_cov, REL_DIFF_ROUND)
+
+        # sets up data dict to compare and append to table dict
+        # see list "fields" for heading list
+        data_list = [directory_name,
+                    variant_type,
+                    filter,
+                    chrom,
+                    start,
+                    end,
+                    ref,
+                    alt,
+                    gene,
+                    transcript,
+                    json_cov,
+                    bed_cov,
+                    vs_cov,
+                    rel_diff] 
+        data_dict = list_to_dict(fields, data_list)
         
-        continue
-      
+        # returns index of duplicate, false otherwise
+        duplicate_index = check_duplicates(data_dict, table_dict)
+        
+        # only runs if duplicate present
+        if duplicate_index:
+          # increments duplicate coverage counter
+          duplicate_count += 1
 
-      ### following only runs if NO duplicates are found
+          # if new absolute vs coverage is greater than coverage in table_dict
+          # greater difference, i.e. more noticeable
+          if abs(vs_cov) > abs(table_dict['json vs bed coverage'][duplicate_index]):
 
-      # appends data to table_dict field by field
-      for field in fields:
-        table_dict[field].append(data_dict[field])
-      
-      # Output checkpoints and increments counters
-      # NOTE: Duplicates should not affect count, as none observed have changed signs
-      if json_cov > bed_cov:
-        json_greater += 1
-        debug('JSON has greater coverage than BED')
+            debug('Higher BED coverage found. Updating table and averages.')
+            
+            # then update totals (for averages)
+            bed_total += bed_cov - table_dict['bed coverage'][duplicate_index]
+            vs_total += vs_cov - table_dict['json vs bed coverage'][duplicate_index]
+            rel_diff_total += rel_diff - table_dict['relative difference'][duplicate_index]
 
-      elif bed_cov > json_cov:
-        bed_greater += 1
-        debug('BED has greater coverage than JSON')
+            # and change values to reflect new change
+            table_dict['bed coverage'][duplicate_index] = bed_cov
+            table_dict['json vs bed coverage'][duplicate_index] = vs_cov
+            table_dict['relative difference'][duplicate_index] = rel_diff
 
-      elif bed_cov == json_cov:
-        coverage_equal += 1
-        debug('Coverage is equal')
+            # NOTE: Duplicates should not affect count,
+            # as none observed have changed signs
 
-      else: # should never trigger, but will stop as a safety measure
-        error('Unknown comparison')
-        sys.exit(1)
-      
-      # Increments totals for averages
-      json_total += json_cov
-      bed_total += bed_cov
-      vs_total += vs_cov
-      rel_diff_total += rel_diff
+          else:
+            debug('Lower or equal absolute value VS coverage found.')
+          
+          continue
+        
+
+        ### following only runs if NO duplicates are found
+
+        # appends data to table_dict field by field
+        for field in fields:
+          table_dict[field].append(data_dict[field])
+        
+        # Output checkpoints and increments counters
+        # NOTE: Duplicates should not affect count, as none observed have changed signs
+        if json_cov > bed_cov:
+          json_greater += 1
+          debug('JSON has greater coverage than BED')
+
+        elif bed_cov > json_cov:
+          bed_greater += 1
+          debug('BED has greater coverage than JSON')
+
+        elif bed_cov == json_cov:
+          coverage_equal += 1
+          debug('Coverage is equal')
+
+        else: # should never trigger, but will stop as a safety measure
+          error('Unknown comparison')
+          sys.exit(1)
+        
+        # Increments totals for averages
+        json_total += json_cov
+        bed_total += bed_cov
+        vs_total += vs_cov
+        rel_diff_total += rel_diff
 
 # Converts dict to tsv
 output_df = pd.DataFrame.from_dict(table_dict)
