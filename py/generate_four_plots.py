@@ -76,6 +76,9 @@ dragen = []
 pindel = []
 dragen_pindel = []
 
+# counts misc sets
+misses = 0
+
 # iterate through dataframe table, append to correct list
 for index, row in df.iterrows():
   
@@ -93,17 +96,23 @@ for index, row in df.iterrows():
     dragen_pindel.append(rel_diff)
   else: # extracted data not expected
     error('Extracted data unable to be sorted.')
+    misses += 1
 
-# generate bins
-combined_list = dragen + pindel + dragen_pindel
-bins = np.arange(int(min(combined_list)) - 1,
-                 int(max(combined_list)) + 1,
-                 BIN_WIDTH)
+info(f'Misc. sets extracted: {misses}')
 
 # stops program depending on cmd line args
 if args.disable_table:
   info('Plot generation disabled, exiting program.')
   sys.exit()
+
+# generate bins
+combined_list = dragen + pindel + dragen_pindel
+min_bin = int(min(combined_list)) - 1 # takes floor min
+max_bin = int(max(combined_list)) + 1 # takes ceiling max
+bins = np.arange(min_bin, max_bin, BIN_WIDTH)
+
+info(f'Generating {len(bins)} bins - Bin width: {BIN_WIDTH} - ' \
+     f'Minimum bin: {min_bin} - Maximum bin: {max_bin}')
   
 # sets up subplots
 figure, ((plot1, plot2), (plot3, plot4)) = plt.subplots(nrows=2, ncols=2)
