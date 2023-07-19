@@ -1,0 +1,439 @@
+[2023-07-19 12:15:27,369] INFO Accessing file for TIER1-3: TWAO-102552878-W23-5092-BM-lib1.report.json
+[2023-07-19 12:15:27,369] INFO Accessing file for TIER1-3: TWAO-102552878-W23-5092-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:27,945] ERROR NOTDETECTED columns do not exist: TWAO-102552878-W23-5092-BM-lib1.report.json
+[2023-07-19 12:15:27,945] INFO Accessing file for LOWLEVEL: TWAO-102552878-W23-5092-BM-lib1.report.json
+[2023-07-19 12:15:27,945] INFO Accessing file for LOWLEVEL: TWAO-102552878-W23-5092-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:28,568] INFO Accessing file for FILTERED: TWAO-102552878-W23-5092-BM-lib1.report.json
+[2023-07-19 12:15:28,568] INFO Accessing file for FILTERED: TWAO-102552878-W23-5092-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:29,318] INFO Accessing file for SNPS: TWAO-102552878-W23-5092-BM-lib1.report.json
+[2023-07-19 12:15:29,318] INFO Accessing file for SNPS: TWAO-102552878-W23-5092-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:30,070] INFO Accessing file for GENOTYPES: TWAO-102552878-W23-5092-BM-lib1.report.json
+[2023-07-19 12:15:30,070] INFO Accessing file for GENOTYPES: TWAO-102552878-W23-5092-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:30,652] INFO Accessing file for TIER1-3: TWAO-201723434-W23-5114-BM-lib1.report.json
+[2023-07-19 12:15:30,652] INFO Accessing file for TIER1-3: TWAO-201723434-W23-5114-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:31,309] INFO Accessing file for NOTDETECTED: TWAO-201723434-W23-5114-BM-lib1.report.json
+[2023-07-19 12:15:31,309] INFO Accessing file for NOTDETECTED: TWAO-201723434-W23-5114-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:31,930] INFO Accessing file for LOWLEVEL: TWAO-201723434-W23-5114-BM-lib1.report.json
+[2023-07-19 12:15:31,930] INFO Accessing file for LOWLEVEL: TWAO-201723434-W23-5114-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:32,612] INFO Accessing file for FILTERED: TWAO-201723434-W23-5114-BM-lib1.report.json
+[2023-07-19 12:15:32,612] INFO Accessing file for FILTERED: TWAO-201723434-W23-5114-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:33,291] INFO Accessing file for SNPS: TWAO-201723434-W23-5114-BM-lib1.report.json
+[2023-07-19 12:15:33,291] INFO Accessing file for SNPS: TWAO-201723434-W23-5114-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:33,908] INFO Accessing file for GENOTYPES: TWAO-201723434-W23-5114-BM-lib1.report.json
+[2023-07-19 12:15:33,908] INFO Accessing file for GENOTYPES: TWAO-201723434-W23-5114-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:34,539] INFO Accessing file for TIER1-3: TWAO-200054718-W23-5200-BM-lib1.report.json
+[2023-07-19 12:15:34,539] INFO Accessing file for TIER1-3: TWAO-200054718-W23-5200-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:35,139] INFO Accessing file for NOTDETECTED: TWAO-200054718-W23-5200-BM-lib1.report.json
+[2023-07-19 12:15:35,139] INFO Accessing file for NOTDETECTED: TWAO-200054718-W23-5200-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:35,734] INFO Accessing file for LOWLEVEL: TWAO-200054718-W23-5200-BM-lib1.report.json
+[2023-07-19 12:15:35,735] INFO Accessing file for LOWLEVEL: TWAO-200054718-W23-5200-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:36,336] INFO Accessing file for FILTERED: TWAO-200054718-W23-5200-BM-lib1.report.json
+[2023-07-19 12:15:36,336] INFO Accessing file for FILTERED: TWAO-200054718-W23-5200-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:36,940] INFO Accessing file for SNPS: TWAO-200054718-W23-5200-BM-lib1.report.json
+[2023-07-19 12:15:36,940] INFO Accessing file for SNPS: TWAO-200054718-W23-5200-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:37,531] INFO Accessing file for GENOTYPES: TWAO-200054718-W23-5200-BM-lib1.report.json
+[2023-07-19 12:15:37,531] INFO Accessing file for GENOTYPES: TWAO-200054718-W23-5200-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:38,113] INFO Accessing file for TIER1-3: TWAO-MS-Positive-Control-W22-6944-BM-lib16.report.json
+[2023-07-19 12:15:38,113] INFO Accessing file for TIER1-3: TWAO-MS-Positive-Control-W22-6944-BM-lib16.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:38,733] ERROR NOTDETECTED columns do not exist: TWAO-MS-Positive-Control-W22-6944-BM-lib16.report.json
+[2023-07-19 12:15:38,733] INFO Accessing file for LOWLEVEL: TWAO-MS-Positive-Control-W22-6944-BM-lib16.report.json
+[2023-07-19 12:15:38,733] INFO Accessing file for LOWLEVEL: TWAO-MS-Positive-Control-W22-6944-BM-lib16.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:39,332] INFO Accessing file for FILTERED: TWAO-MS-Positive-Control-W22-6944-BM-lib16.report.json
+[2023-07-19 12:15:39,333] INFO Accessing file for FILTERED: TWAO-MS-Positive-Control-W22-6944-BM-lib16.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:39,938] INFO Accessing file for SNPS: TWAO-MS-Positive-Control-W22-6944-BM-lib16.report.json
+[2023-07-19 12:15:39,938] INFO Accessing file for SNPS: TWAO-MS-Positive-Control-W22-6944-BM-lib16.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:40,544] INFO Accessing file for GENOTYPES: TWAO-MS-Positive-Control-W22-6944-BM-lib16.report.json
+[2023-07-19 12:15:40,544] INFO Accessing file for GENOTYPES: TWAO-MS-Positive-Control-W22-6944-BM-lib16.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:41,148] INFO Accessing file for TIER1-3: TWAO-105163199-W23-5089-BM-lib1.report.json
+[2023-07-19 12:15:41,149] INFO Accessing file for TIER1-3: TWAO-105163199-W23-5089-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:41,759] ERROR NOTDETECTED columns do not exist: TWAO-105163199-W23-5089-BM-lib1.report.json
+[2023-07-19 12:15:41,759] INFO Accessing file for LOWLEVEL: TWAO-105163199-W23-5089-BM-lib1.report.json
+[2023-07-19 12:15:41,759] INFO Accessing file for LOWLEVEL: TWAO-105163199-W23-5089-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:42,393] INFO Accessing file for FILTERED: TWAO-105163199-W23-5089-BM-lib1.report.json
+[2023-07-19 12:15:42,393] INFO Accessing file for FILTERED: TWAO-105163199-W23-5089-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:43,002] INFO Accessing file for SNPS: TWAO-105163199-W23-5089-BM-lib1.report.json
+[2023-07-19 12:15:43,002] INFO Accessing file for SNPS: TWAO-105163199-W23-5089-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:43,610] INFO Accessing file for GENOTYPES: TWAO-105163199-W23-5089-BM-lib1.report.json
+[2023-07-19 12:15:43,610] INFO Accessing file for GENOTYPES: TWAO-105163199-W23-5089-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:44,233] ERROR TIER1-3 columns do not exist: TWAO-107016815-W23-5248-PB-lib1.report.json
+[2023-07-19 12:15:44,233] ERROR NOTDETECTED columns do not exist: TWAO-107016815-W23-5248-PB-lib1.report.json
+[2023-07-19 12:15:44,233] INFO Accessing file for LOWLEVEL: TWAO-107016815-W23-5248-PB-lib1.report.json
+[2023-07-19 12:15:44,233] INFO Accessing file for LOWLEVEL: TWAO-107016815-W23-5248-PB-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:44,846] INFO Accessing file for FILTERED: TWAO-107016815-W23-5248-PB-lib1.report.json
+[2023-07-19 12:15:44,846] INFO Accessing file for FILTERED: TWAO-107016815-W23-5248-PB-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:45,463] INFO Accessing file for SNPS: TWAO-107016815-W23-5248-PB-lib1.report.json
+[2023-07-19 12:15:45,463] INFO Accessing file for SNPS: TWAO-107016815-W23-5248-PB-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:46,083] INFO Accessing file for GENOTYPES: TWAO-107016815-W23-5248-PB-lib1.report.json
+[2023-07-19 12:15:46,083] INFO Accessing file for GENOTYPES: TWAO-107016815-W23-5248-PB-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:46,698] INFO Accessing file for TIER1-3: TWAO-104533120-W23-5281-BM-lib1.report.json
+[2023-07-19 12:15:46,698] INFO Accessing file for TIER1-3: TWAO-104533120-W23-5281-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:47,282] ERROR NOTDETECTED columns do not exist: TWAO-104533120-W23-5281-BM-lib1.report.json
+[2023-07-19 12:15:47,283] INFO Accessing file for LOWLEVEL: TWAO-104533120-W23-5281-BM-lib1.report.json
+[2023-07-19 12:15:47,283] INFO Accessing file for LOWLEVEL: TWAO-104533120-W23-5281-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:47,865] INFO Accessing file for FILTERED: TWAO-104533120-W23-5281-BM-lib1.report.json
+[2023-07-19 12:15:47,865] INFO Accessing file for FILTERED: TWAO-104533120-W23-5281-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:48,446] INFO Accessing file for SNPS: TWAO-104533120-W23-5281-BM-lib1.report.json
+[2023-07-19 12:15:48,446] INFO Accessing file for SNPS: TWAO-104533120-W23-5281-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:49,023] INFO Accessing file for GENOTYPES: TWAO-104533120-W23-5281-BM-lib1.report.json
+[2023-07-19 12:15:49,023] INFO Accessing file for GENOTYPES: TWAO-104533120-W23-5281-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:49,608] INFO Accessing file for TIER1-3: TWAO-108032713-W23-5115-BM2-lib1.report.json
+[2023-07-19 12:15:49,608] INFO Accessing file for TIER1-3: TWAO-108032713-W23-5115-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:50,210] INFO Accessing file for NOTDETECTED: TWAO-108032713-W23-5115-BM2-lib1.report.json
+[2023-07-19 12:15:50,210] INFO Accessing file for NOTDETECTED: TWAO-108032713-W23-5115-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:50,811] INFO Accessing file for LOWLEVEL: TWAO-108032713-W23-5115-BM2-lib1.report.json
+[2023-07-19 12:15:50,811] INFO Accessing file for LOWLEVEL: TWAO-108032713-W23-5115-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:51,414] INFO Accessing file for FILTERED: TWAO-108032713-W23-5115-BM2-lib1.report.json
+[2023-07-19 12:15:51,414] INFO Accessing file for FILTERED: TWAO-108032713-W23-5115-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:52,017] INFO Accessing file for SNPS: TWAO-108032713-W23-5115-BM2-lib1.report.json
+[2023-07-19 12:15:52,017] INFO Accessing file for SNPS: TWAO-108032713-W23-5115-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:52,630] INFO Accessing file for GENOTYPES: TWAO-108032713-W23-5115-BM2-lib1.report.json
+[2023-07-19 12:15:52,630] INFO Accessing file for GENOTYPES: TWAO-108032713-W23-5115-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:53,228] ERROR TIER1-3 columns do not exist: TWAO-202154026-W23-5242-BM-lib1.report.json
+[2023-07-19 12:15:53,228] ERROR NOTDETECTED columns do not exist: TWAO-202154026-W23-5242-BM-lib1.report.json
+[2023-07-19 12:15:53,228] INFO Accessing file for LOWLEVEL: TWAO-202154026-W23-5242-BM-lib1.report.json
+[2023-07-19 12:15:53,228] INFO Accessing file for LOWLEVEL: TWAO-202154026-W23-5242-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:53,790] INFO Accessing file for FILTERED: TWAO-202154026-W23-5242-BM-lib1.report.json
+[2023-07-19 12:15:53,790] INFO Accessing file for FILTERED: TWAO-202154026-W23-5242-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:54,338] INFO Accessing file for SNPS: TWAO-202154026-W23-5242-BM-lib1.report.json
+[2023-07-19 12:15:54,338] INFO Accessing file for SNPS: TWAO-202154026-W23-5242-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:54,906] INFO Accessing file for GENOTYPES: TWAO-202154026-W23-5242-BM-lib1.report.json
+[2023-07-19 12:15:54,906] INFO Accessing file for GENOTYPES: TWAO-202154026-W23-5242-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:55,457] INFO Accessing file for TIER1-3: TWAO-108783743-W23-5282-BM-lib1.report.json
+[2023-07-19 12:15:55,457] INFO Accessing file for TIER1-3: TWAO-108783743-W23-5282-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:56,064] ERROR NOTDETECTED columns do not exist: TWAO-108783743-W23-5282-BM-lib1.report.json
+[2023-07-19 12:15:56,064] INFO Accessing file for LOWLEVEL: TWAO-108783743-W23-5282-BM-lib1.report.json
+[2023-07-19 12:15:56,064] INFO Accessing file for LOWLEVEL: TWAO-108783743-W23-5282-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:56,675] INFO Accessing file for FILTERED: TWAO-108783743-W23-5282-BM-lib1.report.json
+[2023-07-19 12:15:56,675] INFO Accessing file for FILTERED: TWAO-108783743-W23-5282-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:57,276] INFO Accessing file for SNPS: TWAO-108783743-W23-5282-BM-lib1.report.json
+[2023-07-19 12:15:57,276] INFO Accessing file for SNPS: TWAO-108783743-W23-5282-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:57,866] INFO Accessing file for GENOTYPES: TWAO-108783743-W23-5282-BM-lib1.report.json
+[2023-07-19 12:15:57,867] INFO Accessing file for GENOTYPES: TWAO-108783743-W23-5282-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:58,478] INFO Accessing file for TIER1-3: TWAO-106444776-W23-5197-PB-lib1.report.json
+[2023-07-19 12:15:58,478] INFO Accessing file for TIER1-3: TWAO-106444776-W23-5197-PB-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:59,016] INFO Accessing file for NOTDETECTED: TWAO-106444776-W23-5197-PB-lib1.report.json
+[2023-07-19 12:15:59,016] INFO Accessing file for NOTDETECTED: TWAO-106444776-W23-5197-PB-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:15:59,549] INFO Accessing file for LOWLEVEL: TWAO-106444776-W23-5197-PB-lib1.report.json
+[2023-07-19 12:15:59,550] INFO Accessing file for LOWLEVEL: TWAO-106444776-W23-5197-PB-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:00,100] INFO Accessing file for FILTERED: TWAO-106444776-W23-5197-PB-lib1.report.json
+[2023-07-19 12:16:00,100] INFO Accessing file for FILTERED: TWAO-106444776-W23-5197-PB-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:00,637] INFO Accessing file for SNPS: TWAO-106444776-W23-5197-PB-lib1.report.json
+[2023-07-19 12:16:00,637] INFO Accessing file for SNPS: TWAO-106444776-W23-5197-PB-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:01,167] INFO Accessing file for GENOTYPES: TWAO-106444776-W23-5197-PB-lib1.report.json
+[2023-07-19 12:16:01,167] INFO Accessing file for GENOTYPES: TWAO-106444776-W23-5197-PB-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:01,717] INFO Accessing file for TIER1-3: TWAO-202153377-W23-5261-BM-lib1.report.json
+[2023-07-19 12:16:01,717] INFO Accessing file for TIER1-3: TWAO-202153377-W23-5261-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:02,264] INFO Accessing file for NOTDETECTED: TWAO-202153377-W23-5261-BM-lib1.report.json
+[2023-07-19 12:16:02,264] INFO Accessing file for NOTDETECTED: TWAO-202153377-W23-5261-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:02,831] INFO Accessing file for LOWLEVEL: TWAO-202153377-W23-5261-BM-lib1.report.json
+[2023-07-19 12:16:02,831] INFO Accessing file for LOWLEVEL: TWAO-202153377-W23-5261-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:03,399] INFO Accessing file for FILTERED: TWAO-202153377-W23-5261-BM-lib1.report.json
+[2023-07-19 12:16:03,399] INFO Accessing file for FILTERED: TWAO-202153377-W23-5261-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:03,954] INFO Accessing file for SNPS: TWAO-202153377-W23-5261-BM-lib1.report.json
+[2023-07-19 12:16:03,955] INFO Accessing file for SNPS: TWAO-202153377-W23-5261-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:04,503] INFO Accessing file for GENOTYPES: TWAO-202153377-W23-5261-BM-lib1.report.json
+[2023-07-19 12:16:04,504] INFO Accessing file for GENOTYPES: TWAO-202153377-W23-5261-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:05,075] INFO Accessing file for TIER1-3: TWAO-201682401-W23-5060-BM-lib1.report.json
+[2023-07-19 12:16:05,075] INFO Accessing file for TIER1-3: TWAO-201682401-W23-5060-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:05,695] ERROR NOTDETECTED columns do not exist: TWAO-201682401-W23-5060-BM-lib1.report.json
+[2023-07-19 12:16:05,695] INFO Accessing file for LOWLEVEL: TWAO-201682401-W23-5060-BM-lib1.report.json
+[2023-07-19 12:16:05,695] INFO Accessing file for LOWLEVEL: TWAO-201682401-W23-5060-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:06,297] INFO Accessing file for FILTERED: TWAO-201682401-W23-5060-BM-lib1.report.json
+[2023-07-19 12:16:06,298] INFO Accessing file for FILTERED: TWAO-201682401-W23-5060-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:06,939] INFO Accessing file for SNPS: TWAO-201682401-W23-5060-BM-lib1.report.json
+[2023-07-19 12:16:06,939] INFO Accessing file for SNPS: TWAO-201682401-W23-5060-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:07,545] INFO Accessing file for GENOTYPES: TWAO-201682401-W23-5060-BM-lib1.report.json
+[2023-07-19 12:16:07,546] INFO Accessing file for GENOTYPES: TWAO-201682401-W23-5060-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:08,157] INFO Accessing file for TIER1-3: TWAO-202143635-W23-5271-BM-lib1.report.json
+[2023-07-19 12:16:08,157] INFO Accessing file for TIER1-3: TWAO-202143635-W23-5271-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:08,842] ERROR NOTDETECTED columns do not exist: TWAO-202143635-W23-5271-BM-lib1.report.json
+[2023-07-19 12:16:08,842] INFO Accessing file for LOWLEVEL: TWAO-202143635-W23-5271-BM-lib1.report.json
+[2023-07-19 12:16:08,842] INFO Accessing file for LOWLEVEL: TWAO-202143635-W23-5271-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:09,508] INFO Accessing file for FILTERED: TWAO-202143635-W23-5271-BM-lib1.report.json
+[2023-07-19 12:16:09,508] INFO Accessing file for FILTERED: TWAO-202143635-W23-5271-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:10,193] INFO Accessing file for SNPS: TWAO-202143635-W23-5271-BM-lib1.report.json
+[2023-07-19 12:16:10,193] INFO Accessing file for SNPS: TWAO-202143635-W23-5271-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:10,877] INFO Accessing file for GENOTYPES: TWAO-202143635-W23-5271-BM-lib1.report.json
+[2023-07-19 12:16:10,877] INFO Accessing file for GENOTYPES: TWAO-202143635-W23-5271-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:11,551] INFO Accessing file for TIER1-3: TWAO-103144074-W23-5051-BM-lib1.report.json
+[2023-07-19 12:16:11,551] INFO Accessing file for TIER1-3: TWAO-103144074-W23-5051-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:12,177] ERROR NOTDETECTED columns do not exist: TWAO-103144074-W23-5051-BM-lib1.report.json
+[2023-07-19 12:16:12,177] INFO Accessing file for LOWLEVEL: TWAO-103144074-W23-5051-BM-lib1.report.json
+[2023-07-19 12:16:12,177] INFO Accessing file for LOWLEVEL: TWAO-103144074-W23-5051-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:12,784] INFO Accessing file for FILTERED: TWAO-103144074-W23-5051-BM-lib1.report.json
+[2023-07-19 12:16:12,784] INFO Accessing file for FILTERED: TWAO-103144074-W23-5051-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:13,394] INFO Accessing file for SNPS: TWAO-103144074-W23-5051-BM-lib1.report.json
+[2023-07-19 12:16:13,394] INFO Accessing file for SNPS: TWAO-103144074-W23-5051-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:14,012] INFO Accessing file for GENOTYPES: TWAO-103144074-W23-5051-BM-lib1.report.json
+[2023-07-19 12:16:14,012] INFO Accessing file for GENOTYPES: TWAO-103144074-W23-5051-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:14,621] INFO Accessing file for TIER1-3: TWAO-103636692-W23-5198-BM-lib1.report.json
+[2023-07-19 12:16:14,621] INFO Accessing file for TIER1-3: TWAO-103636692-W23-5198-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:15,230] ERROR NOTDETECTED columns do not exist: TWAO-103636692-W23-5198-BM-lib1.report.json
+[2023-07-19 12:16:15,230] INFO Accessing file for LOWLEVEL: TWAO-103636692-W23-5198-BM-lib1.report.json
+[2023-07-19 12:16:15,230] INFO Accessing file for LOWLEVEL: TWAO-103636692-W23-5198-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:15,854] INFO Accessing file for FILTERED: TWAO-103636692-W23-5198-BM-lib1.report.json
+[2023-07-19 12:16:15,854] INFO Accessing file for FILTERED: TWAO-103636692-W23-5198-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:16,471] INFO Accessing file for SNPS: TWAO-103636692-W23-5198-BM-lib1.report.json
+[2023-07-19 12:16:16,471] INFO Accessing file for SNPS: TWAO-103636692-W23-5198-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:17,072] INFO Accessing file for GENOTYPES: TWAO-103636692-W23-5198-BM-lib1.report.json
+[2023-07-19 12:16:17,072] INFO Accessing file for GENOTYPES: TWAO-103636692-W23-5198-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:17,699] INFO Accessing file for TIER1-3: TWAO-201791635-W23-5078-BM-lib1.report.json
+[2023-07-19 12:16:17,699] INFO Accessing file for TIER1-3: TWAO-201791635-W23-5078-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:18,286] ERROR NOTDETECTED columns do not exist: TWAO-201791635-W23-5078-BM-lib1.report.json
+[2023-07-19 12:16:18,286] INFO Accessing file for LOWLEVEL: TWAO-201791635-W23-5078-BM-lib1.report.json
+[2023-07-19 12:16:18,286] INFO Accessing file for LOWLEVEL: TWAO-201791635-W23-5078-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:18,875] INFO Accessing file for FILTERED: TWAO-201791635-W23-5078-BM-lib1.report.json
+[2023-07-19 12:16:18,875] INFO Accessing file for FILTERED: TWAO-201791635-W23-5078-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:19,473] INFO Accessing file for SNPS: TWAO-201791635-W23-5078-BM-lib1.report.json
+[2023-07-19 12:16:19,473] INFO Accessing file for SNPS: TWAO-201791635-W23-5078-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:20,063] INFO Accessing file for GENOTYPES: TWAO-201791635-W23-5078-BM-lib1.report.json
+[2023-07-19 12:16:20,063] INFO Accessing file for GENOTYPES: TWAO-201791635-W23-5078-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:20,644] INFO Accessing file for TIER1-3: TWAO-105982473-W23-5162-BM-lib1.report.json
+[2023-07-19 12:16:20,644] INFO Accessing file for TIER1-3: TWAO-105982473-W23-5162-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:21,332] ERROR NOTDETECTED columns do not exist: TWAO-105982473-W23-5162-BM-lib1.report.json
+[2023-07-19 12:16:21,332] INFO Accessing file for LOWLEVEL: TWAO-105982473-W23-5162-BM-lib1.report.json
+[2023-07-19 12:16:21,332] INFO Accessing file for LOWLEVEL: TWAO-105982473-W23-5162-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:22,020] INFO Accessing file for FILTERED: TWAO-105982473-W23-5162-BM-lib1.report.json
+[2023-07-19 12:16:22,020] INFO Accessing file for FILTERED: TWAO-105982473-W23-5162-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:22,812] INFO Accessing file for SNPS: TWAO-105982473-W23-5162-BM-lib1.report.json
+[2023-07-19 12:16:22,812] INFO Accessing file for SNPS: TWAO-105982473-W23-5162-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:23,557] INFO Accessing file for GENOTYPES: TWAO-105982473-W23-5162-BM-lib1.report.json
+[2023-07-19 12:16:23,557] INFO Accessing file for GENOTYPES: TWAO-105982473-W23-5162-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:24,255] INFO Accessing file for TIER1-3: TWAO-201796057-W23-5143-BM2-lib1.report.json
+[2023-07-19 12:16:24,255] INFO Accessing file for TIER1-3: TWAO-201796057-W23-5143-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:24,872] ERROR NOTDETECTED columns do not exist: TWAO-201796057-W23-5143-BM2-lib1.report.json
+[2023-07-19 12:16:24,872] INFO Accessing file for LOWLEVEL: TWAO-201796057-W23-5143-BM2-lib1.report.json
+[2023-07-19 12:16:24,872] INFO Accessing file for LOWLEVEL: TWAO-201796057-W23-5143-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:25,481] INFO Accessing file for FILTERED: TWAO-201796057-W23-5143-BM2-lib1.report.json
+[2023-07-19 12:16:25,482] INFO Accessing file for FILTERED: TWAO-201796057-W23-5143-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:26,117] INFO Accessing file for SNPS: TWAO-201796057-W23-5143-BM2-lib1.report.json
+[2023-07-19 12:16:26,117] INFO Accessing file for SNPS: TWAO-201796057-W23-5143-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:26,728] INFO Accessing file for GENOTYPES: TWAO-201796057-W23-5143-BM2-lib1.report.json
+[2023-07-19 12:16:26,728] INFO Accessing file for GENOTYPES: TWAO-201796057-W23-5143-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:27,338] INFO Accessing file for TIER1-3: TWAO-103212136-W23-5185-BM-lib1.report.json
+[2023-07-19 12:16:27,338] INFO Accessing file for TIER1-3: TWAO-103212136-W23-5185-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:27,954] ERROR NOTDETECTED columns do not exist: TWAO-103212136-W23-5185-BM-lib1.report.json
+[2023-07-19 12:16:27,954] INFO Accessing file for LOWLEVEL: TWAO-103212136-W23-5185-BM-lib1.report.json
+[2023-07-19 12:16:27,954] INFO Accessing file for LOWLEVEL: TWAO-103212136-W23-5185-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:28,587] INFO Accessing file for FILTERED: TWAO-103212136-W23-5185-BM-lib1.report.json
+[2023-07-19 12:16:28,587] INFO Accessing file for FILTERED: TWAO-103212136-W23-5185-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:29,231] INFO Accessing file for SNPS: TWAO-103212136-W23-5185-BM-lib1.report.json
+[2023-07-19 12:16:29,231] INFO Accessing file for SNPS: TWAO-103212136-W23-5185-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:29,848] INFO Accessing file for GENOTYPES: TWAO-103212136-W23-5185-BM-lib1.report.json
+[2023-07-19 12:16:29,848] INFO Accessing file for GENOTYPES: TWAO-103212136-W23-5185-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:30,486] ERROR TIER1-3 columns do not exist: TWAO-201878424-W23-5285-BM-lib1.report.json
+[2023-07-19 12:16:30,486] INFO Accessing file for NOTDETECTED: TWAO-201878424-W23-5285-BM-lib1.report.json
+[2023-07-19 12:16:30,486] INFO Accessing file for NOTDETECTED: TWAO-201878424-W23-5285-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:31,169] INFO Accessing file for LOWLEVEL: TWAO-201878424-W23-5285-BM-lib1.report.json
+[2023-07-19 12:16:31,169] INFO Accessing file for LOWLEVEL: TWAO-201878424-W23-5285-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:31,775] INFO Accessing file for FILTERED: TWAO-201878424-W23-5285-BM-lib1.report.json
+[2023-07-19 12:16:31,775] INFO Accessing file for FILTERED: TWAO-201878424-W23-5285-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:32,379] INFO Accessing file for SNPS: TWAO-201878424-W23-5285-BM-lib1.report.json
+[2023-07-19 12:16:32,379] INFO Accessing file for SNPS: TWAO-201878424-W23-5285-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:32,979] INFO Accessing file for GENOTYPES: TWAO-201878424-W23-5285-BM-lib1.report.json
+[2023-07-19 12:16:32,979] INFO Accessing file for GENOTYPES: TWAO-201878424-W23-5285-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:33,574] INFO Accessing file for TIER1-3: TWAO-202138202-W23-5245-BM-lib1.report.json
+[2023-07-19 12:16:33,575] INFO Accessing file for TIER1-3: TWAO-202138202-W23-5245-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:34,208] ERROR NOTDETECTED columns do not exist: TWAO-202138202-W23-5245-BM-lib1.report.json
+[2023-07-19 12:16:34,208] INFO Accessing file for LOWLEVEL: TWAO-202138202-W23-5245-BM-lib1.report.json
+[2023-07-19 12:16:34,208] INFO Accessing file for LOWLEVEL: TWAO-202138202-W23-5245-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:34,832] INFO Accessing file for FILTERED: TWAO-202138202-W23-5245-BM-lib1.report.json
+[2023-07-19 12:16:34,832] INFO Accessing file for FILTERED: TWAO-202138202-W23-5245-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:35,477] INFO Accessing file for SNPS: TWAO-202138202-W23-5245-BM-lib1.report.json
+[2023-07-19 12:16:35,477] INFO Accessing file for SNPS: TWAO-202138202-W23-5245-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:36,091] INFO Accessing file for GENOTYPES: TWAO-202138202-W23-5245-BM-lib1.report.json
+[2023-07-19 12:16:36,091] INFO Accessing file for GENOTYPES: TWAO-202138202-W23-5245-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:36,703] INFO Accessing file for TIER1-3: TWAO-201516155-W23-5090-BM-lib1.report.json
+[2023-07-19 12:16:36,703] INFO Accessing file for TIER1-3: TWAO-201516155-W23-5090-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:37,386] ERROR NOTDETECTED columns do not exist: TWAO-201516155-W23-5090-BM-lib1.report.json
+[2023-07-19 12:16:37,386] INFO Accessing file for LOWLEVEL: TWAO-201516155-W23-5090-BM-lib1.report.json
+[2023-07-19 12:16:37,387] INFO Accessing file for LOWLEVEL: TWAO-201516155-W23-5090-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:38,053] INFO Accessing file for FILTERED: TWAO-201516155-W23-5090-BM-lib1.report.json
+[2023-07-19 12:16:38,054] INFO Accessing file for FILTERED: TWAO-201516155-W23-5090-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:38,713] INFO Accessing file for SNPS: TWAO-201516155-W23-5090-BM-lib1.report.json
+[2023-07-19 12:16:38,714] INFO Accessing file for SNPS: TWAO-201516155-W23-5090-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:39,387] INFO Accessing file for GENOTYPES: TWAO-201516155-W23-5090-BM-lib1.report.json
+[2023-07-19 12:16:39,387] INFO Accessing file for GENOTYPES: TWAO-201516155-W23-5090-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:40,048] INFO Accessing file for TIER1-3: TWAO-103562837-W23-5141-BM2-lib1.report.json
+[2023-07-19 12:16:40,048] INFO Accessing file for TIER1-3: TWAO-103562837-W23-5141-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:40,648] ERROR NOTDETECTED columns do not exist: TWAO-103562837-W23-5141-BM2-lib1.report.json
+[2023-07-19 12:16:40,648] INFO Accessing file for LOWLEVEL: TWAO-103562837-W23-5141-BM2-lib1.report.json
+[2023-07-19 12:16:40,648] INFO Accessing file for LOWLEVEL: TWAO-103562837-W23-5141-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:41,257] INFO Accessing file for FILTERED: TWAO-103562837-W23-5141-BM2-lib1.report.json
+[2023-07-19 12:16:41,257] INFO Accessing file for FILTERED: TWAO-103562837-W23-5141-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:41,851] INFO Accessing file for SNPS: TWAO-103562837-W23-5141-BM2-lib1.report.json
+[2023-07-19 12:16:41,851] INFO Accessing file for SNPS: TWAO-103562837-W23-5141-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:42,442] INFO Accessing file for GENOTYPES: TWAO-103562837-W23-5141-BM2-lib1.report.json
+[2023-07-19 12:16:42,442] INFO Accessing file for GENOTYPES: TWAO-103562837-W23-5141-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:43,034] ERROR TIER1-3 columns do not exist: TWAO-108152658-W23-5283-BM-lib1.report.json
+[2023-07-19 12:16:43,034] INFO Accessing file for NOTDETECTED: TWAO-108152658-W23-5283-BM-lib1.report.json
+[2023-07-19 12:16:43,034] INFO Accessing file for NOTDETECTED: TWAO-108152658-W23-5283-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:43,694] INFO Accessing file for LOWLEVEL: TWAO-108152658-W23-5283-BM-lib1.report.json
+[2023-07-19 12:16:43,694] INFO Accessing file for LOWLEVEL: TWAO-108152658-W23-5283-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:44,346] INFO Accessing file for FILTERED: TWAO-108152658-W23-5283-BM-lib1.report.json
+[2023-07-19 12:16:44,346] INFO Accessing file for FILTERED: TWAO-108152658-W23-5283-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:44,996] INFO Accessing file for SNPS: TWAO-108152658-W23-5283-BM-lib1.report.json
+[2023-07-19 12:16:44,996] INFO Accessing file for SNPS: TWAO-108152658-W23-5283-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:45,642] INFO Accessing file for GENOTYPES: TWAO-108152658-W23-5283-BM-lib1.report.json
+[2023-07-19 12:16:45,642] INFO Accessing file for GENOTYPES: TWAO-108152658-W23-5283-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:46,288] INFO Accessing file for TIER1-3: TWAO-105188778-W23-5079-BM-lib1.report.json
+[2023-07-19 12:16:46,288] INFO Accessing file for TIER1-3: TWAO-105188778-W23-5079-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:46,841] INFO Accessing file for NOTDETECTED: TWAO-105188778-W23-5079-BM-lib1.report.json
+[2023-07-19 12:16:46,841] INFO Accessing file for NOTDETECTED: TWAO-105188778-W23-5079-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:47,386] INFO Accessing file for LOWLEVEL: TWAO-105188778-W23-5079-BM-lib1.report.json
+[2023-07-19 12:16:47,386] INFO Accessing file for LOWLEVEL: TWAO-105188778-W23-5079-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:47,963] INFO Accessing file for FILTERED: TWAO-105188778-W23-5079-BM-lib1.report.json
+[2023-07-19 12:16:47,963] INFO Accessing file for FILTERED: TWAO-105188778-W23-5079-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:48,516] INFO Accessing file for SNPS: TWAO-105188778-W23-5079-BM-lib1.report.json
+[2023-07-19 12:16:48,516] INFO Accessing file for SNPS: TWAO-105188778-W23-5079-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:49,080] INFO Accessing file for GENOTYPES: TWAO-105188778-W23-5079-BM-lib1.report.json
+[2023-07-19 12:16:49,080] INFO Accessing file for GENOTYPES: TWAO-105188778-W23-5079-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:49,651] INFO Accessing file for TIER1-3: TWAO-200249928-W23-5250-BM-lib1.report.json
+[2023-07-19 12:16:49,651] INFO Accessing file for TIER1-3: TWAO-200249928-W23-5250-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:50,257] INFO Accessing file for NOTDETECTED: TWAO-200249928-W23-5250-BM-lib1.report.json
+[2023-07-19 12:16:50,257] INFO Accessing file for NOTDETECTED: TWAO-200249928-W23-5250-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:50,865] INFO Accessing file for LOWLEVEL: TWAO-200249928-W23-5250-BM-lib1.report.json
+[2023-07-19 12:16:50,866] INFO Accessing file for LOWLEVEL: TWAO-200249928-W23-5250-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:51,485] INFO Accessing file for FILTERED: TWAO-200249928-W23-5250-BM-lib1.report.json
+[2023-07-19 12:16:51,485] INFO Accessing file for FILTERED: TWAO-200249928-W23-5250-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:52,090] INFO Accessing file for SNPS: TWAO-200249928-W23-5250-BM-lib1.report.json
+[2023-07-19 12:16:52,090] INFO Accessing file for SNPS: TWAO-200249928-W23-5250-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:52,692] INFO Accessing file for GENOTYPES: TWAO-200249928-W23-5250-BM-lib1.report.json
+[2023-07-19 12:16:52,692] INFO Accessing file for GENOTYPES: TWAO-200249928-W23-5250-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:53,322] INFO Accessing file for TIER1-3: TWAO-107196322-W23-5284-BM-lib1.report.json
+[2023-07-19 12:16:53,322] INFO Accessing file for TIER1-3: TWAO-107196322-W23-5284-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:53,971] ERROR NOTDETECTED columns do not exist: TWAO-107196322-W23-5284-BM-lib1.report.json
+[2023-07-19 12:16:53,971] INFO Accessing file for LOWLEVEL: TWAO-107196322-W23-5284-BM-lib1.report.json
+[2023-07-19 12:16:53,971] INFO Accessing file for LOWLEVEL: TWAO-107196322-W23-5284-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:54,593] INFO Accessing file for FILTERED: TWAO-107196322-W23-5284-BM-lib1.report.json
+[2023-07-19 12:16:54,594] INFO Accessing file for FILTERED: TWAO-107196322-W23-5284-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:55,221] INFO Accessing file for SNPS: TWAO-107196322-W23-5284-BM-lib1.report.json
+[2023-07-19 12:16:55,221] INFO Accessing file for SNPS: TWAO-107196322-W23-5284-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:55,833] INFO Accessing file for GENOTYPES: TWAO-107196322-W23-5284-BM-lib1.report.json
+[2023-07-19 12:16:55,833] INFO Accessing file for GENOTYPES: TWAO-107196322-W23-5284-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:56,450] INFO Accessing file for TIER1-3: TWAO-201938262-W23-5253-BM-lib1.report.json
+[2023-07-19 12:16:56,450] INFO Accessing file for TIER1-3: TWAO-201938262-W23-5253-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:57,064] INFO Accessing file for NOTDETECTED: TWAO-201938262-W23-5253-BM-lib1.report.json
+[2023-07-19 12:16:57,064] INFO Accessing file for NOTDETECTED: TWAO-201938262-W23-5253-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:57,654] INFO Accessing file for LOWLEVEL: TWAO-201938262-W23-5253-BM-lib1.report.json
+[2023-07-19 12:16:57,654] INFO Accessing file for LOWLEVEL: TWAO-201938262-W23-5253-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:58,249] INFO Accessing file for FILTERED: TWAO-201938262-W23-5253-BM-lib1.report.json
+[2023-07-19 12:16:58,249] INFO Accessing file for FILTERED: TWAO-201938262-W23-5253-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:58,856] INFO Accessing file for SNPS: TWAO-201938262-W23-5253-BM-lib1.report.json
+[2023-07-19 12:16:58,856] INFO Accessing file for SNPS: TWAO-201938262-W23-5253-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:16:59,447] INFO Accessing file for GENOTYPES: TWAO-201938262-W23-5253-BM-lib1.report.json
+[2023-07-19 12:16:59,447] INFO Accessing file for GENOTYPES: TWAO-201938262-W23-5253-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:00,045] INFO Accessing file for TIER1-3: TWAO-106444776-W23-5056-BM-lib1.report.json
+[2023-07-19 12:17:00,045] INFO Accessing file for TIER1-3: TWAO-106444776-W23-5056-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:00,403] ERROR NOTDETECTED columns do not exist: TWAO-106444776-W23-5056-BM-lib1.report.json
+[2023-07-19 12:17:00,403] INFO Accessing file for LOWLEVEL: TWAO-106444776-W23-5056-BM-lib1.report.json
+[2023-07-19 12:17:00,403] INFO Accessing file for LOWLEVEL: TWAO-106444776-W23-5056-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:00,751] INFO Accessing file for FILTERED: TWAO-106444776-W23-5056-BM-lib1.report.json
+[2023-07-19 12:17:00,751] INFO Accessing file for FILTERED: TWAO-106444776-W23-5056-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:01,093] INFO Accessing file for SNPS: TWAO-106444776-W23-5056-BM-lib1.report.json
+[2023-07-19 12:17:01,093] INFO Accessing file for SNPS: TWAO-106444776-W23-5056-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:01,435] INFO Accessing file for GENOTYPES: TWAO-106444776-W23-5056-BM-lib1.report.json
+[2023-07-19 12:17:01,435] INFO Accessing file for GENOTYPES: TWAO-106444776-W23-5056-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:01,799] INFO Accessing file for TIER1-3: TWAO-201280541-W23-5184-BM-lib1.report.json
+[2023-07-19 12:17:01,799] INFO Accessing file for TIER1-3: TWAO-201280541-W23-5184-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:02,436] ERROR NOTDETECTED columns do not exist: TWAO-201280541-W23-5184-BM-lib1.report.json
+[2023-07-19 12:17:02,436] INFO Accessing file for LOWLEVEL: TWAO-201280541-W23-5184-BM-lib1.report.json
+[2023-07-19 12:17:02,436] INFO Accessing file for LOWLEVEL: TWAO-201280541-W23-5184-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:03,069] INFO Accessing file for FILTERED: TWAO-201280541-W23-5184-BM-lib1.report.json
+[2023-07-19 12:17:03,069] INFO Accessing file for FILTERED: TWAO-201280541-W23-5184-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:03,707] INFO Accessing file for SNPS: TWAO-201280541-W23-5184-BM-lib1.report.json
+[2023-07-19 12:17:03,707] INFO Accessing file for SNPS: TWAO-201280541-W23-5184-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:04,328] INFO Accessing file for GENOTYPES: TWAO-201280541-W23-5184-BM-lib1.report.json
+[2023-07-19 12:17:04,328] INFO Accessing file for GENOTYPES: TWAO-201280541-W23-5184-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:04,942] INFO Accessing file for TIER1-3: TWAO-101484893-W23-5251-BM-lib1.report.json
+[2023-07-19 12:17:04,942] INFO Accessing file for TIER1-3: TWAO-101484893-W23-5251-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:05,561] ERROR NOTDETECTED columns do not exist: TWAO-101484893-W23-5251-BM-lib1.report.json
+[2023-07-19 12:17:05,561] INFO Accessing file for LOWLEVEL: TWAO-101484893-W23-5251-BM-lib1.report.json
+[2023-07-19 12:17:05,561] INFO Accessing file for LOWLEVEL: TWAO-101484893-W23-5251-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:06,199] INFO Accessing file for FILTERED: TWAO-101484893-W23-5251-BM-lib1.report.json
+[2023-07-19 12:17:06,199] INFO Accessing file for FILTERED: TWAO-101484893-W23-5251-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:06,826] INFO Accessing file for SNPS: TWAO-101484893-W23-5251-BM-lib1.report.json
+[2023-07-19 12:17:06,826] INFO Accessing file for SNPS: TWAO-101484893-W23-5251-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:07,462] INFO Accessing file for GENOTYPES: TWAO-101484893-W23-5251-BM-lib1.report.json
+[2023-07-19 12:17:07,462] INFO Accessing file for GENOTYPES: TWAO-101484893-W23-5251-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:08,080] INFO Accessing file for TIER1-3: TWAO-202035007-W23-5244-BM-lib1.report.json
+[2023-07-19 12:17:08,080] INFO Accessing file for TIER1-3: TWAO-202035007-W23-5244-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:08,688] ERROR NOTDETECTED columns do not exist: TWAO-202035007-W23-5244-BM-lib1.report.json
+[2023-07-19 12:17:08,688] INFO Accessing file for LOWLEVEL: TWAO-202035007-W23-5244-BM-lib1.report.json
+[2023-07-19 12:17:08,688] INFO Accessing file for LOWLEVEL: TWAO-202035007-W23-5244-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:09,314] INFO Accessing file for FILTERED: TWAO-202035007-W23-5244-BM-lib1.report.json
+[2023-07-19 12:17:09,315] INFO Accessing file for FILTERED: TWAO-202035007-W23-5244-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:09,926] INFO Accessing file for SNPS: TWAO-202035007-W23-5244-BM-lib1.report.json
+[2023-07-19 12:17:09,926] INFO Accessing file for SNPS: TWAO-202035007-W23-5244-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:10,552] INFO Accessing file for GENOTYPES: TWAO-202035007-W23-5244-BM-lib1.report.json
+[2023-07-19 12:17:10,552] INFO Accessing file for GENOTYPES: TWAO-202035007-W23-5244-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:11,180] ERROR TIER1-3 columns do not exist: TWAO-100406124-W23-5088-BM-lib1.report.json
+[2023-07-19 12:17:11,180] INFO Accessing file for NOTDETECTED: TWAO-100406124-W23-5088-BM-lib1.report.json
+[2023-07-19 12:17:11,180] INFO Accessing file for NOTDETECTED: TWAO-100406124-W23-5088-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:11,838] INFO Accessing file for LOWLEVEL: TWAO-100406124-W23-5088-BM-lib1.report.json
+[2023-07-19 12:17:11,838] INFO Accessing file for LOWLEVEL: TWAO-100406124-W23-5088-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:12,442] INFO Accessing file for FILTERED: TWAO-100406124-W23-5088-BM-lib1.report.json
+[2023-07-19 12:17:12,443] INFO Accessing file for FILTERED: TWAO-100406124-W23-5088-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:13,063] INFO Accessing file for SNPS: TWAO-100406124-W23-5088-BM-lib1.report.json
+[2023-07-19 12:17:13,064] INFO Accessing file for SNPS: TWAO-100406124-W23-5088-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:13,651] INFO Accessing file for GENOTYPES: TWAO-100406124-W23-5088-BM-lib1.report.json
+[2023-07-19 12:17:13,651] INFO Accessing file for GENOTYPES: TWAO-100406124-W23-5088-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:14,332] ERROR TIER1-3 columns do not exist: TWAO-108007890-W23-5011-BM3-lib1.report.json
+[2023-07-19 12:17:14,332] ERROR NOTDETECTED columns do not exist: TWAO-108007890-W23-5011-BM3-lib1.report.json
+[2023-07-19 12:17:14,332] INFO Accessing file for LOWLEVEL: TWAO-108007890-W23-5011-BM3-lib1.report.json
+[2023-07-19 12:17:14,332] INFO Accessing file for LOWLEVEL: TWAO-108007890-W23-5011-BM3-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:15,084] INFO Accessing file for FILTERED: TWAO-108007890-W23-5011-BM3-lib1.report.json
+[2023-07-19 12:17:15,084] INFO Accessing file for FILTERED: TWAO-108007890-W23-5011-BM3-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:15,818] INFO Accessing file for SNPS: TWAO-108007890-W23-5011-BM3-lib1.report.json
+[2023-07-19 12:17:15,818] INFO Accessing file for SNPS: TWAO-108007890-W23-5011-BM3-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:16,549] INFO Accessing file for GENOTYPES: TWAO-108007890-W23-5011-BM3-lib1.report.json
+[2023-07-19 12:17:16,549] INFO Accessing file for GENOTYPES: TWAO-108007890-W23-5011-BM3-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:17,224] ERROR TIER1-3 columns do not exist: TWAO-106352110-W23-5075-BM-lib1.report.json
+[2023-07-19 12:17:17,224] ERROR NOTDETECTED columns do not exist: TWAO-106352110-W23-5075-BM-lib1.report.json
+[2023-07-19 12:17:17,224] INFO Accessing file for LOWLEVEL: TWAO-106352110-W23-5075-BM-lib1.report.json
+[2023-07-19 12:17:17,224] INFO Accessing file for LOWLEVEL: TWAO-106352110-W23-5075-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:17,788] INFO Accessing file for FILTERED: TWAO-106352110-W23-5075-BM-lib1.report.json
+[2023-07-19 12:17:17,789] INFO Accessing file for FILTERED: TWAO-106352110-W23-5075-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:18,338] INFO Accessing file for SNPS: TWAO-106352110-W23-5075-BM-lib1.report.json
+[2023-07-19 12:17:18,338] INFO Accessing file for SNPS: TWAO-106352110-W23-5075-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:18,900] INFO Accessing file for GENOTYPES: TWAO-106352110-W23-5075-BM-lib1.report.json
+[2023-07-19 12:17:18,900] INFO Accessing file for GENOTYPES: TWAO-106352110-W23-5075-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:19,434] INFO Accessing file for TIER1-3: TWAO-201805813-W23-5093-BM-lib1.report.json
+[2023-07-19 12:17:19,434] INFO Accessing file for TIER1-3: TWAO-201805813-W23-5093-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:20,043] INFO Accessing file for NOTDETECTED: TWAO-201805813-W23-5093-BM-lib1.report.json
+[2023-07-19 12:17:20,043] INFO Accessing file for NOTDETECTED: TWAO-201805813-W23-5093-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:20,655] INFO Accessing file for LOWLEVEL: TWAO-201805813-W23-5093-BM-lib1.report.json
+[2023-07-19 12:17:20,655] INFO Accessing file for LOWLEVEL: TWAO-201805813-W23-5093-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:21,250] INFO Accessing file for FILTERED: TWAO-201805813-W23-5093-BM-lib1.report.json
+[2023-07-19 12:17:21,250] INFO Accessing file for FILTERED: TWAO-201805813-W23-5093-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:21,843] INFO Accessing file for SNPS: TWAO-201805813-W23-5093-BM-lib1.report.json
+[2023-07-19 12:17:21,843] INFO Accessing file for SNPS: TWAO-201805813-W23-5093-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:22,455] INFO Accessing file for GENOTYPES: TWAO-201805813-W23-5093-BM-lib1.report.json
+[2023-07-19 12:17:22,455] INFO Accessing file for GENOTYPES: TWAO-201805813-W23-5093-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:23,180] INFO Accessing file for TIER1-3: TWAO-105574860-W23-5249-BM-lib1.report.json
+[2023-07-19 12:17:23,181] INFO Accessing file for TIER1-3: TWAO-105574860-W23-5249-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:23,866] ERROR NOTDETECTED columns do not exist: TWAO-105574860-W23-5249-BM-lib1.report.json
+[2023-07-19 12:17:23,866] INFO Accessing file for LOWLEVEL: TWAO-105574860-W23-5249-BM-lib1.report.json
+[2023-07-19 12:17:23,866] INFO Accessing file for LOWLEVEL: TWAO-105574860-W23-5249-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:24,587] INFO Accessing file for FILTERED: TWAO-105574860-W23-5249-BM-lib1.report.json
+[2023-07-19 12:17:24,587] INFO Accessing file for FILTERED: TWAO-105574860-W23-5249-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:25,165] INFO Accessing file for SNPS: TWAO-105574860-W23-5249-BM-lib1.report.json
+[2023-07-19 12:17:25,165] INFO Accessing file for SNPS: TWAO-105574860-W23-5249-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:25,730] INFO Accessing file for GENOTYPES: TWAO-105574860-W23-5249-BM-lib1.report.json
+[2023-07-19 12:17:25,730] INFO Accessing file for GENOTYPES: TWAO-105574860-W23-5249-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:17:26,308] INFO ----------DIRECTORTY STATISTICS----------
+[2023-07-19 12:17:26,308] INFO Total subdirectories accessed: 38
+[2023-07-19 12:17:26,308] INFO JSON files without correct column (error count): 33
+[2023-07-19 12:17:26,308] INFO Subirectory error percent: 0.868
+[2023-07-19 12:17:26,308] INFO ----------COMPARISON STATISTICS----------
+[2023-07-19 12:17:26,308] INFO Total Comparisons: 2446
+[2023-07-19 12:17:26,308] INFO Duplicate coverage count: 1202
+[2023-07-19 12:17:26,308] INFO Total Comparisons, excluding duplicates: 1244
+[2023-07-19 12:17:26,308] INFO ----------STATISTICS EXCLUDING DUPLICATES----------
+[2023-07-19 12:17:26,308] INFO Cases where JSON coverage was greater: 0.051 (63)
+[2023-07-19 12:17:26,308] INFO Cases where BED coverage was greater: 0.58 (722)
+[2023-07-19 12:17:26,308] INFO Cases where coverage was equal: 0.369 (459)
+[2023-07-19 12:17:26,308] INFO JSON average coverage: 5165.513
+[2023-07-19 12:17:26,308] INFO BED average coverage: 5199.054
+[2023-07-19 12:17:26,308] INFO Average coverage comparison: -27.182
+[2023-07-19 12:17:26,308] INFO Average relative difference: 0.01558
