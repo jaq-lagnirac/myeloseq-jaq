@@ -1,0 +1,161 @@
+[2023-07-19 11:59:56,370] INFO Accessing file for TIER1-3: TWAO-102552878-W23-5092-BM-lib1.report.json
+[2023-07-19 11:59:56,370] INFO Accessing file for TIER1-3: TWAO-102552878-W23-5092-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 11:59:56,929] INFO Accessing file for FILTERED: TWAO-102552878-W23-5092-BM-lib1.report.json
+[2023-07-19 11:59:56,930] INFO Accessing file for FILTERED: TWAO-102552878-W23-5092-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 11:59:57,486] INFO Accessing file for TIER1-3: TWAO-201723434-W23-5114-BM-lib1.report.json
+[2023-07-19 11:59:57,486] INFO Accessing file for TIER1-3: TWAO-201723434-W23-5114-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 11:59:58,103] INFO Accessing file for FILTERED: TWAO-201723434-W23-5114-BM-lib1.report.json
+[2023-07-19 11:59:58,103] INFO Accessing file for FILTERED: TWAO-201723434-W23-5114-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 11:59:58,776] INFO Accessing file for TIER1-3: TWAO-200054718-W23-5200-BM-lib1.report.json
+[2023-07-19 11:59:58,777] INFO Accessing file for TIER1-3: TWAO-200054718-W23-5200-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 11:59:59,507] INFO Accessing file for FILTERED: TWAO-200054718-W23-5200-BM-lib1.report.json
+[2023-07-19 11:59:59,507] INFO Accessing file for FILTERED: TWAO-200054718-W23-5200-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:00,183] INFO Accessing file for TIER1-3: TWAO-MS-Positive-Control-W22-6944-BM-lib16.report.json
+[2023-07-19 12:00:00,183] INFO Accessing file for TIER1-3: TWAO-MS-Positive-Control-W22-6944-BM-lib16.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:00,868] INFO Accessing file for FILTERED: TWAO-MS-Positive-Control-W22-6944-BM-lib16.report.json
+[2023-07-19 12:00:00,868] INFO Accessing file for FILTERED: TWAO-MS-Positive-Control-W22-6944-BM-lib16.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:01,516] INFO Accessing file for TIER1-3: TWAO-105163199-W23-5089-BM-lib1.report.json
+[2023-07-19 12:00:01,516] INFO Accessing file for TIER1-3: TWAO-105163199-W23-5089-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:02,154] INFO Accessing file for FILTERED: TWAO-105163199-W23-5089-BM-lib1.report.json
+[2023-07-19 12:00:02,154] INFO Accessing file for FILTERED: TWAO-105163199-W23-5089-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:02,783] ERROR TIER1-3 columns do not exist: TWAO-107016815-W23-5248-PB-lib1.report.json
+[2023-07-19 12:00:02,783] INFO Accessing file for FILTERED: TWAO-107016815-W23-5248-PB-lib1.report.json
+[2023-07-19 12:00:02,783] INFO Accessing file for FILTERED: TWAO-107016815-W23-5248-PB-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:03,412] INFO Accessing file for TIER1-3: TWAO-104533120-W23-5281-BM-lib1.report.json
+[2023-07-19 12:00:03,412] INFO Accessing file for TIER1-3: TWAO-104533120-W23-5281-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:04,035] INFO Accessing file for FILTERED: TWAO-104533120-W23-5281-BM-lib1.report.json
+[2023-07-19 12:00:04,035] INFO Accessing file for FILTERED: TWAO-104533120-W23-5281-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:04,622] INFO Accessing file for TIER1-3: TWAO-108032713-W23-5115-BM2-lib1.report.json
+[2023-07-19 12:00:04,622] INFO Accessing file for TIER1-3: TWAO-108032713-W23-5115-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:05,242] INFO Accessing file for FILTERED: TWAO-108032713-W23-5115-BM2-lib1.report.json
+[2023-07-19 12:00:05,242] INFO Accessing file for FILTERED: TWAO-108032713-W23-5115-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:05,883] ERROR TIER1-3 columns do not exist: TWAO-202154026-W23-5242-BM-lib1.report.json
+[2023-07-19 12:00:05,883] INFO Accessing file for FILTERED: TWAO-202154026-W23-5242-BM-lib1.report.json
+[2023-07-19 12:00:05,883] INFO Accessing file for FILTERED: TWAO-202154026-W23-5242-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:06,462] INFO Accessing file for TIER1-3: TWAO-108783743-W23-5282-BM-lib1.report.json
+[2023-07-19 12:00:06,462] INFO Accessing file for TIER1-3: TWAO-108783743-W23-5282-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:07,068] INFO Accessing file for FILTERED: TWAO-108783743-W23-5282-BM-lib1.report.json
+[2023-07-19 12:00:07,068] INFO Accessing file for FILTERED: TWAO-108783743-W23-5282-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:07,680] INFO Accessing file for TIER1-3: TWAO-106444776-W23-5197-PB-lib1.report.json
+[2023-07-19 12:00:07,680] INFO Accessing file for TIER1-3: TWAO-106444776-W23-5197-PB-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:08,227] INFO Accessing file for FILTERED: TWAO-106444776-W23-5197-PB-lib1.report.json
+[2023-07-19 12:00:08,227] INFO Accessing file for FILTERED: TWAO-106444776-W23-5197-PB-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:08,781] INFO Accessing file for TIER1-3: TWAO-202153377-W23-5261-BM-lib1.report.json
+[2023-07-19 12:00:08,782] INFO Accessing file for TIER1-3: TWAO-202153377-W23-5261-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:09,351] INFO Accessing file for FILTERED: TWAO-202153377-W23-5261-BM-lib1.report.json
+[2023-07-19 12:00:09,352] INFO Accessing file for FILTERED: TWAO-202153377-W23-5261-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:09,912] INFO Accessing file for TIER1-3: TWAO-201682401-W23-5060-BM-lib1.report.json
+[2023-07-19 12:00:09,912] INFO Accessing file for TIER1-3: TWAO-201682401-W23-5060-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:10,526] INFO Accessing file for FILTERED: TWAO-201682401-W23-5060-BM-lib1.report.json
+[2023-07-19 12:00:10,527] INFO Accessing file for FILTERED: TWAO-201682401-W23-5060-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:11,169] INFO Accessing file for TIER1-3: TWAO-202143635-W23-5271-BM-lib1.report.json
+[2023-07-19 12:00:11,169] INFO Accessing file for TIER1-3: TWAO-202143635-W23-5271-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:11,932] INFO Accessing file for FILTERED: TWAO-202143635-W23-5271-BM-lib1.report.json
+[2023-07-19 12:00:11,933] INFO Accessing file for FILTERED: TWAO-202143635-W23-5271-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:12,764] INFO Accessing file for TIER1-3: TWAO-103144074-W23-5051-BM-lib1.report.json
+[2023-07-19 12:00:12,764] INFO Accessing file for TIER1-3: TWAO-103144074-W23-5051-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:13,495] INFO Accessing file for FILTERED: TWAO-103144074-W23-5051-BM-lib1.report.json
+[2023-07-19 12:00:13,495] INFO Accessing file for FILTERED: TWAO-103144074-W23-5051-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:14,154] INFO Accessing file for TIER1-3: TWAO-103636692-W23-5198-BM-lib1.report.json
+[2023-07-19 12:00:14,154] INFO Accessing file for TIER1-3: TWAO-103636692-W23-5198-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:14,768] INFO Accessing file for FILTERED: TWAO-103636692-W23-5198-BM-lib1.report.json
+[2023-07-19 12:00:14,769] INFO Accessing file for FILTERED: TWAO-103636692-W23-5198-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:15,428] INFO Accessing file for TIER1-3: TWAO-201791635-W23-5078-BM-lib1.report.json
+[2023-07-19 12:00:15,428] INFO Accessing file for TIER1-3: TWAO-201791635-W23-5078-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:16,034] INFO Accessing file for FILTERED: TWAO-201791635-W23-5078-BM-lib1.report.json
+[2023-07-19 12:00:16,034] INFO Accessing file for FILTERED: TWAO-201791635-W23-5078-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:16,670] INFO Accessing file for TIER1-3: TWAO-105982473-W23-5162-BM-lib1.report.json
+[2023-07-19 12:00:16,670] INFO Accessing file for TIER1-3: TWAO-105982473-W23-5162-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:17,355] INFO Accessing file for FILTERED: TWAO-105982473-W23-5162-BM-lib1.report.json
+[2023-07-19 12:00:17,355] INFO Accessing file for FILTERED: TWAO-105982473-W23-5162-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:18,059] INFO Accessing file for TIER1-3: TWAO-201796057-W23-5143-BM2-lib1.report.json
+[2023-07-19 12:00:18,059] INFO Accessing file for TIER1-3: TWAO-201796057-W23-5143-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:18,681] INFO Accessing file for FILTERED: TWAO-201796057-W23-5143-BM2-lib1.report.json
+[2023-07-19 12:00:18,681] INFO Accessing file for FILTERED: TWAO-201796057-W23-5143-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:19,285] INFO Accessing file for TIER1-3: TWAO-103212136-W23-5185-BM-lib1.report.json
+[2023-07-19 12:00:19,285] INFO Accessing file for TIER1-3: TWAO-103212136-W23-5185-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:19,906] INFO Accessing file for FILTERED: TWAO-103212136-W23-5185-BM-lib1.report.json
+[2023-07-19 12:00:19,906] INFO Accessing file for FILTERED: TWAO-103212136-W23-5185-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:20,543] ERROR TIER1-3 columns do not exist: TWAO-201878424-W23-5285-BM-lib1.report.json
+[2023-07-19 12:00:20,543] INFO Accessing file for FILTERED: TWAO-201878424-W23-5285-BM-lib1.report.json
+[2023-07-19 12:00:20,543] INFO Accessing file for FILTERED: TWAO-201878424-W23-5285-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:21,150] INFO Accessing file for TIER1-3: TWAO-202138202-W23-5245-BM-lib1.report.json
+[2023-07-19 12:00:21,150] INFO Accessing file for TIER1-3: TWAO-202138202-W23-5245-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:21,803] INFO Accessing file for FILTERED: TWAO-202138202-W23-5245-BM-lib1.report.json
+[2023-07-19 12:00:21,803] INFO Accessing file for FILTERED: TWAO-202138202-W23-5245-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:22,557] INFO Accessing file for TIER1-3: TWAO-201516155-W23-5090-BM-lib1.report.json
+[2023-07-19 12:00:22,557] INFO Accessing file for TIER1-3: TWAO-201516155-W23-5090-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:23,321] INFO Accessing file for FILTERED: TWAO-201516155-W23-5090-BM-lib1.report.json
+[2023-07-19 12:00:23,321] INFO Accessing file for FILTERED: TWAO-201516155-W23-5090-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:24,069] INFO Accessing file for TIER1-3: TWAO-103562837-W23-5141-BM2-lib1.report.json
+[2023-07-19 12:00:24,070] INFO Accessing file for TIER1-3: TWAO-103562837-W23-5141-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:24,666] INFO Accessing file for FILTERED: TWAO-103562837-W23-5141-BM2-lib1.report.json
+[2023-07-19 12:00:24,666] INFO Accessing file for FILTERED: TWAO-103562837-W23-5141-BM2-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:25,262] ERROR TIER1-3 columns do not exist: TWAO-108152658-W23-5283-BM-lib1.report.json
+[2023-07-19 12:00:25,262] INFO Accessing file for FILTERED: TWAO-108152658-W23-5283-BM-lib1.report.json
+[2023-07-19 12:00:25,262] INFO Accessing file for FILTERED: TWAO-108152658-W23-5283-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:25,946] INFO Accessing file for TIER1-3: TWAO-105188778-W23-5079-BM-lib1.report.json
+[2023-07-19 12:00:25,947] INFO Accessing file for TIER1-3: TWAO-105188778-W23-5079-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:26,504] INFO Accessing file for FILTERED: TWAO-105188778-W23-5079-BM-lib1.report.json
+[2023-07-19 12:00:26,504] INFO Accessing file for FILTERED: TWAO-105188778-W23-5079-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:27,067] INFO Accessing file for TIER1-3: TWAO-200249928-W23-5250-BM-lib1.report.json
+[2023-07-19 12:00:27,067] INFO Accessing file for TIER1-3: TWAO-200249928-W23-5250-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:27,689] INFO Accessing file for FILTERED: TWAO-200249928-W23-5250-BM-lib1.report.json
+[2023-07-19 12:00:27,689] INFO Accessing file for FILTERED: TWAO-200249928-W23-5250-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:28,331] INFO Accessing file for TIER1-3: TWAO-107196322-W23-5284-BM-lib1.report.json
+[2023-07-19 12:00:28,332] INFO Accessing file for TIER1-3: TWAO-107196322-W23-5284-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:29,047] INFO Accessing file for FILTERED: TWAO-107196322-W23-5284-BM-lib1.report.json
+[2023-07-19 12:00:29,047] INFO Accessing file for FILTERED: TWAO-107196322-W23-5284-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:29,712] INFO Accessing file for TIER1-3: TWAO-201938262-W23-5253-BM-lib1.report.json
+[2023-07-19 12:00:29,712] INFO Accessing file for TIER1-3: TWAO-201938262-W23-5253-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:30,439] INFO Accessing file for FILTERED: TWAO-201938262-W23-5253-BM-lib1.report.json
+[2023-07-19 12:00:30,439] INFO Accessing file for FILTERED: TWAO-201938262-W23-5253-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:31,242] INFO Accessing file for TIER1-3: TWAO-106444776-W23-5056-BM-lib1.report.json
+[2023-07-19 12:00:31,242] INFO Accessing file for TIER1-3: TWAO-106444776-W23-5056-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:31,669] INFO Accessing file for FILTERED: TWAO-106444776-W23-5056-BM-lib1.report.json
+[2023-07-19 12:00:31,670] INFO Accessing file for FILTERED: TWAO-106444776-W23-5056-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:32,118] INFO Accessing file for TIER1-3: TWAO-201280541-W23-5184-BM-lib1.report.json
+[2023-07-19 12:00:32,118] INFO Accessing file for TIER1-3: TWAO-201280541-W23-5184-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:32,896] INFO Accessing file for FILTERED: TWAO-201280541-W23-5184-BM-lib1.report.json
+[2023-07-19 12:00:32,896] INFO Accessing file for FILTERED: TWAO-201280541-W23-5184-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:33,600] INFO Accessing file for TIER1-3: TWAO-101484893-W23-5251-BM-lib1.report.json
+[2023-07-19 12:00:33,600] INFO Accessing file for TIER1-3: TWAO-101484893-W23-5251-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:34,338] INFO Accessing file for FILTERED: TWAO-101484893-W23-5251-BM-lib1.report.json
+[2023-07-19 12:00:34,338] INFO Accessing file for FILTERED: TWAO-101484893-W23-5251-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:34,975] INFO Accessing file for TIER1-3: TWAO-202035007-W23-5244-BM-lib1.report.json
+[2023-07-19 12:00:34,975] INFO Accessing file for TIER1-3: TWAO-202035007-W23-5244-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:35,595] INFO Accessing file for FILTERED: TWAO-202035007-W23-5244-BM-lib1.report.json
+[2023-07-19 12:00:35,595] INFO Accessing file for FILTERED: TWAO-202035007-W23-5244-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:36,315] ERROR TIER1-3 columns do not exist: TWAO-100406124-W23-5088-BM-lib1.report.json
+[2023-07-19 12:00:36,316] INFO Accessing file for FILTERED: TWAO-100406124-W23-5088-BM-lib1.report.json
+[2023-07-19 12:00:36,316] INFO Accessing file for FILTERED: TWAO-100406124-W23-5088-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:36,976] ERROR TIER1-3 columns do not exist: TWAO-108007890-W23-5011-BM3-lib1.report.json
+[2023-07-19 12:00:36,976] INFO Accessing file for FILTERED: TWAO-108007890-W23-5011-BM3-lib1.report.json
+[2023-07-19 12:00:36,976] INFO Accessing file for FILTERED: TWAO-108007890-W23-5011-BM3-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:37,629] ERROR TIER1-3 columns do not exist: TWAO-106352110-W23-5075-BM-lib1.report.json
+[2023-07-19 12:00:37,629] INFO Accessing file for FILTERED: TWAO-106352110-W23-5075-BM-lib1.report.json
+[2023-07-19 12:00:37,629] INFO Accessing file for FILTERED: TWAO-106352110-W23-5075-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:38,169] INFO Accessing file for TIER1-3: TWAO-201805813-W23-5093-BM-lib1.report.json
+[2023-07-19 12:00:38,169] INFO Accessing file for TIER1-3: TWAO-201805813-W23-5093-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:38,776] INFO Accessing file for FILTERED: TWAO-201805813-W23-5093-BM-lib1.report.json
+[2023-07-19 12:00:38,776] INFO Accessing file for FILTERED: TWAO-201805813-W23-5093-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:39,374] INFO Accessing file for TIER1-3: TWAO-105574860-W23-5249-BM-lib1.report.json
+[2023-07-19 12:00:39,374] INFO Accessing file for TIER1-3: TWAO-105574860-W23-5249-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:39,971] INFO Accessing file for FILTERED: TWAO-105574860-W23-5249-BM-lib1.report.json
+[2023-07-19 12:00:39,971] INFO Accessing file for FILTERED: TWAO-105574860-W23-5249-BM-lib1.qc-coverage-region-1_full_res.bed
+[2023-07-19 12:00:40,526] INFO ----------DIRECTORTY STATISTICS----------
+[2023-07-19 12:00:40,527] INFO Total subdirectories accessed: 38
+[2023-07-19 12:00:40,527] INFO JSON files without correct column (error count): 7
+[2023-07-19 12:00:40,527] INFO Subirectory error percent: 0.184
+[2023-07-19 12:00:40,527] INFO ----------COMPARISON STATISTICS----------
+[2023-07-19 12:00:40,527] INFO Total Comparisons: 1304
+[2023-07-19 12:00:40,527] INFO Duplicate coverage count: 865
+[2023-07-19 12:00:40,527] INFO Total Comparisons, excluding duplicates: 439
+[2023-07-19 12:00:40,527] INFO ----------STATISTICS EXCLUDING DUPLICATES----------
+[2023-07-19 12:00:40,527] INFO Cases where JSON coverage was greater: 0.073 (32)
+[2023-07-19 12:00:40,527] INFO Cases where BED coverage was greater: 0.761 (334)
+[2023-07-19 12:00:40,527] INFO Cases where coverage was equal: 0.166 (73)
+[2023-07-19 12:00:40,527] INFO JSON average coverage: 4587.497
+[2023-07-19 12:00:40,527] INFO BED average coverage: 4638.708
+[2023-07-19 12:00:40,527] INFO Average coverage comparison: -59.85
+[2023-07-19 12:00:40,527] INFO Average relative difference: 0.02271
