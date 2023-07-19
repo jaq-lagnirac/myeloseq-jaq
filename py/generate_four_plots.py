@@ -19,6 +19,7 @@ STACKED = True
 DENSITY = True
 XLABEL = 'Relative Difference'
 YLABEL = 'Probaility Density'
+LEGEND_FONT_SIZE = 8
 
 
 SCRIPT_PATH = os.path.abspath(__file__)
@@ -188,7 +189,7 @@ plot4.hist(pindel,
 plot4.set_title('Comparison of Coverage Sets', fontdict=fontdict)
 plot4.set_xlabel(XLABEL, fontdict=fontdict)
 plot4.set_ylabel(YLABEL, fontdict=fontdict)
-plot4.legend(loc='upper right', fontsize=8)
+plot4.legend(loc='upper right', fontsize=LEGEND_FONT_SIZE)
 
 # finalizes plot, displays it
 figure.tight_layout()
