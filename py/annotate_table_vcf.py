@@ -240,12 +240,19 @@ total_file_count, vcf_suffix_count = count_files(args.directory)
 info(f'Reading table: {args.coverage_table}')
 df = pd.read_csv(args.coverage_table, sep=SEP)
 
+# list of columns, used to preserve order
+columns = list(df.columns)
+columns.append('set')
+
 # applies extraction function
 # NOTE: axis=1 == columns, i.e. apply function to each row
 df = df.apply(add_set, axis=1)
 
 # re-sorts to ensure that it's sorted in order to take any file
 df = df.sort_values(by='json vs bed coverage', ascending=False)
+
+# reorders columns to ensure that it's the same order
+df = df[columns]
 
 # outputs table to standard output, can be piped into tsv
 df.to_csv(sys.stdout, sep=SEP, index=None)
