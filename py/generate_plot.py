@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 
 SEP = '\t'
 
-BIN_WIDTH = 0.5
+BIN_WIDTH = 0.25
 ALPHA = 0.3
 HISTTYPE = 'barstacked'
 STACKED = True
@@ -105,8 +105,8 @@ if args.disable_table:
 
 # generate bins
 combined_list = dragen + pindel + dragen_pindel
-min_bin = int(min(combined_list)) - 1 # takes floor min
-max_bin = int(max(combined_list)) + 1 # takes ceiling max
+min_bin = int(min(combined_list)) - 1.5 # takes floor min
+max_bin = int(max(combined_list)) + 1.5 # takes ceiling max
 bins = np.arange(min_bin, max_bin, BIN_WIDTH)
 
 info(f'Generating {len(bins)} bins - Bin width: {BIN_WIDTH} - ' \

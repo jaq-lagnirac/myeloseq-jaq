@@ -12,7 +12,10 @@ import matplotlib.pyplot as plt
 
 SEP = '\t'
 
-BIN_WIDTH = 0.5
+BIN_WIDTH = 0.25
+DRAGEN_WIDTH = 0.1
+PINDEL_WIDTH = DRAGEN_WIDTH
+DRAGEN_PINDEL_WIDTH = BIN_WIDTH
 ALPHA = 0.3
 HISTTYPE = 'barstacked'
 STACKED = True
@@ -108,13 +111,37 @@ if args.disable_table:
 
 # generate bins
 combined_list = dragen + pindel + dragen_pindel
-min_bin = int(min(combined_list)) - 1 # takes floor min
-max_bin = int(max(combined_list)) + 1 # takes ceiling max
+min_bin = int(min(combined_list)) - 1.5 # takes floor min
+max_bin = int(max(combined_list)) + 1.5 # takes ceiling max
 bins = np.arange(min_bin, max_bin, BIN_WIDTH)
 
 info(f'Generating {len(bins)} bins - Bin width: {BIN_WIDTH} - ' \
      f'Minimum bin: {min_bin} - Maximum bin: {max_bin}')
-  
+
+# generate dragen bins
+min_dragen = int(min(dragen)) - 1.5 # takes floor min
+max_dragen = int(max(dragen)) + 1.5 # takes ceiling max
+dragen_bins = np.arange(min_dragen, max_dragen, DRAGEN_WIDTH)
+
+info(f'Generating {len(dragen_bins)} dragen bins - Bin width: {DRAGEN_WIDTH} - ' \
+     f'Minimum bin: {min_dragen} - Maximum bin: {max_dragen}')
+
+# generate pindel bins
+min_pindel = int(min(pindel)) - 1.5 # takes floor min
+max_pindel = int(max(pindel)) + 1.5 # takes ceiling max
+pindel_bins = np.arange(min_pindel, max_pindel, PINDEL_WIDTH)
+
+info(f'Generating {len(pindel_bins)} pindel bins - Bin width: {PINDEL_WIDTH} - ' \
+     f'Minimum bin: {min_pindel} - Maximum bin: {max_pindel}')
+
+# generate dragen-pindel bins
+min_dragen_pindel = int(min(dragen_pindel)) - 1.5 # takes floor min
+max_dragen_pindel = int(max(dragen_pindel)) + 1.5 # takes ceiling max
+dragen_pindel_bins = np.arange(min_dragen_pindel, max_dragen_pindel, DRAGEN_PINDEL_WIDTH)
+
+info(f'Generating {len(dragen_pindel_bins)} dragen-pindel bins - Bin width: {DRAGEN_PINDEL_WIDTH} - ' \
+     f'Minimum bin: {min_dragen_pindel} - Maximum bin: {max_dragen_pindel}')
+
 # sets up subplots
 figure, ((plot1, plot2), (plot3, plot4)) = plt.subplots(nrows=2, ncols=2)
 fontdict = {'fontsize':10}
@@ -123,6 +150,7 @@ fontdict = {'fontsize':10}
 
 # plot 1 - dragen coverage
 plot1.hist(dragen,
+           bins=dragen_bins,
            histtype=HISTTYPE,
            stacked=STACKED,
            density=DENSITY,
@@ -134,6 +162,7 @@ plot1.set_ylabel(YLABEL, fontdict=fontdict)
 
 # plot 2 - pindel coverage
 plot2.hist(pindel,
+           bins=pindel_bins,
            histtype=HISTTYPE,
            stacked=STACKED,
            density=DENSITY,
@@ -145,6 +174,7 @@ plot2.set_ylabel(YLABEL, fontdict=fontdict)
 
 # plot 3 - dragen-pindel coverage
 plot3.hist(dragen_pindel,
+           bins=dragen_pindel_bins,
            histtype=HISTTYPE,
            stacked=STACKED,
            density=DENSITY,
