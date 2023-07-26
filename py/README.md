@@ -42,6 +42,10 @@ flowchart TD
     set comparison plot"]
     state65[".png image of four coverage plots
     (dragen, pindel, dragen-pindel, comparison)"]
+    action52{"calculate_stats.py"}
+    state526[".err file with statistics on
+    set coverage, average relative
+    difference, and others"]
 
     originalstate1 --> action1
     action1 --> state2
@@ -60,4 +64,6 @@ flowchart TD
     state5 --> action55
     action5 --> state6
     action55 --> state65
+    state5 --> action52
+    action52 --> state526
 ```
