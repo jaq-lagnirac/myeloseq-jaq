@@ -1,0 +1,27 @@
+[2023-07-26 13:31:22,922] DEBUG /home/jaq_lagnirac/wustl/myeloseq/myeloseq-jaq/py/calculate_stats.py begin
+[2023-07-26 13:31:22,923] INFO Reading table: ../outputs/rel-diff-outputs/tier13-rel-diff/rel_diff_annotated.tsv
+[2023-07-26 13:31:22,926] DEBUG VERSUS COVERAGE CUTOFF: 50
+[2023-07-26 13:31:22,927] INFO --------------------     STATISTICS - DRAGEN      --------------------
+[2023-07-26 13:31:22,927] INFO Total Extractions: 67
+[2023-07-26 13:31:22,927] INFO Average Relative Difference: -0.03362
+[2023-07-26 13:31:22,927] INFO Average Difference in Coverage: -85.46269
+[2023-07-26 13:31:22,927] INFO Absolute differences greater than 50: 5 (62 less than or equal to cutoff)
+[2023-07-26 13:31:22,927] DEBUG Absolute values greater than 50: 486, -78, -1064, -1064, -3865
+[2023-07-26 13:31:22,927] DEBUG Absolute values less than or equal to 50: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -3, -3, -3, -3, -3, -4, -4, -5, -5, -6, -6, -7, -9, -10, -11, -20
+[2023-07-26 13:31:22,927] INFO --------------------     STATISTICS - PINDEL      --------------------
+[2023-07-26 13:31:22,927] INFO Total Extractions: 2
+[2023-07-26 13:31:22,927] INFO Average Relative Difference: 0.47623
+[2023-07-26 13:31:22,927] INFO Average Difference in Coverage: 249.5
+[2023-07-26 13:31:22,927] INFO Absolute differences greater than 50: 1 (1 less than or equal to cutoff)
+[2023-07-26 13:31:22,927] DEBUG Absolute values greater than 50: 496
+[2023-07-26 13:31:22,927] DEBUG Absolute values less than or equal to 50: 3
+[2023-07-26 13:31:22,927] INFO --------------------  STATISTICS - DRAGEN-PINDEL  --------------------
+[2023-07-26 13:31:22,927] INFO Total Extractions: 29
+[2023-07-26 13:31:22,927] INFO Average Relative Difference: 0.599
+[2023-07-26 13:31:22,927] INFO Average Difference in Coverage: 292.06897
+[2023-07-26 13:31:22,927] INFO Absolute differences greater than 50: 16 (13 less than or equal to cutoff)
+[2023-07-26 13:31:22,927] DEBUG Absolute values greater than 50: 4629, 2683, 1734, 1683, 1624, 650, 615, 578, 473, 445, 432, 174, 98, -91, -3056, -4187
+[2023-07-26 13:31:22,927] DEBUG Absolute values less than or equal to 50: 11, 5, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, -33
+[2023-07-26 13:31:22,927] INFO --------------------      STATISTICS - MISC       --------------------
+[2023-07-26 13:31:22,927] INFO No values exist for misc.
+[2023-07-26 13:31:22,927] DEBUG /home/jaq_lagnirac/wustl/myeloseq/myeloseq-jaq/py/calculate_stats.py end
